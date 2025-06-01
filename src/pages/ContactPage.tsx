@@ -236,7 +236,7 @@ const ContactPage: React.FC = () => {
                     <MapPin size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Our Address</h3>
-                      <p className="text-neutral-300">123 Harley Street, London, W1G 7JU</p>
+                      <p className="text-neutral-300">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
                     </div>
                   </div>
                   
@@ -245,7 +245,7 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Phone</h3>
                       <p className="text-neutral-300">
-                        <a href="tel:+442071234567" className="hover:text-secondary-400 transition-colors">+44 20 7123 4567</a>
+                        <a href="tel:+441892338157" className="hover:text-secondary-400 transition-colors">01892 338157</a>
                       </p>
                     </div>
                   </div>
@@ -313,10 +313,10 @@ const ContactPage: React.FC = () => {
               For urgent concerns related to your treatment, please contact our emergency line:
             </p>
             <a 
-              href="tel:+442071234567" 
+              href="tel:+441892338157" 
               className="text-xl font-medium text-primary-800 hover:text-primary-600 transition-colors"
             >
-              +44 20 7123 4567
+              01892 338157
             </a>
             <p className="text-sm text-neutral-500 mt-2">
               Available 24/7 for existing clients only

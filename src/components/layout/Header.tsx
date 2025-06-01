@@ -51,13 +51,13 @@ const Header: React.FC = () => {
             <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
             
             <a 
-              href="tel:+442071234567" 
+              href="tel:+441892338157" 
               className={`flex items-center space-x-2 ml-4 ${
                 isScrolled ? 'text-primary-800' : 'text-white'
               }`}
             >
               <Phone size={18} />
-              <span className="text-sm font-medium">+44 20 7123 4567</span>
+              <span className="text-sm font-medium">01892 338157</span>
             </a>
             
             <Link 
@@ -126,11 +126,11 @@ const Header: React.FC = () => {
             
             <div className="pt-8 flex flex-col items-center space-y-4">
               <a 
-                href="tel:+442071234567" 
+                href="tel:+441892338157" 
                 className="flex items-center text-white space-x-2"
               >
                 <Phone size={20} />
-                <span className="text-lg">+44 20 7123 4567</span>
+                <span className="text-lg">01892 338157</span>
               </a>
               
               <Link 
