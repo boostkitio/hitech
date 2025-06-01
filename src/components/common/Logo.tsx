@@ -9,7 +9,7 @@ const Logo: React.FC<LogoProps> = ({ color = '#273a3d' }) => {
   
   // Use light logo on dark backgrounds, dark logo on light backgrounds
   const isLightLogo = color === '#ffffff' || color === 'white';
-  const logoSrc = isLightLogo ? '/images/logo-light.webp' : '/images/logo-dark.webp';
+  const logoSrc = isLightLogo ? '/images/Logo-light.webp' : '/images/Logo-dark.webp';
   
   // Fallback to text if image fails to load
   if (imageError) {
@@ -27,10 +27,10 @@ const Logo: React.FC<LogoProps> = ({ color = '#273a3d' }) => {
       <img 
         src={logoSrc} 
         alt="HiTech Aesthetics" 
-        className="h-12 md:h-16"
+        className="h-12 w-auto md:h-16 object-contain"
         loading="eager"
         width="200"
-        height="64"
+        height="auto"
         onError={() => setImageError(true)}
       />
     </div>

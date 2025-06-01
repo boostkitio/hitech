@@ -31,31 +31,24 @@ const AboutPage: React.FC = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'Dr. Sophia Reynolds',
-      role: 'Lead Aesthetic Physician',
+      name: 'Eva Whittle',
+      role: 'Practice Owner',
       image: 'https://images.pexels.com/photos/5214959/pexels-photo-5214959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Dr. Reynolds has over 15 years of experience in aesthetic medicine and is passionate about creating natural-looking results. She specializes in advanced facial contouring techniques.'
+      description: 'Eva is the heart of our clinic, bringing years of expertise in aesthetic treatments and a passion for helping clients achieve their beauty goals. Her dedication to excellence ensures every client receives the highest standard of care.'
     },
     {
       id: 2,
-      name: 'Dr. James Chen',
-      role: 'Medical Director',
-      image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'With a background in dermatology, Dr. Chen brings his extensive knowledge of skin health to HiTech Aesthetics. He focuses on creating holistic treatment plans for optimal results.'
+      name: 'Eva Colleague 1',
+      role: 'Senior Aesthetic Practitioner',
+      image: 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      description: 'With specialized training in advanced aesthetic procedures, our Senior Aesthetic Practitioner delivers exceptional results with a gentle touch and meticulous attention to detail.'
     },
     {
       id: 3,
-      name: 'Olivia Mitchell',
-      role: 'Senior Aesthetic Nurse',
-      image: 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Olivia has worked alongside top aesthetic physicians for over a decade and is known for her gentle technique and attention to detail with injectable treatments.'
-    },
-    {
-      id: 4,
-      name: 'Daniel Kim',
-      role: 'Laser Specialist',
+      name: 'Eva Colleague 2',
+      role: 'Aesthetic Therapist',
       image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Daniel specializes in advanced laser treatments and has helped countless clients address skin concerns from pigmentation to texture issues with his technical expertise.'
+      description: 'Our skilled Aesthetic Therapist specializes in a range of treatments, providing personalized care and expert advice to help you achieve your desired results.'
     }
   ];
   
@@ -84,7 +77,7 @@ const AboutPage: React.FC = () => {
   
   const credentials = [
     { id: 1, name: 'Save Face Accredited', icon: <Badge className="text-primary-600" size={24} /> },
-    { id: 2, name: 'British College of Aesthetic Medicine', icon: <Award className="text-primary-600\" size={24} /> },
+    { id: 2, name: 'British College of Aesthetic Medicine', icon: <Award className="text-primary-600" size={24} /> },
     { id: 3, name: 'Allergan Medical Institute', icon: <Heart className="text-primary-600" size={24} /> }
   ];
 
@@ -130,16 +123,26 @@ const AboutPage: React.FC = () => {
               animate={missionInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="mb-6">Our Mission</h2>
+              <h2 className="mb-6">Our Philosophy</h2>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  At HiTech Aesthetics, our mission is to provide exceptional aesthetic treatments that enhance natural beauty while prioritising safety, comfort, and results. We believe in a personalised approach that respects each client's unique features and aesthetic goals.
+                  We specialise in unisex treatments including Soprano laser hair removal, SkinPen micro-needling, ZO chemical peels, lip augmentation, dermal fillers, anti-wrinkle injections, skin boosters, therapeutic massages, and advanced medical skincare.
                 </p>
                 <p>
-                  We are committed to maintaining the highest standards in medical aesthetics by continuously updating our knowledge and techniques, investing in advanced technology, and creating a welcoming environment where clients feel valued and understood.
+                  Our fully qualified therapists stay ahead with continuous training, ensuring you receive personalised care in a friendly, safe, and professional setting. And yes, we proudly offer tailored treatments for men!
                 </p>
                 <p>
-                  Our vision is to be the premier destination for those seeking subtle enhancements that refresh their appearance while maintaining their natural beauty. We aim to build lasting relationships with our clients based on trust, transparency, and outstanding results.
+                  Experience the speed, safety, and lasting results of our market-leading Soprano laser technology. Discover a new level of confidence today.
+                </p>
+                <p className="font-medium">
+                  Tailored treatments to your individual needs
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <h3 className="text-xl mb-4">Expert care led by Eva Whittle</h3>
+                <p className="text-neutral-600">
+                  A warm and inviting experience
                 </p>
               </div>
               
@@ -190,11 +193,11 @@ const AboutPage: React.FC = () => {
           >
             <h2 className="mb-4">Meet Our Expert Team</h2>
             <p className="text-neutral-600 max-w-3xl mx-auto">
-              Our team of highly skilled practitioners brings together years of medical expertise and aesthetic artistry to deliver exceptional results.
+              Our team of highly skilled practitioners brings together years of expertise and aesthetic artistry to deliver exceptional results in a warm and professional environment.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
