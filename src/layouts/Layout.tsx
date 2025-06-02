@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
+import PopupDisplayController from '../components/popups/PopupDisplayController';
 
 const Layout: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </motion.main>
       <Footer />
+      <PopupDisplayController />
     </div>
   );
 };
