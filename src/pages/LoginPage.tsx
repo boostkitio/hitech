@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -15,6 +15,18 @@ const LoginPage: React.FC = () => {
   // Otherwise, default to '/admin'
   const from = location.state?.from?.pathname || '/admin';
 
+  // Add debugging to see auth state
+  useEffect(() => {
+    console.log('LoginPage - Current user:', auth.user);
+    console.log('LoginPage - Is loading:', auth.isLoading);
+    
+    // If user is already logged in, redirect them
+    if (auth.user && !auth.isLoading) {
+      console.log('LoginPage - User already logged in, redirecting to:', from);
+      navigate(from, { replace: true });
+    }
+  }, [auth.user, auth.isLoading, navigate, from]);
+
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
     setError('');
@@ -25,18 +37,23 @@ const LoginPage: React.FC = () => {
     }
 
     try {
+      // Add debug logging
+      console.log('LoginPage - Attempting login for:', email);
+      
       // Use the login function from AuthContext, which now calls Supabase
       const { error: loginError } = await auth.login(email, password);
       
       if (loginError) {
+        console.error('LoginPage - Login error:', loginError);
         setError(loginError.message || 'Login failed. Please check your credentials.');
       } else {
+        console.log('LoginPage - Login successful, navigating to:', from);
         // On successful login, Supabase onAuthStateChange will update the user state
         // and ProtectedRoute will allow navigation.
         navigate(from, { replace: true });
       }
     } catch (err) {
-      console.error('Login error:', err);
+      console.error('LoginPage - Unexpected error:', err);
       setError('An unexpected error occurred. Please try again.');
     }
   };
