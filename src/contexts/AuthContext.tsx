@@ -27,11 +27,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    console.log('AuthContext - Initializing auth state');
     
     // Check initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('AuthContext - Initial session:', session);
       setSession(session);
       setUser(session?.user ?? null);
       setIsLoading(false);
@@ -40,7 +38,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // Listen for auth state changes
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        console.log('AuthContext - Auth state changed:', event, session);
         setSession(session);
         setUser(session?.user ?? null);
         setIsLoading(false);
