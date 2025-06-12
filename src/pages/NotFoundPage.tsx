@@ -12,7 +12,7 @@ const NotFoundPage: React.FC = () => {
         <meta name="description" content="The page you are looking for could not be found." />
       </Helmet>
       
-      <div className="min-h-screen flex items-center justify-center bg-neutral-50 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-primary-50 px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

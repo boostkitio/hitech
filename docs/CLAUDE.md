@@ -53,6 +53,11 @@ Required for deployment:
 - Removed unused .bolt and .claude directories
 - Organized documentation into /docs folder
 - Kept OptimizedImage component for future use
+- Added interactive "Treatment Development Process" section to About page with:
+  - Original static process section (4 steps with icons)
+  - Interactive version with clickable steps and detailed explanations
+  - Smooth animations and transitions using Framer Motion
+  - Responsive design with sticky sidebar on larger screens
 
 ## Common Issues & Solutions
 1. **404 on routes in production**: Ensure _redirects file exists in public folder

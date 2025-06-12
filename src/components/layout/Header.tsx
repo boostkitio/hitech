@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import Logo from '../common/Logo';
 
 const Header: React.FC = () => {
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <Logo color={isScrolled ? '#273a3d' : '#ffffff'} />
+            <Logo color={isScrolled ? '#8C7A6E' : '#ffffff'} />
           </Link>
           
           {/* Desktop Navigation */}

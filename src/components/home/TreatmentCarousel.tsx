@@ -4,45 +4,22 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
+import { treatments } from '../../data/treatments';
 
-// Treatment data
-const treatments = [
-  {
-    id: 1,
-    name: 'Dermal Fillers',
-    description: 'Restore volume and enhance facial contours with our premium dermal fillers.',
-    image: 'https://images.pexels.com/photos/7298701/pexels-photo-7298701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '/treatments#dermal-fillers'
-  },
-  {
-    id: 2,
-    name: 'Anti-Wrinkle Treatments',
-    description: 'Smooth fine lines and wrinkles with our advanced anti-ageing injections.',
-    image: 'https://images.pexels.com/photos/7446147/pexels-photo-7446147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '/treatments#anti-wrinkle'
-  },
-  {
-    id: 3,
-    name: 'Skin Rejuvenation',
-    description: 'Revitalise your skin with our cutting-edge rejuvenation treatments.',
-    image: 'https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '/treatments#skin-rejuvenation'
-  },
-  {
-    id: 4,
-    name: 'Chemical Peels',
-    description: 'Transform your skin texture and tone with our medical-grade chemical peels.',
-    image: 'https://images.pexels.com/photos/6766591/pexels-photo-6766591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '/treatments#chemical-peels'
-  },
-  {
-    id: 5,
-    name: 'Microneedling',
-    description: 'Stimulate collagen production for smoother, firmer skin with microneedling.',
-    image: 'https://images.pexels.com/photos/7479753/pexels-photo-7479753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '/treatments#microneedling'
-  }
+// Import treatments from the TreatmentsPage or a shared treatments data file.
+// Filter to only include the specified featured treatments by id.
+
+const featuredIds = [
+  'soprano-ice-platinum',
+  'apilus-xcell',
+  'skinpen-microneedling',
+  'lynton-ipl',
+  'advanced-botox',
+  'asce-exosomes',
+  'polynucleotides',
 ];
+
+const featuredTreatments = treatments.filter(t => featuredIds.includes(t.id));
 
 const TreatmentCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,13 +41,13 @@ const TreatmentCarousel: React.FC = () => {
   
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === treatments.length - visibleTreatments() ? 0 : prevIndex + 1
+      prevIndex === featuredTreatments.length - visibleTreatments() ? 0 : prevIndex + 1
     );
   };
   
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? treatments.length - visibleTreatments() : prevIndex - 1
+      prevIndex === 0 ? featuredTreatments.length - visibleTreatments() : prevIndex - 1
     );
   };
   
@@ -83,7 +60,7 @@ const TreatmentCarousel: React.FC = () => {
           animate={{ x: `-${currentIndex * (100 / visibleTreatments())}%` }}
           transition={{ duration: 0.5 }}
         >
-          {treatments.map((treatment) => (
+          {featuredTreatments.map((treatment) => (
             <div 
               key={treatment.id}
               className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
@@ -100,7 +77,7 @@ const TreatmentCarousel: React.FC = () => {
                 <div className="p-6">
                   <h3 className="text-xl mb-2">{treatment.name}</h3>
                   <p className="text-neutral-600 mb-4">{treatment.description}</p>
-                  <Link to={treatment.link} className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
+                  <Link to={`/treatments/${treatment.id}`} className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
                     Learn more
                     <ChevronRight size={16} className="ml-1" />
                   </Link>

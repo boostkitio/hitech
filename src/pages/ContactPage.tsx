@@ -82,7 +82,7 @@ const ContactPage: React.FC = () => {
       {/* Header Section */}
       <section 
         ref={headerRef}
-        className="pt-32 pb-20 bg-primary-800 text-white"
+        className="pt-32 pb-20 bg-primary-600 text-white"
       >
         <div className="container-custom">
           <motion.div
@@ -92,7 +92,7 @@ const ContactPage: React.FC = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-white mb-6">Contact Us</h1>
-            <p className="text-xl text-neutral-100">
+            <p className="text-xl text-primary-100">
               Get in touch with our team to book your consultation or enquire about our treatments.
             </p>
           </motion.div>
@@ -128,7 +128,7 @@ const ContactPage: React.FC = () => {
               
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-neutral-700 mb-2">
+                  <label htmlFor="name" className="block text-primary-700 mb-2">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -137,14 +137,14 @@ const ContactPage: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                     required
                   />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="email" className="block text-neutral-700 mb-2">
+                    <label htmlFor="email" className="block text-primary-700 mb-2">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -153,12 +153,12 @@ const ContactPage: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-neutral-700 mb-2">
+                    <label htmlFor="phone" className="block text-primary-700 mb-2">
                       Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -167,14 +167,14 @@ const ContactPage: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                       required
                     />
                   </div>
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="service" className="block text-neutral-700 mb-2">
+                  <label htmlFor="service" className="block text-primary-700 mb-2">
                     Interested In
                   </label>
                   <select
@@ -182,21 +182,41 @@ const ContactPage: React.FC = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="">Select a treatment</option>
-                    <option value="Dermal Fillers">Dermal Fillers</option>
-                    <option value="Anti-Wrinkle Treatments">Anti-Wrinkle Treatments</option>
-                    <option value="Skin Rejuvenation">Skin Rejuvenation</option>
-                    <option value="Chemical Peels">Chemical Peels</option>
-                    <option value="Microneedling">Microneedling</option>
-                    <option value="Laser Treatments">Laser Treatments</option>
+                    <optgroup label="Hair Removal">
+                      <option value="Soprano Ice Platinum">Soprano Ice Platinum Laser</option>
+                      <option value="Apilus xCell">Apilus xCell Electrolysis</option>
+                    </optgroup>
+                    <optgroup label="Skin Rejuvenation">
+                      <option value="SkinPen Microneedling">SkinPen Microneedling</option>
+                      <option value="Lynton IPL">Lynton IPL Treatments</option>
+                      <option value="Lynton RF">Lynton Radio-Frequency</option>
+                      <option value="Lynton Laser">Lynton Laser Resurfacing</option>
+                      <option value="Dermalux LED">Dermalux LED Light Therapy</option>
+                    </optgroup>
+                    <optgroup label="Injectable Treatments">
+                      <option value="Botox">Botox Anti-wrinkle</option>
+                      <option value="Mesotox">Mesotox Skin Refinement</option>
+                      <option value="Polynucleotides">Polynucleotides</option>
+                      <option value="Skin Boosters">Skin Boosters</option>
+                    </optgroup>
+                    <optgroup label="Advanced Therapies">
+                      <option value="ASCE+ Exosomes">ASCE+ Exosomes</option>
+                      <option value="PRP Hair">PRP Hair Restoration</option>
+                      <option value="Relaxing Facials">Relaxing Facials</option>
+                      <option value="Chemical Peels">Chemical Peels</option>
+                      <option value="ZO Skincare">ZO Medical Skincare</option>
+                      <option value="Permanent Makeup">Permanent Makeup</option>
+                    </optgroup>
+                    <option value="Consultation">General Consultation</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-neutral-700 mb-2">
+                  <label htmlFor="message" className="block text-primary-700 mb-2">
                     Your Message
                   </label>
                   <textarea
@@ -205,7 +225,7 @@ const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 border border-primary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                   ></textarea>
                 </div>
                 
@@ -216,7 +236,7 @@ const ContactPage: React.FC = () => {
                   <Send size={18} className="mr-2" />
                   Send Message
                 </button>
-                <p className="text-xs text-neutral-500 mt-3">
+                <p className="text-xs text-primary-500 mt-3">
                   By submitting this form, you agree to our privacy policy and consent to being contacted regarding your enquiry.
                 </p>
               </form>
@@ -229,14 +249,14 @@ const ContactPage: React.FC = () => {
               animate={infoInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="bg-primary-800 text-white rounded-lg shadow-lg p-8 mb-8">
+              <div className="bg-primary-600 text-white rounded-lg shadow-lg p-8 mb-8">
                 <h2 className="text-2xl text-white mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <MapPin size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Our Address</h3>
-                      <p className="text-neutral-300">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
+                      <p className="text-primary-300">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
                     </div>
                   </div>
                   
@@ -244,7 +264,7 @@ const ContactPage: React.FC = () => {
                     <Phone size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Phone</h3>
-                      <p className="text-neutral-300">
+                      <p className="text-primary-300">
                         <a href="tel:+441892338157" className="hover:text-secondary-400 transition-colors">01892 338157</a>
                       </p>
                     </div>
@@ -254,7 +274,7 @@ const ContactPage: React.FC = () => {
                     <Mail size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Email</h3>
-                      <p className="text-neutral-300">
+                      <p className="text-primary-300">
                         <a href="mailto:info@hitechaesthetics.co.uk" className="hover:text-secondary-400 transition-colors">info@hitechaesthetics.co.uk</a>
                       </p>
                     </div>
@@ -264,38 +284,89 @@ const ContactPage: React.FC = () => {
                     <Clock size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-medium text-white mb-1">Business Hours</h3>
-                      <p className="text-neutral-300">Monday - Friday: 9am - 6pm</p>
-                      <p className="text-neutral-300">Saturday: 10am - 4pm</p>
-                      <p className="text-neutral-300">Sunday: Closed</p>
+                      <p className="text-primary-300">Monday - Friday: 9am - 6pm</p>
+                      <p className="text-primary-300">Saturday: 10am - 4pm</p>
+                      <p className="text-primary-300">Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
               </div>
               
               {/* Google Maps Embed */}
-              <div className="rounded-lg overflow-hidden shadow-lg h-64 bg-neutral-100">
-                <div className="w-full h-full flex items-center justify-center text-neutral-500">
+              <div className="rounded-lg overflow-hidden shadow-lg h-64 bg-primary-100">
+                <div className="w-full h-full flex items-center justify-center text-primary-500">
                   [GOOGLE MAPS EMBED PLACEHOLDER]
                 </div>
               </div>
               
-              {/* Booking Calendar */}
+              {/* Booking Options */}
               <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl mb-6">Book Online</h2>
-                <div className="bg-neutral-100 rounded-lg p-8 flex items-center justify-center h-64">
-                  <div className="text-center">
-                    <p className="text-neutral-600 mb-4">
-                      Book your consultation or treatment directly through our online calendar.
+                <h2 className="text-2xl mb-6">Book Your Appointment</h2>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-primary-50 rounded-lg p-6">
+                    <h3 className="font-semibold text-primary-800 mb-2">Online Booking</h3>
+                    <p className="text-primary-600 text-sm mb-4">
+                      Book consultations and treatments directly through our secure online system.
                     </p>
                     <a 
-                      href="#" 
+                      href="https://booking.example.com/hitech-aesthetics" 
                       className="btn btn-primary inline-flex items-center"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Clock size={18} className="mr-2" />
-                      Open Booking Calendar
+                      Book Online Now
                     </a>
+                  </div>
+                  
+                  <div className="bg-secondary-50 rounded-lg p-6">
+                    <h3 className="font-semibold text-secondary-800 mb-2">Phone Booking</h3>
+                    <p className="text-secondary-600 text-sm mb-4">
+                      Speak directly with our team to schedule your appointment and ask any questions.
+                    </p>
+                    <a 
+                      href="tel:+441892338157" 
+                      className="btn btn-secondary inline-flex items-center"
+                    >
+                      <Phone size={18} className="mr-2" />
+                      Call 01892 338157
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="border-t pt-6">
+                  <h4 className="font-medium mb-3">Booking Information:</h4>
+                  <ul className="text-sm text-neutral-600 space-y-1">
+                    <li>• Consultations are £50 (redeemable against treatment)</li>
+                    <li>• 48-hour cancellation policy applies</li>
+                    <li>• Please arrive 15 minutes early for appointments</li>
+                    <li>• Patch tests may be required 48 hours before treatment</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Payment & Finance */}
+              <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-2xl mb-6">Payment & Finance</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-neutral-50 rounded-lg p-4">
+                    <h3 className="font-medium mb-2">Payment Methods</h3>
+                    <ul className="text-sm text-neutral-600 space-y-1">
+                      <li>• Cash</li>
+                      <li>• Card payments</li>
+                      <li>• Bank transfer</li>
+                      <li>• Apple Pay / Google Pay</li>
+                    </ul>
+                  </div>
+                  <div className="bg-neutral-50 rounded-lg p-4">
+                    <h3 className="font-medium mb-2">Finance Options</h3>
+                    <ul className="text-sm text-neutral-600 space-y-1">
+                      <li>• 0% finance available</li>
+                      <li>• Spread costs over 3-12 months</li>
+                      <li>• Subject to credit approval</li>
+                      <li>• Ask about payment plans</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -305,11 +376,11 @@ const ContactPage: React.FC = () => {
       </section>
       
       {/* Emergency Contact */}
-      <section className="py-12 bg-neutral-50">
+      <section className="py-12 bg-primary-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-xl mb-4">Emergency Contact</h3>
-            <p className="text-neutral-600 mb-4">
+            <p className="text-primary-600 mb-4">
               For urgent concerns related to your treatment, please contact our emergency line:
             </p>
             <a 
@@ -318,7 +389,7 @@ const ContactPage: React.FC = () => {
             >
               01892 338157
             </a>
-            <p className="text-sm text-neutral-500 mt-2">
+            <p className="text-sm text-primary-500 mt-2">
               Available 24/7 for existing clients only
             </p>
           </div>

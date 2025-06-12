@@ -5,9 +5,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Badge, Award, Heart } from 'lucide-react';
+import { Badge, Award, Heart, Sparkles, Shield } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
+  
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -32,23 +33,47 @@ const AboutPage: React.FC = () => {
     {
       id: 1,
       name: 'Eva Whittle',
-      role: 'Practice Owner',
+      role: 'Practice Owner & Lead Practitioner',
       image: 'https://images.pexels.com/photos/5214959/pexels-photo-5214959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Eva is the heart of our clinic, bringing years of expertise in aesthetic treatments and a passion for helping clients achieve their beauty goals. Her dedication to excellence ensures every client receives the highest standard of care.'
+      description: 'Eva is the heart of our clinic, bringing years of expertise in aesthetic treatments and a passion for helping clients achieve their beauty goals. Her dedication to excellence ensures every client receives the highest standard of care.',
+      qualifications: [
+        'Advanced Aesthetic Practitioner Certification',
+        'Allergan Medical Institute Graduate',
+        'Save Face Accredited Practitioner',
+        'British College of Aesthetic Medicine Member',
+        'Level 7 Advanced Injectable Treatments'
+      ],
+      specialties: ['Botox & Anti-wrinkle treatments', 'Dermal Fillers', 'Skin Boosters', 'Treatment Planning']
     },
     {
       id: 2,
-      name: 'Eva Colleague 1',
+      name: 'Dr. Sarah Mitchell',
       role: 'Senior Aesthetic Practitioner',
       image: 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'With specialized training in advanced aesthetic procedures, our Senior Aesthetic Practitioner delivers exceptional results with a gentle touch and meticulous attention to detail.'
+      description: 'Dr. Mitchell brings medical expertise and artistic vision to every treatment. With over 8 years in aesthetic medicine, she specializes in advanced procedures and natural-looking results.',
+      qualifications: [
+        'MB ChB Medicine Degree',
+        'PG Cert Aesthetic Medicine',
+        'Advanced Botox & Filler Certification',
+        'Lynton Laser Training Certification',
+        'Medical Council Registration'
+      ],
+      specialties: ['Injectable treatments', 'Laser procedures', 'Skin rejuvenation', 'Medical aesthetics']
     },
     {
       id: 3,
-      name: 'Eva Colleague 2',
-      role: 'Aesthetic Therapist',
+      name: 'Natalia Kowalski',
+      role: 'Master Permanent Makeup Artist',
       image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Our skilled Aesthetic Therapist specializes in a range of treatments, providing personalized care and expert advice to help you achieve your desired results.'
+      description: 'Natalia is our resident permanent makeup specialist with international training and certification. Her artistry and precision create beautiful, natural-looking permanent makeup results.',
+      qualifications: [
+        'International Permanent Makeup Certification',
+        'Microblading Specialist Diploma',
+        'Scalp Micropigmentation Certification',
+        'Health & Safety in Cosmetic Tattooing',
+        'Color Theory & Facial Anatomy Training'
+      ],
+      specialties: ['Microblading', 'Powder Brows', 'Lip Blush', 'Scalp Micropigmentation']
     }
   ];
   
@@ -76,10 +101,14 @@ const AboutPage: React.FC = () => {
   ];
   
   const credentials = [
-    { id: 1, name: 'Save Face Accredited', icon: <Badge className="text-primary-600" size={24} /> },
-    { id: 2, name: 'British College of Aesthetic Medicine', icon: <Award className="text-primary-600" size={24} /> },
-    { id: 3, name: 'Allergan Medical Institute', icon: <Heart className="text-primary-600" size={24} /> }
+    { id: 1, name: 'Save Face Accredited', description: 'Government-approved treatment provider register', icon: <Badge className="text-primary-600" size={24} /> },
+    { id: 2, name: 'British College of Aesthetic Medicine', description: 'Professional medical aesthetics training', icon: <Award className="text-primary-600" size={24} /> },
+    { id: 3, name: 'Allergan Medical Institute', description: 'Advanced injectable treatment certification', icon: <Heart className="text-primary-600" size={24} /> },
+    { id: 4, name: 'CQC Compliant', description: 'Meeting healthcare quality standards', icon: <Shield className="text-primary-600" size={24} /> },
+    { id: 5, name: 'Lynton Certified', description: 'Authorized laser equipment training', icon: <Sparkles className="text-primary-600" size={24} /> },
+    { id: 6, name: 'Insurance & Indemnity', description: 'Full professional coverage for all treatments', icon: <Award className="text-primary-600" size={24} /> }
   ];
+  
 
   return (
     <>
@@ -148,14 +177,17 @@ const AboutPage: React.FC = () => {
               
               {/* Credentials */}
               <div className="mt-8">
-                <h3 className="text-xl mb-4">Our Credentials</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <h3 className="text-xl mb-4">Our Credentials & Certifications</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {credentials.map(credential => (
-                    <div key={credential.id} className="flex items-center p-4 bg-neutral-50 rounded-lg">
-                      <div className="mr-3">
+                    <div key={credential.id} className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                      <div className="mr-3 mt-1">
                         {credential.icon}
                       </div>
-                      <span className="font-medium text-primary-800">{credential.name}</span>
+                      <div>
+                        <h4 className="font-medium text-primary-800 mb-1">{credential.name}</h4>
+                        <p className="text-sm text-neutral-600">{credential.description}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -217,7 +249,35 @@ const AboutPage: React.FC = () => {
                 <div className="p-6">
                   <h3 className="text-xl mb-1">{member.name}</h3>
                   <p className="text-secondary-500 font-medium mb-3">{member.role}</p>
-                  <p className="text-neutral-600">{member.description}</p>
+                  <p className="text-neutral-600 mb-4">{member.description}</p>
+                  
+                  {/* Qualifications */}
+                  <div className="mb-4">
+                    <h4 className="font-medium text-sm text-neutral-800 mb-2">Qualifications:</h4>
+                    <ul className="text-xs text-neutral-600 space-y-1">
+                      {member.qualifications.map((qual, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-primary-600 mr-1">•</span>
+                          <span>{qual}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {/* Specialties */}
+                  <div>
+                    <h4 className="font-medium text-sm text-neutral-800 mb-2">Specialties:</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {member.specialties.map((specialty, index) => (
+                        <span 
+                          key={index}
+                          className="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -270,6 +330,25 @@ const AboutPage: React.FC = () => {
               Book a Consultation
             </Link>
           </div>
+        </div>
+      </section>
+      
+      {/* Call to Action Section */}
+      <section className="py-20 bg-primary-700 text-white">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-white mb-6">Ready to Begin Your Transformation?</h2>
+            <p className="text-xl text-neutral-100 mb-8 max-w-2xl mx-auto">
+              Discover the HiTech Aesthetics difference. Schedule your consultation today and let us help you achieve your aesthetic goals with precision and care.
+            </p>
+            <Link to="/contact" className="btn btn-secondary btn-lg">
+              Book Your Consultation
+            </Link>
+          </motion.div>
         </div>
       </section>
     </>

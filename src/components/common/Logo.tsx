@@ -4,7 +4,7 @@ interface LogoProps {
   color?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ color = '#273a3d' }) => {
+const Logo: React.FC<LogoProps> = ({ color = '#8C7A6E' }) => {
   const [imageError, setImageError] = useState(false);
   
   // Use light logo on dark backgrounds, dark logo on light backgrounds
@@ -15,7 +15,7 @@ const Logo: React.FC<LogoProps> = ({ color = '#273a3d' }) => {
   if (imageError) {
     return (
       <div className="flex items-center">
-        <h1 className={`text-2xl md:text-3xl font-serif ${isLightLogo ? 'text-white' : 'text-primary-800'}`}>
+        <h1 className={`text-2xl md:text-3xl ${isLightLogo ? 'text-white' : 'text-primary-800'}`}>
           HiTech Aesthetics
         </h1>
       </div>

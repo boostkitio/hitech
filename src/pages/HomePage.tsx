@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Clock, Shield, Award } from 'lucide-react';
+import { ArrowRight, Star, Clock, Shield } from 'lucide-react';
 import TreatmentCarousel from '../components/home/TreatmentCarousel';
 import Testimonials from '../components/home/Testimonials';
 import FaqAccordion from '../components/home/FaqAccordion';
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Video Background */}
-        <div className="absolute inset-0 bg-primary-900">
+        <div className="absolute inset-0 bg-primary-700">
           <video
             autoPlay
             loop
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
         </div>
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-900/80 to-primary-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-700/80 to-primary-700/60"></div>
         
         {/* Content */}
         <div className="container-custom relative z-10 text-white text-center">
@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h1 className="text-white mb-6">Redefining Beauty Through Science</h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-neutral-100">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-100">
               Experience the art of transformation with our advanced medical aesthetic treatments tailored to your unique beauty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -87,7 +87,7 @@ const HomePage: React.FC = () => {
       {/* Features Section */}
       <section 
         ref={featuresRef}
-        className="section bg-white py-20"
+        className="section bg-primary-50 py-20"
       >
         <div className="container-custom">
           <div className="text-center mb-16">
@@ -111,8 +111,8 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center p-6 rounded-lg"
             >
-              <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="text-primary-600" size={24} />
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="text-primary-500" size={24} />
               </div>
               <h3 className="text-xl mb-3">Expert Practitioners</h3>
               <p className="text-neutral-600">
@@ -127,8 +127,8 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center p-6 rounded-lg"
             >
-              <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-primary-600" size={24} />
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="text-primary-500" size={24} />
               </div>
               <h3 className="text-xl mb-3">Advanced Technology</h3>
               <p className="text-neutral-600">
@@ -143,8 +143,8 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-center p-6 rounded-lg"
             >
-              <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="text-primary-600" size={24} />
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="text-primary-500" size={24} />
               </div>
               <h3 className="text-xl mb-3">Personalised Care</h3>
               <p className="text-neutral-600">
@@ -158,7 +158,7 @@ const HomePage: React.FC = () => {
       {/* Treatments Carousel Section */}
       <section 
         ref={treatmentsRef}
-        className="section bg-neutral-50 py-20"
+        className="section bg-primary-50 py-20"
       >
         <div className="container-custom">
           <motion.div
@@ -185,7 +185,7 @@ const HomePage: React.FC = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="section bg-white py-20">
+      <section className="section bg-primary-50 py-20">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="mb-4">What Our Clients Say</h2>
@@ -199,7 +199,7 @@ const HomePage: React.FC = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="section bg-neutral-50 py-20">
+      <section className="section bg-primary-50 py-20">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="mb-4">Frequently Asked Questions</h2>
@@ -224,11 +224,11 @@ const HomePage: React.FC = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-primary-800 text-white">
+      <section className="py-20 bg-primary-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-white mb-6">Begin Your Transformation Today</h2>
-            <p className="text-xl mb-8 text-neutral-200">
+            <p className="text-xl mb-8 text-primary-200">
               Schedule your personalised consultation and take the first step towards enhancing your natural beauty.
             </p>
             <Link to="/contact" className="btn btn-secondary text-lg px-8 py-4">
