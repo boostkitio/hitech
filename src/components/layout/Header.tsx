@@ -8,6 +8,11 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   
+  // Check if we're on a page that has a white background from the top
+  const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/') || 
+                                  location.pathname === '/about' || 
+                                  location.pathname === '/contact';
+  
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -29,18 +34,18 @@ const Header: React.FC = () => {
     `relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
       isActive 
         ? 'text-secondary-500 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-secondary-400' 
-        : isScrolled ? 'text-neutral-800 hover:text-primary-600' : 'text-white hover:text-secondary-300'
+        : (isScrolled || isOnWhiteBackgroundPage) ? 'text-neutral-800 hover:text-primary-600' : 'text-white hover:text-secondary-300'
     }`;
   
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+      (isScrolled || isOnWhiteBackgroundPage) ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <Logo color={isScrolled ? '#8C7A6E' : '#ffffff'} />
+            <Logo color={(isScrolled || isOnWhiteBackgroundPage) ? '#8C7A6E' : '#ffffff'} />
           </Link>
           
           {/* Desktop Navigation */}
@@ -53,7 +58,7 @@ const Header: React.FC = () => {
             <a 
               href="tel:+441892338157" 
               className={`flex items-center space-x-2 ml-4 ${
-                isScrolled ? 'text-primary-800' : 'text-white'
+                (isScrolled || isOnWhiteBackgroundPage) ? 'text-primary-800' : 'text-white'
               }`}
             >
               <Phone size={18} />
@@ -62,7 +67,7 @@ const Header: React.FC = () => {
             
             <Link 
               to="/contact" 
-              className={`btn ${isScrolled ? 'btn-primary' : 'btn-secondary'}`}
+              className={`btn ${(isScrolled || isOnWhiteBackgroundPage) ? 'btn-primary' : 'btn-secondary'}`}
             >
               Book Consultation
             </Link>
@@ -75,9 +80,9 @@ const Header: React.FC = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? 'text-primary-800' : 'text-white'}`} />
+              <X className={`h-6 w-6 ${(isScrolled || isOnWhiteBackgroundPage) ? 'text-primary-800' : 'text-white'}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? 'text-primary-800' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 ${(isScrolled || isOnWhiteBackgroundPage) ? 'text-primary-800' : 'text-white'}`} />
             )}
           </button>
         </div>

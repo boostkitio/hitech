@@ -80,24 +80,24 @@ const AboutPage: React.FC = () => {
   const clinicImages = [
     {
       id: 1,
-      image: 'https://images.pexels.com/photos/3735863/pexels-photo-3735863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      alt: 'Reception area'
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva2_Lo.jpg?updatedAt=1749813392239',
+      alt: 'Reception area',
     },
     {
       id: 2,
-      image: 'https://images.pexels.com/photos/3735940/pexels-photo-3735940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      alt: 'Treatment room'
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva3_Lo.jpg?updatedAt=1749813392216',
+      alt: 'Treatment room',
     },
     {
       id: 3,
-      image: 'https://images.pexels.com/photos/3735860/pexels-photo-3735860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      alt: 'Consultation room'
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva1_Lo.jpg?updatedAt=1749813392184',
+      alt: 'Consultation room',
     },
     {
       id: 4,
-      image: 'https://images.pexels.com/photos/3985300/pexels-photo-3985300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      alt: 'Relaxation area'
-    }
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva_Lo.jpg?updatedAt=1749813392115',
+      alt: 'Relaxation area',
+    },
   ];
   
   const credentials = [
@@ -201,7 +201,7 @@ const AboutPage: React.FC = () => {
               className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <LazyLoadImage
-                src="https://images.pexels.com/photos/3985172/pexels-photo-3985172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="https://ik.imagekit.io/boostkit/HiTech/Eva.jpg?updatedAt=1749813265775"
                 alt="HiTech Aesthetics Clinic"
                 effect="blur"
                 className="w-full h-full object-cover"
@@ -211,11 +211,8 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
       
-      {/* Team Section */}
-      <section 
-        ref={teamRef}
-        className="py-20 bg-neutral-50"
-      >
+      {/* Team Section - Hidden for now */}
+      {/* <section ref={teamRef} className="py-20 bg-neutral-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -283,7 +280,7 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Clinic Interior Section */}
       <section 
