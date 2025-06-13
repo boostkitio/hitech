@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
         className="relative h-screen flex items-center justify-center overflow-hidden"
       >
         {/* Video Background */}
-        <div className="absolute inset-0 bg-primary-700">
+        <div className="absolute inset-0 bg-gray-700">
           <video
             autoPlay
             loop
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
         </div>
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-700/80 to-primary-700/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-700/80 to-gray-700/60"></div>
         
         {/* Content */}
         <div className="container-custom relative z-10 text-white text-center">
@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h1 className="text-white mb-6">Redefining Beauty Through Science</h1>
+            <h1 className="text-white mb-6">Redefining Beauty Through Technology</h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-100">
               Experience the art of transformation with our advanced medical aesthetic treatments tailored to your unique beauty.
             </p>
@@ -146,9 +146,9 @@ const HomePage: React.FC = () => {
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="text-primary-500" size={24} />
               </div>
-              <h3 className="text-xl mb-3">Personalised Care</h3>
+              <h3 className="text-xl mb-3">Inclusive, Individual Care</h3>
               <p className="text-neutral-600">
-                Every treatment plan is uniquely tailored to meet your specific goals and aesthetic aspirations.
+                We create bespoke treatment plans that honour your unique aesthetic vision, welcoming clients of all genders and identities in a safe, affirming environment.
               </p>
             </motion.div>
           </div>

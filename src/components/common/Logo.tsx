@@ -4,7 +4,7 @@ interface LogoProps {
   color?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ color = '#8C7A6E' }) => {
+const Logo: React.FC<LogoProps> = ({ color = '#A8A5A0' }) => {
   const [imageError, setImageError] = useState(false);
   
   // Use light logo on dark backgrounds, dark logo on light backgrounds

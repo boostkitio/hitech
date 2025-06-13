@@ -54,9 +54,9 @@ const skinRejuvenationIds = [
 ];
 const injectableIds = [
   'botox',
-  'mesotox',
   'polynucleotides',
   'skin-boosters',
+  'mesotox',
 ];
 const advancedTherapiesIds = [
   'asce-exosomes',
@@ -73,12 +73,12 @@ const sectionGroups = [
     ids: hairRemovalIds,
   },
   {
-    title: 'Skin Rejuvenation',
-    ids: skinRejuvenationIds,
-  },
-  {
     title: 'Injectable Treatments',
     ids: injectableIds,
+  },
+  {
+    title: 'Skin Rejuvenation',
+    ids: skinRejuvenationIds,
   },
   {
     title: 'Advanced Therapies',
@@ -275,7 +275,7 @@ const TreatmentsPage: React.FC = () => {
                         </div>
                         
                         <Link to="/contact" className="btn btn-primary inline-block">
-                          Book a Consultation
+                          Free Consultation
                         </Link>
                       </div>
                       

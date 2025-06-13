@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -23,6 +23,8 @@ const featuredTreatments = treatments.filter(t => featuredIds.includes(t.id));
 
 const TreatmentCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const visibleTreatments = () => {
     // Show different number of treatments based on screen size
@@ -51,8 +53,31 @@ const TreatmentCarousel: React.FC = () => {
     );
   };
   
+  // Auto-scroll functionality
+  useEffect(() => {
+    const startAutoScroll = () => {
+      intervalRef.current = setInterval(() => {
+        if (!isPaused) {
+          nextSlide();
+        }
+      }, 4000); // Change slide every 4 seconds
+    };
+    
+    startAutoScroll();
+    
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [currentIndex, isPaused]);
+  
   return (
-    <div className="relative">
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="overflow-hidden">
         <motion.div 
           className="flex"

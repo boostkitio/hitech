@@ -45,7 +45,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <Logo color={(isScrolled || isOnWhiteBackgroundPage) ? '#8C7A6E' : '#ffffff'} />
+            <Logo color={(isScrolled || isOnWhiteBackgroundPage) ? '#A8A5A0' : '#ffffff'} />
           </Link>
           
           {/* Desktop Navigation */}
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
               to="/contact" 
               className={`btn ${(isScrolled || isOnWhiteBackgroundPage) ? 'btn-primary' : 'btn-secondary'}`}
             >
-              Book Consultation
+              Free Consultation
             </Link>
           </nav>
           
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
                 to="/contact" 
                 className="btn btn-secondary mt-4"
               >
-                Book Consultation
+                Free Consultation
               </Link>
             </div>
           </nav>

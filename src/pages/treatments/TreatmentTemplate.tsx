@@ -182,7 +182,7 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatment }) => {
               to="/contact"
               className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
             >
-              Book Consultation
+              Free Consultation
             </Link>
           </div>
         </section>

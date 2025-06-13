@@ -6,35 +6,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 const testimonials = [
   {
     id: 1,
-    name: 'Sophia Clarke',
-    treatment: 'Dermal Fillers',
+    name: 'Natalia Golovata',
+    treatment: 'Microneedling',
     stars: 5,
-    quote: 'My experience at HiTech Aesthetics was exceptional from start to finish. The team took the time to understand exactly what I wanted, and the results exceeded my expectations. I couldn\'t be happier with my refreshed appearance!',
-    image: 'https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    quote: 'I recently had a microneedling treatment on my face, done by Eva, and I couldn\'t be more pleased with the experience! From the moment I walked in, Eva made me feel completely at ease. She explained the entire process clearly and answered all of my questions with patience and professionalism.'
   },
   {
     id: 2,
-    name: 'James Wilson',
-    treatment: 'Anti-Wrinkle Treatment',
+    name: 'Amy White',
+    treatment: 'Laser Hair Removal',
     stars: 5,
-    quote: 'As a busy professional, I appreciate the efficiency and attention to detail at HiTech Aesthetics. The anti-wrinkle treatment was quick, painless, and delivered incredibly natural-looking results. I look refreshed without appearing "done".',
-    image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    quote: 'Professional, friendly, knowledgeable and makes you feel at ease and looked after. Have been getting laser hair removal with Eva and wouldn\'t go anywhere else.'
   },
   {
     id: 3,
-    name: 'Emily Thompson',
-    treatment: 'Skin Rejuvenation',
+    name: 'Sophia Ambrose',
+    treatment: 'Polynucleotides',
     stars: 5,
-    quote: 'The skin rejuvenation treatments at HiTech Aesthetics have transformed my skin. After struggling with hyperpigmentation for years, I finally found a solution that works. The practitioners are true experts in their field.',
-    image: 'https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    id: 4,
-    name: 'Michael Brooks',
-    treatment: 'Microneedling',
-    stars: 4,
-    quote: 'HiTech Aesthetics provides a level of service that\'s rare to find. The microneedling treatment has improved my acne scarring significantly. The environment is luxurious and the staff incredibly knowledgeable.',
-    image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    quote: 'I\'ve been visiting Eva at Hi-Tech for a year now and have seen a wonderful improvement in my skin by following her advice. The thing that\'s made the biggest difference is the polynucleotide injections - the results are really miraculous, I look ten years younger!'
   }
 ];
 
@@ -60,16 +49,7 @@ const Testimonials: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-xl shadow-md overflow-hidden"
         >
-          <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/3 relative">
-              <img 
-                src={testimonials[current].image} 
-                alt={testimonials[current].name}
-                className="w-full h-64 md:h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-primary-900/30"></div>
-            </div>
-            <div className="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+          <div className="p-8 md:p-12">
               <div className="flex mb-3">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star 
@@ -90,7 +70,6 @@ const Testimonials: React.FC = () => {
                   {testimonials[current].treatment} Client
                 </p>
               </div>
-            </div>
           </div>
         </motion.div>
       </AnimatePresence>
