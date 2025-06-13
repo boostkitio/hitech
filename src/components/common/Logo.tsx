@@ -9,7 +9,7 @@ const Logo: React.FC<LogoProps> = ({ color = '#8C7A6E' }) => {
   
   // Use light logo on dark backgrounds, dark logo on light backgrounds
   const isLightLogo = color === '#ffffff' || color === 'white';
-  const logoSrc = isLightLogo ? '/images/Logo-light.webp' : '/images/Logo-dark.webp';
+  const logoSrc = isLightLogo ? 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725' : 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725';
   
   // Fallback to text if image fails to load
   if (imageError) {

@@ -7,7 +7,7 @@ const ApilusXCell: React.FC = () => {
     name: 'Apilus xCell Electrolysis',
     description: 'Permanent hair removal solution for all hair types, including white and blonde hairs.',
     longDescription: 'Apilus xCell Electrolysis is the most advanced permanent hair removal solution available. Using state-of-the-art technology, this treatment effectively removes unwanted hair of any color or type, including white, blonde, and fine hairs that cannot be treated with laser.',
-    image: '/images/treatments/apilus-xcell.jpg',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     benefits: [
       'Permanent hair removal',
       'Effective on all hair colors and types',

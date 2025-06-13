@@ -19,16 +19,16 @@ const galleryImages: GalleryImage[] = [
     id: '1',
     category: 'Hair Removal',
     treatment: 'Soprano Ice Platinum',
-    before: '/images/gallery/hair-removal-1-before.jpg',
-    after: '/images/gallery/hair-removal-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Full leg laser hair removal after 6 sessions'
   },
   {
     id: '2',
     category: 'Hair Removal',
     treatment: 'Apilus xCell',
-    before: '/images/gallery/hair-removal-2-before.jpg',
-    after: '/images/gallery/hair-removal-2-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Facial hair removal with electrolysis'
   },
   // Skin Rejuvenation
@@ -36,24 +36,24 @@ const galleryImages: GalleryImage[] = [
     id: '3',
     category: 'Skin Rejuvenation',
     treatment: 'SkinPen Microneedling',
-    before: '/images/gallery/microneedling-1-before.jpg',
-    after: '/images/gallery/microneedling-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Acne scar improvement after 4 treatments'
   },
   {
     id: '4',
     category: 'Skin Rejuvenation',
     treatment: 'Lynton IPL',
-    before: '/images/gallery/ipl-1-before.jpg',
-    after: '/images/gallery/ipl-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Sun damage and pigmentation correction'
   },
   {
     id: '5',
     category: 'Skin Rejuvenation',
     treatment: 'Lynton RF',
-    before: '/images/gallery/rf-1-before.jpg',
-    after: '/images/gallery/rf-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Skin tightening and lifting results'
   },
   // Injectable Treatments
@@ -61,16 +61,16 @@ const galleryImages: GalleryImage[] = [
     id: '6',
     category: 'Injectable Treatments',
     treatment: 'Botox',
-    before: '/images/gallery/botox-1-before.jpg',
-    after: '/images/gallery/botox-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Forehead lines and crow\'s feet treatment'
   },
   {
     id: '7',
     category: 'Injectable Treatments',
     treatment: 'Polynucleotides',
-    before: '/images/gallery/polynucleotides-1-before.jpg',
-    after: '/images/gallery/polynucleotides-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Under-eye rejuvenation and skin quality improvement'
   },
   // Advanced Therapies
@@ -78,24 +78,24 @@ const galleryImages: GalleryImage[] = [
     id: '8',
     category: 'Advanced Therapies',
     treatment: 'PRP Hair Restoration',
-    before: '/images/gallery/prp-hair-1-before.jpg',
-    after: '/images/gallery/prp-hair-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Hair density improvement after 4 PRP sessions'
   },
   {
     id: '9',
     category: 'Advanced Therapies',
     treatment: 'Chemical Peels',
-    before: '/images/gallery/chemical-peel-1-before.jpg',
-    after: '/images/gallery/chemical-peel-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Skin texture and tone improvement'
   },
   {
     id: '10',
     category: 'Advanced Therapies',
     treatment: 'Permanent Makeup',
-    before: '/images/gallery/permanent-makeup-1-before.jpg',
-    after: '/images/gallery/permanent-makeup-1-after.jpg',
+    before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     description: 'Microbladed eyebrows for natural enhancement'
   }
 ];
