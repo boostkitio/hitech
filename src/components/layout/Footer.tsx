@@ -53,10 +53,13 @@ const Footer: React.FC = () => {
                 <Link to="/contact" className="text-neutral-300 hover:text-secondary-400 transition-colors">Contact Us</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Privacy Policy</a>
+                <a href="/privacy-policy" className="text-neutral-300 hover:text-secondary-400 transition-colors">Privacy Policy</a>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Terms of Service</a>
+                <a href="/terms-of-service" className="text-neutral-300 hover:text-secondary-400 transition-colors">Terms of Service</a>
+              </li>
+              <li>
+                <a href="/cookie-policy" className="text-neutral-300 hover:text-secondary-400 transition-colors">Cookie Policy</a>
               </li>
             </ul>
           </div>

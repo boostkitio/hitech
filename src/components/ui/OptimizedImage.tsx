@@ -1,15 +1,21 @@
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { IKImage } from '../../lib/imagekit';
 
 interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
-  width?: number | string;
-  height?: number | string;
-  placeholderSrc?: string;
-  eager?: boolean;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  quality?: number;
+  transformation?: Array<{
+    height?: number;
+    width?: number;
+    quality?: number;
+    crop?: string;
+    focus?: string;
+  }>;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -18,34 +24,25 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className = '',
   width,
   height,
-  placeholderSrc,
-  eager = false,
+  loading = 'lazy',
+  quality = 80,
+  transformation = [],
 }) => {
-  // If eager loading is requested, use regular img tag
-  if (eager) {
-    return (
-      <img
-        src={src}
-        alt={alt}
-        className={className}
-        width={width}
-        height={height}
-        loading="eager"
-      />
-    );
-  }
+  // If the image is already an ImageKit URL, use it directly
+  const isImageKitUrl = src.includes('ik.imagekit.io');
+  const imagePath = isImageKitUrl ? src : src.replace(/^\/+/, '');
 
-  // Use lazy loading for other images
   return (
-    <LazyLoadImage
-      src={src}
+    <IKImage
+      path={imagePath}
       alt={alt}
       className={className}
       width={width}
       height={height}
-      placeholderSrc={placeholderSrc}
-      effect="blur"
-      threshold={100}
+      loading={loading}
+      quality={quality}
+      transformation={transformation}
+      lqip={{ active: true, quality: 20, blur: 10 }}
     />
   );
 };

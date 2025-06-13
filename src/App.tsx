@@ -5,6 +5,9 @@ import LoadingSpinner from './components/ui/LoadingSpinner';
 import CookieConsent from './components/common/CookieConsent';
 import WhatsAppWidget from './components/common/WhatsAppWidget';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -65,6 +68,9 @@ function App() {
             <Route path="contact" element={<ContactPage />} />
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="resources" element={<ResourcesPage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="terms-of-service" element={<TermsOfService />} />
+            <Route path="cookie-policy" element={<CookiePolicy />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
           {/* Standalone routes (e.g., without the main layout) */}
