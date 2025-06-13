@@ -129,34 +129,18 @@ const PriceListPage: React.FC = () => {
       </Helmet>
 
       {/* Header Section */}
-      <section ref={headerRef} className="pt-32 pb-20 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600 text-white">
-        <div className="container mx-auto px-4">
+      <section ref={headerRef} className="pt-32 pb-20 bg-primary-600 text-white">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
           >
-            <div className="flex justify-center mb-6">
-            </div>
             <h1 className="text-white mb-6">Treatment Price List</h1>
-            <p className="text-xl text-neutral-100 mb-8">
-              Transparent pricing for premium aesthetic treatments. Invest in yourself - because you're worth it.
+            <p className="text-xl text-neutral-100">
+              Transparent pricing for premium aesthetic treatments.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center bg-white/10 rounded-full px-4 py-2">
-                <CheckCircle className="text-secondary-300 mr-2" size={20} />
-                <span>Complimentary Consultation</span>
-              </div>
-              <div className="flex items-center bg-white/10 rounded-full px-4 py-2">
-                <CheckCircle className="text-secondary-300 mr-2" size={20} />
-                <span>Expert Practitioners</span>
-              </div>
-              <div className="flex items-center bg-white/10 rounded-full px-4 py-2">
-                <CheckCircle className="text-secondary-300 mr-2" size={20} />
-                <span>Latest Technology</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -274,7 +258,7 @@ const PriceListPage: React.FC = () => {
             {/* Popular Packages */}
             <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 mb-12">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-primary-800 mb-2">🎯 Popular Laser Packages</h3>
+                <h3 className="text-2xl font-bold text-primary-800 mb-2">Popular Laser Packages</h3>
                 <p className="text-primary-600">Exceptional value for our most requested combinations</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -301,7 +285,7 @@ const PriceListPage: React.FC = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center bg-secondary-100 rounded-full px-6 py-3 mb-4">
-              <span className="text-secondary-800 font-semibold">⚡ APILUS XCELL PRO ELECTROLYSIS</span>
+              <span className="text-secondary-800 font-semibold">APILUS XCELL PRO ELECTROLYSIS</span>
             </div>
             <h2 className="mb-4">The Gold Standard for Permanent Hair Removal</h2>
             <p className="text-neutral-600 mb-8">Effective on all hair types and colors</p>
@@ -337,7 +321,7 @@ const PriceListPage: React.FC = () => {
           >
             <div className="text-center mb-12">
               <div className="inline-flex items-center bg-primary-100 rounded-full px-6 py-3 mb-4">
-                <span className="text-primary-800 font-semibold">🌸 LYNTON 3JUVE IPL & LASER TREATMENTS</span>
+                <span className="text-primary-800 font-semibold">LYNTON 3JUVE IPL & LASER TREATMENTS</span>
               </div>
               <h2 className="mb-4">Advanced Skin Treatments</h2>
             </div>
@@ -448,10 +432,12 @@ const PriceListPage: React.FC = () => {
 
             {/* Radio Frequency */}
             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold mb-2">REMODEL RADIO FREQUENCY</h3>
-              <p className="text-neutral-600 mb-6">Non-surgical lifting and tightening</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-semibold mb-2">REMODEL RADIO FREQUENCY</h3>
+                <p className="text-neutral-600">Non-surgical lifting and tightening</p>
+              </div>
+              <div className="flex justify-center">
+                <div className="bg-white rounded-lg p-6 shadow-md max-w-sm">
                   <h4 className="font-semibold text-primary-800 mb-2">Small Area (Eyes/Mouth)</h4>
                   <p className="text-lg font-bold text-secondary-600 mb-2">£50 Single | £240 Course of 6</p>
                   <p className="text-sm text-neutral-600">45 minutes duration</p>
@@ -517,7 +503,7 @@ const PriceListPage: React.FC = () => {
             <div className="flex justify-center mb-6">
               <Phone className="text-secondary-300" size={48} />
             </div>
-            <h2 className="text-white mb-6">📞 Book Your Consultation Today</h2>
+            <h2 className="text-white mb-6">Book Your Consultation Today</h2>
             <p className="text-xl text-neutral-100 mb-8">
               All treatments begin with a complimentary consultation to ensure the best results for your unique needs.
             </p>
@@ -536,9 +522,6 @@ const PriceListPage: React.FC = () => {
                 <Phone className="mr-2" size={20} />
                 Call 01892 338157
               </a>
-            </div>
-            <div className="mt-12 text-center">
-              <p className="text-2xl font-bold text-secondary-300">✨ Invest in yourself - because you're worth it ✨</p>
             </div>
           </motion.div>
         </div>

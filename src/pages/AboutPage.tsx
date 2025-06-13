@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
       {/* Header Section */}
       <section 
         ref={headerRef}
-        className="pt-32 pb-20 bg-primary-800 text-white"
+        className="pt-32 pb-20 bg-primary-600 text-white"
       >
         <div className="container-custom">
           <motion.div

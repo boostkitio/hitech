@@ -92,7 +92,7 @@ const ContactPage: React.FC = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-white mb-6">Contact Us</h1>
-            <p className="text-xl text-primary-100">
+            <p className="text-xl text-neutral-100">
               Get in touch with our team to book your consultation or enquire about our treatments.
             </p>
           </motion.div>
@@ -380,27 +380,6 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Emergency Contact */}
-      <section className="py-12 bg-primary-50">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-xl mb-4">Emergency Contact</h3>
-            <p className="text-primary-600 mb-4">
-              For urgent concerns related to your treatment, please contact our emergency line:
-            </p>
-            <a 
-              href="tel:+441892338157" 
-              className="text-xl font-medium text-primary-800 hover:text-primary-600 transition-colors"
-            >
-              01892 338157
-            </a>
-            <p className="text-sm text-primary-500 mt-2">
-              Available 24/7 for existing clients only
-            </p>
           </div>
         </div>
       </section>
