@@ -39,13 +39,13 @@ const CookieConsent: React.FC = () => {
           <div className="flex items-center space-x-4 mt-2 md:mt-0">
             <button 
               onClick={acceptCookies}
-              className="btn btn-primary py-2 px-4 text-sm"
+              className="btn btn-primary btn-sm"
             >
               Accept All
             </button>
             <button 
               onClick={() => setVisible(false)}
-              className="btn btn-outline py-2 px-4 text-sm"
+              className="btn btn-outline btn-sm"
             >
               Decline
             </button>

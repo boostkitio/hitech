@@ -9,12 +9,12 @@ const Header: React.FC = () => {
   const location = useLocation();
   
   // Check if we're on a page that has a white background from the top
-  const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/') || 
-                                  location.pathname === '/about' || 
-                                  location.pathname === '/contact';
+  const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/');
   
   useEffect(() => {
     setIsOpen(false);
+    // Scroll to top when route changes
+    window.scrollTo(0, 0);
   }, [location]);
   
   useEffect(() => {

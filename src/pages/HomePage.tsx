@@ -231,7 +231,7 @@ const HomePage: React.FC = () => {
             <p className="text-xl mb-8 text-primary-200">
               Schedule your personalised consultation and take the first step towards enhancing your natural beauty.
             </p>
-            <Link to="/contact" className="btn btn-secondary text-lg px-8 py-4">
+            <Link to="/contact" className="btn btn-secondary btn-lg">
               Book Your Consultation
             </Link>
           </div>

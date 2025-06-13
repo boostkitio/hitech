@@ -25,8 +25,7 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatment }) => {
         <div className="container mx-auto px-4" style={{ marginTop: '5.5rem' }}>
           <Link
             to="/treatments"
-            className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors text-base font-medium bg-white rounded-lg shadow-sm px-4 py-2 mb-4"
-            style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}
+            className="btn btn-outline btn-sm mb-4"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Treatments
@@ -180,7 +179,7 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatment }) => {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
+              className="btn btn-secondary"
             >
               Free Consultation
             </Link>

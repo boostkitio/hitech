@@ -69,22 +69,22 @@ const Footer: React.FC = () => {
             <h3 className="text-xl text-white font-medium mb-4">Our Treatments</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Dermal Fillers</a>
+                <Link to="/treatments/botox" className="text-neutral-300 hover:text-secondary-400 transition-colors">Botox</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Anti-Wrinkle Treatment</a>
+                <Link to="/treatments/soprano-ice-platinum" className="text-neutral-300 hover:text-secondary-400 transition-colors">Laser Hair Removal</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Skin Rejuvenation</a>
+                <Link to="/treatments/skinpen-microneedling" className="text-neutral-300 hover:text-secondary-400 transition-colors">Microneedling</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Chemical Peels</a>
+                <Link to="/treatments/polynucleotides" className="text-neutral-300 hover:text-secondary-400 transition-colors">Polynucleotides</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Microneedling</a>
+                <Link to="/treatments/lynton-ipl" className="text-neutral-300 hover:text-secondary-400 transition-colors">IPL Treatments</Link>
               </li>
               <li>
-                <a href="#" className="text-neutral-300 hover:text-secondary-400 transition-colors">Laser Treatments</a>
+                <Link to="/price-list" className="text-neutral-300 hover:text-secondary-400 transition-colors">View All Prices</Link>
               </li>
             </ul>
           </div>
@@ -118,9 +118,9 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-primary-700 mt-12 pt-8 text-neutral-400 text-sm">
+        <div className="border-t border-primary-700 mt-12 pt-8 text-white text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; {currentYear} HiTech Aesthetics. All rights reserved.</p>
+            <p>&copy; 2025 HiTech Aesthetics. All rights reserved.</p>
             <p className="mt-2 md:mt-0">
               Designed and developed with excellence in mind.
             </p>
