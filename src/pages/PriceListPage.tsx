@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star, Clock, CheckCircle, Phone, Calendar, Sparkles } from 'lucide-react';
+import { Clock, CheckCircle, Phone, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PriceListPage: React.FC = () => {
@@ -138,7 +138,6 @@ const PriceListPage: React.FC = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="flex justify-center mb-6">
-              <Sparkles className="text-secondary-300" size={48} />
             </div>
             <h1 className="text-white mb-6">Treatment Price List</h1>
             <p className="text-xl text-neutral-100 mb-8">
@@ -173,16 +172,15 @@ const PriceListPage: React.FC = () => {
           >
             {/* Section Header */}
             <div className="text-center mb-12">
-              <div className="inline-flex items-center bg-primary-100 rounded-full px-6 py-3 mb-4">
-                <Star className="text-primary-600 mr-2" size={24} />
+              <div className="bg-secondary-50 border border-secondary-200 rounded-lg p-4 max-w-md mx-auto text-center mb-4">
                 <span className="text-primary-800 font-semibold">SOPRANO ICE PLATINUM LASER HAIR REMOVAL</span>
               </div>
               <h2 className="mb-4">Virtually Pain-Free Permanent Hair Reduction</h2>
               <p className="text-neutral-600 max-w-3xl mx-auto mb-6">
                 Experience our award-winning laser technology for effective, comfortable hair removal on all skin types.
               </p>
-              <div className="bg-secondary-50 border border-secondary-200 rounded-lg p-4 max-w-md mx-auto">
-                <p className="text-secondary-800 font-medium">✓ Patch Test Required for All New Clients</p>
+              <div className="bg-secondary-50 border border-secondary-200 rounded-lg p-4 max-w-md mx-auto text-center">
+                <span className="text-secondary-800 font-medium">✓ Patch Test Required for All New Clients</span>
               </div>
             </div>
 

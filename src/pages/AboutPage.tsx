@@ -19,63 +19,10 @@ const AboutPage: React.FC = () => {
     threshold: 0.1,
   });
   
-  const [teamRef, teamInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  
   const [clinicRef, clinicInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'Eva Whittle',
-      role: 'Practice Owner & Lead Practitioner',
-      image: 'https://images.pexels.com/photos/5214959/pexels-photo-5214959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Eva is the heart of our clinic, bringing years of expertise in aesthetic treatments and a passion for helping clients achieve their beauty goals. Her dedication to excellence ensures every client receives the highest standard of care.',
-      qualifications: [
-        'Advanced Aesthetic Practitioner Certification',
-        'Allergan Medical Institute Graduate',
-        'Save Face Accredited Practitioner',
-        'British College of Aesthetic Medicine Member',
-        'Level 7 Advanced Injectable Treatments'
-      ],
-      specialties: ['Botox & Anti-wrinkle treatments', 'Dermal Fillers', 'Skin Boosters', 'Treatment Planning']
-    },
-    {
-      id: 2,
-      name: 'Dr. Sarah Mitchell',
-      role: 'Senior Aesthetic Practitioner',
-      image: 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Dr. Mitchell brings medical expertise and artistic vision to every treatment. With over 8 years in aesthetic medicine, she specializes in advanced procedures and natural-looking results.',
-      qualifications: [
-        'MB ChB Medicine Degree',
-        'PG Cert Aesthetic Medicine',
-        'Advanced Botox & Filler Certification',
-        'Lynton Laser Training Certification',
-        'Medical Council Registration'
-      ],
-      specialties: ['Injectable treatments', 'Laser procedures', 'Skin rejuvenation', 'Medical aesthetics']
-    },
-    {
-      id: 3,
-      name: 'Natalia Kowalski',
-      role: 'Master Permanent Makeup Artist',
-      image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      description: 'Natalia is our resident permanent makeup specialist with international training and certification. Her artistry and precision create beautiful, natural-looking permanent makeup results.',
-      qualifications: [
-        'International Permanent Makeup Certification',
-        'Microblading Specialist Diploma',
-        'Scalp Micropigmentation Certification',
-        'Health & Safety in Cosmetic Tattooing',
-        'Color Theory & Facial Anatomy Training'
-      ],
-      specialties: ['Microblading', 'Powder Brows', 'Lip Blush', 'Scalp Micropigmentation']
-    }
-  ];
   
   const clinicImages = [
     {
@@ -204,82 +151,12 @@ const AboutPage: React.FC = () => {
                 src="https://ik.imagekit.io/boostkit/HiTech/Eva.jpg?updatedAt=1749813265775"
                 alt="HiTech Aesthetics Clinic"
                 effect="blur"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </motion.div>
           </div>
         </div>
       </section>
-      
-      {/* Team Section - Hidden for now 
-      <section ref={teamRef} className="py-20 bg-neutral-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="mb-4">Meet Our Expert Team</h2>
-            <p className="text-neutral-600 max-w-3xl mx-auto">
-              Our team of highly skilled practitioners brings together years of expertise and aesthetic artistry to deliver exceptional results in a warm and professional environment.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card h-full"
-              >
-                <div className="relative h-80 overflow-hidden">
-                  <LazyLoadImage
-                    src={member.image}
-                    alt={member.name}
-                    effect="blur"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl mb-1">{member.name}</h3>
-                  <p className="text-secondary-500 font-medium mb-3">{member.role}</p>
-                  <p className="text-neutral-600 mb-4">{member.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-sm text-neutral-800 mb-2">Qualifications:</h4>
-                    <ul className="text-xs text-neutral-600 space-y-1">
-                      {member.qualifications.map((qual, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-primary-600 mr-1">•</span>
-                          <span>{qual}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-medium text-sm text-neutral-800 mb-2">Specialties:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {member.specialties.map((specialty, index) => (
-                        <span 
-                          key={index}
-                          className="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> 
-      */}
       
       {/* Clinic Interior Section */}
       <section 
@@ -312,7 +189,7 @@ const AboutPage: React.FC = () => {
                   src={image.image}
                   alt={image.alt}
                   effect="blur"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </motion.div>
             ))}

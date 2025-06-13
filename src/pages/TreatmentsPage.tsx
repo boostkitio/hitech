@@ -134,44 +134,26 @@ const TreatmentsPage: React.FC = () => {
             <h2 className="text-3xl font-bold mb-8">{section.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {treatments.filter(t => section.ids.includes(t.id)).map(treatment => (
-                <div key={treatment.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                  <Link to={`/treatments/${treatment.id}`} className="block">
-                    <div className="relative h-48">
-                      <LazyLoadImage
-                        src={treatment.image}
-                        alt={treatment.name}
-                        effect="blur"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-neutral-900 mb-2">{treatment.name}</h3>
-                      <p className="text-neutral-600 mb-2">{treatment.description}</p>
-                      <p className="text-neutral-600 text-sm mb-2">{treatment.longDescription}</p>
-                      {/* Optionally list benefits, areas, sessions, etc. */}
-                      {treatment.benefits && (
-                        <ul className="list-disc list-inside text-neutral-600 text-sm mb-2">
-                          {treatment.benefits.map((b, i) => <li key={i}>{b}</li>)}
-                        </ul>
-                      )}
-                      {treatment.treatmentAreas && (
-                        <p className="text-neutral-600 text-xs mb-1"><strong>Areas:</strong> {Array.isArray(treatment.treatmentAreas) ? treatment.treatmentAreas.join(', ') : treatment.treatmentAreas}</p>
-                      )}
-                      {treatment.sessions && (
-                        <p className="text-neutral-600 text-xs mb-1"><strong>Sessions:</strong> {treatment.sessions}</p>
-                      )}
-                      {treatment.duration && (
-                        <p className="text-neutral-600 text-xs mb-1"><strong>Duration:</strong> {treatment.duration}</p>
-                      )}
-                      {treatment.results && (
-                        <p className="text-neutral-600 text-xs mb-1"><strong>Results:</strong> {treatment.results}</p>
-                      )}
-                      <div className="mt-4">
-                        <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded font-semibold text-sm">Learn More</span>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+                <Link
+                  key={treatment.id}
+                  to={`/treatments/${treatment.id}`}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col cursor-pointer group"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div className="w-full aspect-[1.5] overflow-hidden">
+                    <img
+                      src={treatment.image}
+                      alt={treatment.name}
+                      className="w-full h-full object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-neutral-900 mb-1 font-display">{treatment.name}</h3>
+                    <div className="text-lg text-primary-700 mb-2 font-sans">{treatment.description}</div>
+                    <div className="text-neutral-700 text-base">{treatment.longDescription}</div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
