@@ -44,7 +44,7 @@ const SopranoIcePlatinum: React.FC = () => {
       },
       {
         question: 'How many sessions will I need?',
-        answer: 'Most clients require 6-8 sessions for optimal results, spaced 4-6 weeks apart. The exact number depends on your hair type, color, and the treatment area.'
+        answer: 'Most clients require 6-8 sessions for optimal results, spaced 4-6 weeks apart. The exact number depends on your hair type, colour, and the treatment area.'
       },
       {
         question: 'Is the treatment painful?',

@@ -6,11 +6,11 @@ const ApilusXCell: React.FC = () => {
     id: 'apilus-xcell',
     name: 'Apilus xCell Electrolysis',
     description: 'Permanent hair removal solution for all hair types, including white and blonde hairs.',
-    longDescription: 'Apilus xCell Electrolysis is the most advanced permanent hair removal solution available. Using state-of-the-art technology, this treatment effectively removes unwanted hair of any color or type, including white, blonde, and fine hairs that cannot be treated with laser.',
+    longDescription: 'Apilus xCell Electrolysis is the most advanced permanent hair removal solution available. Using state-of-the-art technology, this treatment effectively removes unwanted hair of any colour or type, including white, blonde, and fine hairs that cannot be treated with laser.',
     image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     benefits: [
       'Permanent hair removal',
-      'Effective on all hair colors and types',
+      'Effective on all hair colours and types',
       'Precise treatment targeting',
       'Minimal discomfort',
       'Suitable for all skin types',
@@ -26,7 +26,7 @@ const ApilusXCell: React.FC = () => {
       'Any body area'
     ],
     sessions: 'Multiple sessions required for permanent results',
-    course: 'Customized treatment plan based on hair growth',
+    course: 'Customised treatment plan based on hair growth',
     frequency: 'Every 2-4 weeks',
     touchups: 'Occasional maintenance sessions may be needed',
     duration: '15-60 minutes depending on area',
@@ -40,15 +40,15 @@ const ApilusXCell: React.FC = () => {
       },
       {
         question: 'Is it suitable for all hair types?',
-        answer: 'Yes, Apilus xCell is effective on all hair types and colors, including white, blonde, and fine hairs that cannot be treated with laser hair removal.'
+        answer: 'Yes, Apilus xCell is effective on all hair types and colours, including white, blonde, and fine hairs that cannot be treated with laser hair removal.'
       },
       {
         question: 'How many sessions will I need?',
-        answer: 'The number of sessions varies depending on the treatment area, hair density, and individual hair growth cycles. Your practitioner will create a customized treatment plan during your consultation.'
+        answer: 'The number of sessions varies depending on the treatment area, hair density, and individual hair growth cycles. Your practitioner will create a customised treatment plan during your consultation.'
       },
       {
         question: 'Is the treatment painful?',
-        answer: 'Most clients experience minimal discomfort. The Apilus xCell system includes advanced technology to minimize any discomfort during treatment.'
+        answer: 'Most clients experience minimal discomfort. The Apilus xCell system includes advanced technology to minimise any discomfort during treatment.'
       },
       {
         question: 'What is the recovery time?',

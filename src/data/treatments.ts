@@ -61,7 +61,7 @@ export const treatments: Treatment[] = [
       },
       {
         question: 'Is electrolysis painful?',
-        answer: 'Most clients describe the sensation as a mild tingling or pricking feeling. We use advanced technology to minimize discomfort.'
+        answer: 'Most clients describe the sensation as a mild tingling or pricking feeling. We use advanced technology to minimise discomfort.'
       },
       {
         question: 'How many sessions will I need?',
@@ -196,7 +196,7 @@ export const treatments: Treatment[] = [
       },
       {
         question: 'Is the treatment painful?',
-        answer: 'We use topical anesthesia to ensure your comfort during the procedure.'
+        answer: 'We use topical anaesthesia to ensure your comfort during the procedure.'
       }
     ]
   },
@@ -541,7 +541,7 @@ export const treatments: Treatment[] = [
       },
       {
         question: 'Is the treatment painful?',
-        answer: 'We use topical anesthetics to ensure your comfort throughout the procedure.'
+        answer: 'We use topical anaesthetics to ensure your comfort throughout the procedure.'
       },
       {
         question: 'What is the healing process?',

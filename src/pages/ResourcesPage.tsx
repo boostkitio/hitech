@@ -133,7 +133,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'Are the treatments painful?',
-    answer: 'Comfort levels vary by treatment. We use topical numbing cream, cooling devices, and gentle techniques to minimize discomfort. Most patients find treatments very tolerable.',
+    answer: 'Comfort levels vary by treatment. We use topical numbing cream, cooling devices, and gentle techniques to minimise discomfort. Most patients find treatments very tolerable.',
     category: 'Treatments'
   },
   {

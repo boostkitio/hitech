@@ -304,7 +304,7 @@ const PriceListPage: React.FC = () => {
               <span className="text-secondary-800 font-semibold">⚡ APILUS XCELL PRO ELECTROLYSIS</span>
             </div>
             <h2 className="mb-4">The Gold Standard for Permanent Hair Removal</h2>
-            <p className="text-neutral-600 mb-8">Effective on all hair types and colors</p>
+            <p className="text-neutral-600 mb-8">Effective on all hair types and colours</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -397,7 +397,7 @@ const PriceListPage: React.FC = () => {
             {/* Skin Rejuvenation */}
             <div className="mb-12">
               <h3 className="text-xl font-semibold mb-2">SKIN REJUVENATION</h3>
-              <p className="text-neutral-600 mb-6">Turn back the clock on aging</p>
+              <p className="text-neutral-600 mb-6">Turn back the clock on ageing</p>
               <div className="overflow-x-auto">
                 <table className="w-full bg-white rounded-lg shadow-md">
                   <thead className="bg-primary-50">
