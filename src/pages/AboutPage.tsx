@@ -211,8 +211,8 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
       
-      {/* Team Section - Hidden for now */}
-      {/* <section ref={teamRef} className="py-20 bg-neutral-50">
+      {/* Team Section - Hidden for now 
+      <section ref={teamRef} className="py-20 bg-neutral-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -248,7 +248,6 @@ const AboutPage: React.FC = () => {
                   <p className="text-secondary-500 font-medium mb-3">{member.role}</p>
                   <p className="text-neutral-600 mb-4">{member.description}</p>
                   
-                  {/* Qualifications */}
                   <div className="mb-4">
                     <h4 className="font-medium text-sm text-neutral-800 mb-2">Qualifications:</h4>
                     <ul className="text-xs text-neutral-600 space-y-1">
@@ -261,7 +260,6 @@ const AboutPage: React.FC = () => {
                     </ul>
                   </div>
                   
-                  {/* Specialties */}
                   <div>
                     <h4 className="font-medium text-sm text-neutral-800 mb-2">Specialties:</h4>
                     <div className="flex flex-wrap gap-1">
@@ -280,7 +278,8 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section> 
+      */}
       
       {/* Clinic Interior Section */}
       <section 

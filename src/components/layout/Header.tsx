@@ -53,6 +53,7 @@ const Header: React.FC = () => {
             <NavLink to="/" className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" className={navLinkClasses}>About</NavLink>
             <NavLink to="/treatments" className={navLinkClasses}>Treatments</NavLink>
+            <NavLink to="/price-list" className={navLinkClasses}>Price List</NavLink>
             <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
             
             <a 
@@ -119,6 +120,14 @@ const Header: React.FC = () => {
               }
             >
               Treatments
+            </NavLink>
+            <NavLink 
+              to="/price-list" 
+              className={({ isActive }) => 
+                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+              }
+            >
+              Price List
             </NavLink>
             <NavLink 
               to="/contact" 
