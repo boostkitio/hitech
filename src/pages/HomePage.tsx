@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Clock, Shield } from 'lucide-react';
+import { ArrowRight, Star, Clock, Shield, Phone, Mail } from 'lucide-react';
 import TreatmentCarousel from '../components/home/TreatmentCarousel';
 import Testimonials from '../components/home/Testimonials';
 import FaqAccordion from '../components/home/FaqAccordion';
@@ -195,6 +195,53 @@ const HomePage: React.FC = () => {
           </div>
           
           <Testimonials />
+        </div>
+      </section>
+      
+      {/* Contact Information Section */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white text-primary-800 rounded-lg shadow-lg p-8 mb-8">
+              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Shield size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Our Address</h3>
+                    <p className="text-primary-600">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Phone size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Phone</h3>
+                    <p className="text-primary-600">
+                      <a href="tel:+441892338157" className="hover:text-primary-800 underline transition-colors">01892 338157</a>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Mail size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Email</h3>
+                    <p className="text-primary-600">
+                      <a href="mailto:info@hitechaesthetics.co.uk" className="hover:text-primary-800 underline transition-colors">info@hitechaesthetics.co.uk</a>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Clock size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
+                    <p className="text-primary-600">Monday - Friday: 9am - 6pm</p>
+                    <p className="text-primary-600">Saturday: 10am - 4pm</p>
+                    <p className="text-primary-600">Sunday: Closed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       

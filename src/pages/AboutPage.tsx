@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Badge, Award, Heart, Sparkles, Shield } from 'lucide-react';
+import { Badge, Award, Heart, Sparkles, Shield, Brush } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   
@@ -15,6 +15,11 @@ const AboutPage: React.FC = () => {
   });
   
   const [missionRef, missionInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [nataliaRef, nataliaInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -158,6 +163,74 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
       
+      {/* Natalia Section */}
+      <section 
+        ref={nataliaRef}
+        className="py-20 bg-neutral-50"
+      >
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={nataliaInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
+              <h2 className="mb-6">Meet Natalia</h2>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  Our permanent makeup specialist, Natalia, brings over 5 years of experience in creating natural, beautiful enhancements that frame and define your features.
+                </p>
+                <p>
+                  Specialising in microblading, powder brows, and lip blushing, Natalia combines artistic precision with advanced techniques to achieve results that look effortlessly natural.
+                </p>
+                <p>
+                  Her attention to detail and commitment to understanding each client's unique features ensures that every treatment is tailored to enhance your natural beauty.
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <h3 className="text-xl mb-4">Specialist in Permanent Makeup</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                    <div className="mr-3 mt-1">
+                      <Brush className="text-primary-600" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-primary-800 mb-1">Expert Techniques</h4>
+                      <p className="text-sm text-neutral-600">Advanced microblading and powder brow techniques for natural-looking results</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                    <div className="mr-3 mt-1">
+                      <Heart className="text-primary-600" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-primary-800 mb-1">Personalised Approach</h4>
+                      <p className="text-sm text-neutral-600">Tailored treatments to enhance your unique features and natural beauty</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={nataliaInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative h-[500px] rounded-lg overflow-hidden shadow-xl order-1 lg:order-2"
+            >
+              <LazyLoadImage
+                src="https://ik.imagekit.io/boostkit/HiTech/Natalia.jpg?updatedAt=1749813265775"
+                alt="Natalia - Permanent Makeup Specialist at HiTech Aesthetics"
+                effect="blur"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* Clinic Interior Section */}
       <section 
         ref={clinicRef}
@@ -207,7 +280,7 @@ const AboutPage: React.FC = () => {
       </section>
       
       {/* Call to Action Section */}
-      <section className="py-20 bg-primary-700 text-white">
+      <section className="py-20 bg-primary-600 text-white">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

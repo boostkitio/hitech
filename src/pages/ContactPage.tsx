@@ -249,44 +249,41 @@ const ContactPage: React.FC = () => {
               animate={infoInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="bg-primary-600 text-white rounded-lg shadow-lg p-8 mb-8">
-                <h2 className="text-2xl text-white mb-6">Contact Information</h2>
+              <div className="bg-white text-primary-800 rounded-lg shadow-lg p-8 mb-8">
+                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <MapPin size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
+                    <MapPin size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-medium text-white mb-1">Our Address</h3>
-                      <p className="text-primary-300">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
+                      <h3 className="text-lg font-semibold mb-1">Our Address</h3>
+                      <p className="text-primary-600">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
-                    <Phone size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
+                    <Phone size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-medium text-white mb-1">Phone</h3>
-                      <p className="text-primary-300">
-                        <a href="tel:+441892338157" className="hover:text-secondary-400 transition-colors">01892 338157</a>
+                      <h3 className="text-lg font-semibold mb-1">Phone</h3>
+                      <p className="text-primary-600">
+                        <a href="tel:+441892338157" className="hover:text-primary-800 underline transition-colors">01892 338157</a>
                       </p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
-                    <Mail size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
+                    <Mail size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-medium text-white mb-1">Email</h3>
-                      <p className="text-primary-300">
-                        <a href="mailto:info@hitechaesthetics.co.uk" className="hover:text-secondary-400 transition-colors">info@hitechaesthetics.co.uk</a>
+                      <h3 className="text-lg font-semibold mb-1">Email</h3>
+                      <p className="text-primary-600">
+                        <a href="mailto:info@hitechaesthetics.com" className="hover:text-primary-800 underline transition-colors">info@hitechaesthetics.com</a>
                       </p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
-                    <Clock size={24} className="mr-4 text-secondary-400 flex-shrink-0 mt-1" />
+                    <Clock size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-medium text-white mb-1">Business Hours</h3>
-                      <p className="text-primary-300">Monday - Friday: 9am - 6pm</p>
-                      <p className="text-primary-300">Saturday: 10am - 4pm</p>
-                      <p className="text-primary-300">Sunday: Closed</p>
+                      <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
+                      <p className="text-primary-600">Monday - Friday: 9am - 6pm</p>
+                      <p className="text-primary-600">Saturday: 10am - 4pm</p>
+                      <p className="text-primary-600">Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
@@ -347,9 +344,9 @@ const ContactPage: React.FC = () => {
                 <div className="border-t pt-6">
                   <h4 className="font-medium mb-3">Booking Information:</h4>
                   <ul className="text-sm text-neutral-600 space-y-1">
-                    <li>• Consultations are £50 (redeemable against treatment)</li>
+                    <li>• One Time Free Consultation</li>
                     <li>• 48-hour cancellation policy applies</li>
-                    <li>• Please arrive 15 minutes early for appointments</li>
+                    <li>• Please arrive on time for appointments</li>
                     <li>• Patch tests may be required 48 hours before treatment</li>
                   </ul>
                 </div>
@@ -372,8 +369,8 @@ const ContactPage: React.FC = () => {
                     <h3 className="font-medium mb-2">Finance Options</h3>
                     <ul className="text-sm text-neutral-600 space-y-1">
                       <li>• 0% finance available</li>
-                      <li>• Spread costs over 3-12 months</li>
-                      <li>• Subject to credit approval</li>
+                      <li>• Split payment plan</li>
+                      <li>• No credit check needed</li>
                       <li>• Ask about payment plans</li>
                     </ul>
                   </div>

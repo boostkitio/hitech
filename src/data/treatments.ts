@@ -268,38 +268,6 @@ export const treatments: Treatment[] = [
     ]
   },
   {
-    id: 'mesotox',
-    name: 'Mesotox',
-    description: 'Micro-Botox for Skin Refinement',
-    longDescription: 'An innovative technique using diluted Botox injected superficially to improve skin quality without freezing facial expressions.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
-    benefits: [
-      'Reduces pore size',
-      'Improves skin texture',
-      'Controls oil production',
-      'Subtle lifting effect',
-      'Natural-looking results'
-    ],
-    duration: '30-45 minutes',
-    results: 'Glowing, refined skin for 3-4 months',
-    downtime: 'Minimal',
-    price: 'From £350 per treatment',
-    faqs: [
-      {
-        question: 'How is Mesotox different from regular Botox?',
-        answer: 'Mesotox uses diluted Botox injected superficially into the skin rather than the muscle, improving skin quality without affecting facial movement.'
-      },
-      {
-        question: 'What areas can be treated?',
-        answer: 'Mesotox is ideal for the face, neck, and décolletage.'
-      },
-      {
-        question: 'When will I see results?',
-        answer: 'Results appear within 5-7 days and continue to improve over 2-3 weeks.'
-      }
-    ]
-  },
-  {
     id: 'polynucleotides',
     name: 'Polynucleotides',
     description: 'Next-Generation Skin Regeneration',
@@ -363,6 +331,38 @@ export const treatments: Treatment[] = [
       {
         question: 'What\'s the difference between skin boosters and dermal fillers?',
         answer: 'Skin boosters improve overall skin quality and hydration, while fillers add volume to specific areas.'
+      }
+    ]
+  },
+  {
+    id: 'mesotox',
+    name: 'Mesotox',
+    description: 'Micro-Botox for Skin Refinement',
+    longDescription: 'An innovative technique using diluted Botox injected superficially to improve skin quality without freezing facial expressions.',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    benefits: [
+      'Reduces pore size',
+      'Improves skin texture',
+      'Controls oil production',
+      'Subtle lifting effect',
+      'Natural-looking results'
+    ],
+    duration: '30-45 minutes',
+    results: 'Glowing, refined skin for 3-4 months',
+    downtime: 'Minimal',
+    price: 'From £350 per treatment',
+    faqs: [
+      {
+        question: 'How is Mesotox different from regular Botox?',
+        answer: 'Mesotox uses diluted Botox injected superficially into the skin rather than the muscle, improving skin quality without affecting facial movement.'
+      },
+      {
+        question: 'What areas can be treated?',
+        answer: 'Mesotox is ideal for the face, neck, and décolletage.'
+      },
+      {
+        question: 'When will I see results?',
+        answer: 'Results appear within 5-7 days and continue to improve over 2-3 weeks.'
       }
     ]
   },

@@ -11,6 +11,13 @@
 - **Videos**: Upload to `/public/videos/`
   - Hero videos, background videos
 
+## Troubleshooting
+- If you see "ERR_BLOCKED_BY_CLIENT" errors in the console, this is likely due to an ad blocker or similar browser extension blocking some resources. This is not an issue with the site's code.
+- To resolve this, users can either:
+  1. Disable their ad blocker for the site
+  2. Add the site to their ad blocker's whitelist
+  3. Use a different browser without ad blocking extensions
+
 ## File Organization
 
 ```

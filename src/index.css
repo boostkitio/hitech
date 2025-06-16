@@ -75,15 +75,19 @@
   }
   
   .btn-primary {
-    @apply bg-primary-800 text-white hover:bg-primary-700 active:bg-primary-900 focus:ring-primary-500;
+    @apply bg-primary-800 text-white hover:bg-primary-600 active:bg-primary-900 focus:ring-primary-500;
   }
   
   .btn-secondary {
-    @apply bg-secondary-400 text-primary-900 hover:bg-secondary-500 active:bg-secondary-300 focus:ring-secondary-300;
+    @apply bg-secondary-500 text-white hover:bg-secondary-700 active:bg-secondary-800 focus:ring-secondary-300;
   }
   
   .btn-outline {
-    @apply border border-primary-800 text-primary-800 hover:bg-primary-50 focus:ring-primary-300;
+    @apply border border-primary-800 text-primary-800 bg-transparent hover:bg-primary-50 hover:text-primary-900 focus:ring-primary-300;
+  }
+  
+  .btn-outline-white {
+    @apply border border-white text-white bg-transparent hover:bg-white hover:text-primary-800 focus:ring-white;
   }
   
   .btn-sm {

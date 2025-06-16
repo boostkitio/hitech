@@ -30,12 +30,19 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const navLinkClasses = ({ isActive }: { isActive: boolean }) => 
-    `relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-      isActive 
-        ? 'text-secondary-500 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-secondary-400' 
-        : (isScrolled || isOnWhiteBackgroundPage) ? 'text-neutral-800 hover:text-primary-600' : 'text-white hover:text-secondary-300'
-    }`;
+  const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
+    const onLight = isScrolled || isOnWhiteBackgroundPage;
+    if (isActive) {
+      if (onLight) {
+        return 'relative px-3 py-2 text-sm font-bold text-primary-800 after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-800';
+      } else {
+        return 'relative px-3 py-2 text-sm font-bold text-white after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white';
+      }
+    }
+    return onLight
+      ? 'relative px-3 py-2 text-sm font-medium text-neutral-800 hover:text-primary-600 transition-colors duration-300'
+      : 'relative px-3 py-2 text-sm font-medium text-white hover:text-primary-200 transition-colors duration-300';
+  };
   
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
@@ -68,7 +75,7 @@ const Header: React.FC = () => {
             
             <Link 
               to="/contact" 
-              className={`btn ${(isScrolled || isOnWhiteBackgroundPage) ? 'btn-primary' : 'btn-secondary'}`}
+              className="btn btn-primary"
             >
               Free Consultation
             </Link>
@@ -91,7 +98,7 @@ const Header: React.FC = () => {
       
       {/* Mobile menu */}
       <div 
-        className={`fixed inset-0 bg-primary-900/95 z-40 transform transition-transform duration-300 ${
+        className={`fixed inset-0 bg-primary-900 shadow-2xl border-l-4 border-primary-800 z-40 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
@@ -100,7 +107,7 @@ const Header: React.FC = () => {
             <NavLink 
               to="/" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
               }
             >
               Home
@@ -108,7 +115,7 @@ const Header: React.FC = () => {
             <NavLink 
               to="/about" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
               }
             >
               About
@@ -116,7 +123,7 @@ const Header: React.FC = () => {
             <NavLink 
               to="/treatments" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
               }
             >
               Treatments
@@ -124,7 +131,7 @@ const Header: React.FC = () => {
             <NavLink 
               to="/price-list" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
               }
             >
               Price List
@@ -132,12 +139,11 @@ const Header: React.FC = () => {
             <NavLink 
               to="/contact" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-secondary-400' : 'text-white hover:text-secondary-300'}`
+                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
               }
             >
               Contact
             </NavLink>
-            
             <div className="pt-8 flex flex-col items-center space-y-4">
               <a 
                 href="tel:+441892338157" 
@@ -146,10 +152,9 @@ const Header: React.FC = () => {
                 <Phone size={20} />
                 <span className="text-lg">01892 338157</span>
               </a>
-              
               <Link 
                 to="/contact" 
-                className="btn btn-secondary mt-4"
+                className="btn btn-primary mt-4"
               >
                 Free Consultation
               </Link>
