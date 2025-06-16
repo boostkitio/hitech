@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 import CookieConsent from './components/common/CookieConsent';
-import WhatsAppWidget from './components/common/WhatsAppWidget';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -81,7 +80,6 @@ function App() {
         </Routes>
       </Suspense>
       <CookieConsent />
-      <WhatsAppWidget />
     </>
   );
 }

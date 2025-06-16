@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Linkedin, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Instagram, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Logo from '../common/Logo';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
     <footer className="bg-primary-800 text-white">
       <div className="container-custom py-16">
@@ -17,21 +15,15 @@ const Footer: React.FC = () => {
               HiTech Aesthetics provides luxury medical aesthetics treatments with cutting-edge technology and personalised care.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
+              <a href="https://www.instagram.com/hitechaesthetics" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
+              <a href="https://www.tiktok.com/@hitechaesthetics" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
+                <span className="sr-only">TikTok</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 2v4.5a4.5 4.5 0 0 0 4.5 4.5H22v3a7 7 0 1 1-7-7h3" />
+                </svg>
               </a>
             </div>
           </div>

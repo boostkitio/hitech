@@ -101,13 +101,24 @@ const Header: React.FC = () => {
         className={`fixed inset-0 bg-primary-900 shadow-2xl border-l-4 border-primary-800 z-40 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
+        onClick={() => setIsOpen(false)}
       >
-        <div className="flex flex-col h-full justify-center items-center">
+        {/* Close button */}
+        <button
+          className="absolute top-6 right-6 z-50 text-white bg-primary-800 rounded-full p-2 shadow-lg focus:outline-none"
+          onClick={e => { e.stopPropagation(); setIsOpen(false); }}
+          aria-label="Close menu"
+        >
+          <X size={28} />
+        </button>
+        <div className="flex flex-col h-full justify-center items-center" onClick={e => e.stopPropagation()}>
           <nav className="flex flex-col items-center space-y-6">
             <NavLink 
               to="/" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
+                isActive
+                  ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+                  : 'text-2xl font-medium text-white hover:text-primary-200'
               }
             >
               Home
@@ -115,7 +126,9 @@ const Header: React.FC = () => {
             <NavLink 
               to="/about" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
+                isActive
+                  ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+                  : 'text-2xl font-medium text-white hover:text-primary-200'
               }
             >
               About
@@ -123,7 +136,9 @@ const Header: React.FC = () => {
             <NavLink 
               to="/treatments" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
+                isActive
+                  ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+                  : 'text-2xl font-medium text-white hover:text-primary-200'
               }
             >
               Treatments
@@ -131,7 +146,9 @@ const Header: React.FC = () => {
             <NavLink 
               to="/price-list" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
+                isActive
+                  ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+                  : 'text-2xl font-medium text-white hover:text-primary-200'
               }
             >
               Price List
@@ -139,7 +156,9 @@ const Header: React.FC = () => {
             <NavLink 
               to="/contact" 
               className={({ isActive }) => 
-                `text-2xl font-medium ${isActive ? 'text-primary-800 font-bold underline underline-offset-8' : 'text-white hover:text-primary-200'}`
+                isActive
+                  ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+                  : 'text-2xl font-medium text-white hover:text-primary-200'
               }
             >
               Contact
