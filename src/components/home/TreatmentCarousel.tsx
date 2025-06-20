@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -14,94 +14,72 @@ const featuredIds = [
   'apilus-xcell',
   'skinpen-microneedling',
   'lynton-ipl',
-  'advanced-botox',
+  'botox',
   'asce-exosomes',
   'polynucleotides',
 ];
 
 const featuredTreatments = treatments.filter(t => featuredIds.includes(t.id));
 
+const getVisibleTreatmentsCount = () => {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1024) return 2;
+  }
+  return 3;
+};
+
 const TreatmentCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [visibleCount, setVisibleCount] = useState(getVisibleTreatmentsCount());
   
-  const visibleTreatments = () => {
-    // Show different number of treatments based on screen size
-    // This is simplified - in a real implementation we'd use hooks to detect screen size
-    const isMobile = window.innerWidth < 768;
-    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-    
-    if (isMobile) {
-      return 1;
-    } else if (isTablet) {
-      return 2;
-    } else {
-      return 3;
-    }
-  };
-  
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCount(getVisibleTreatmentsCount());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === featuredTreatments.length - visibleTreatments() ? 0 : prevIndex + 1
+      (prevIndex + 1) % (featuredTreatments.length - visibleCount + 1)
     );
   };
   
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? featuredTreatments.length - visibleTreatments() : prevIndex - 1
+    setCurrentIndex((prevIndex) =>
+      (prevIndex - 1 + (featuredTreatments.length - visibleCount + 1)) % (featuredTreatments.length - visibleCount + 1)
     );
   };
   
-  // Auto-scroll functionality
-  useEffect(() => {
-    const startAutoScroll = () => {
-      intervalRef.current = setInterval(() => {
-        if (!isPaused) {
-          nextSlide();
-        }
-      }, 4000); // Change slide every 4 seconds
-    };
-    
-    startAutoScroll();
-    
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [currentIndex, isPaused]);
-  
   return (
-    <div 
-      className="relative"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="relative w-full max-w-7xl mx-auto">
       <div className="overflow-hidden">
         <motion.div 
           className="flex"
-          initial={{ x: 0 }}
-          animate={{ x: `-${currentIndex * (100 / visibleTreatments())}%` }}
-          transition={{ duration: 0.5 }}
+          animate={{ x: `-${currentIndex * (100 / visibleCount)}%` }}
+          transition={{ type: 'spring', stiffness: 260, damping: 30 }}
         >
           {featuredTreatments.map((treatment) => (
             <div 
               key={treatment.id}
-              className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+              className="flex-shrink-0 px-4"
+              style={{ width: `${100 / visibleCount}%` }}
             >
-              <div className="card h-full">
-                <div className="relative h-64 overflow-hidden">
+              <div className="card h-full group">
+                <div className="relative h-64 overflow-hidden rounded-t-lg">
                   <LazyLoadImage
                     src={treatment.image}
                     alt={treatment.name}
                     effect="blur"
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl mb-2">{treatment.name}</h3>
-                  <p className="text-neutral-600 mb-4">{treatment.description}</p>
+                  <p className="text-neutral-600 mb-4 h-24 overflow-hidden">{treatment.description}</p>
                   <Link to={`/treatments/${treatment.id}`} className="text-primary-600 hover:text-primary-800 font-medium flex items-center">
                     Learn more
                     <ChevronRight size={16} className="ml-1" />
@@ -116,7 +94,7 @@ const TreatmentCarousel: React.FC = () => {
       {/* Navigation buttons */}
       <button 
         onClick={prevSlide}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-3 shadow-md hover:bg-neutral-50 transition-colors z-10"
+        className="absolute top-1/2 -left-4 md:-left-8 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-neutral-100 transition-colors z-10"
         aria-label="Previous slide"
       >
         <ChevronLeft size={24} className="text-primary-800" />
@@ -124,7 +102,7 @@ const TreatmentCarousel: React.FC = () => {
       
       <button 
         onClick={nextSlide}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-md hover:bg-neutral-50 transition-colors z-10"
+        className="absolute top-1/2 -right-4 md:-right-8 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-neutral-100 transition-colors z-10"
         aria-label="Next slide"
       >
         <ChevronRight size={24} className="text-primary-800" />
