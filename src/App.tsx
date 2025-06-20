@@ -7,6 +7,7 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
+import FloatingActionButton from './components/common/FloatingActionButton';
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -80,6 +81,7 @@ function App() {
         </Routes>
       </Suspense>
       <CookieConsent />
+      <FloatingActionButton />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { ArrowRight, Star, Clock, Shield, Phone, Mail } from 'lucide-react';
 import TreatmentCarousel from '../components/home/TreatmentCarousel';
 import Testimonials from '../components/home/Testimonials';
 import FaqAccordion from '../components/home/FaqAccordion';
+import LogoCarousel from '../components/home/LogoCarousel';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -195,6 +196,19 @@ const HomePage: React.FC = () => {
           </div>
           
           <Testimonials />
+        </div>
+      </section>
+      
+      {/* Logos Section */}
+      <section className="section bg-white py-16">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="mb-4">Our Trusted Partners & Technologies</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              We partner with industry-leading brands to bring you the safest and most effective treatments available.
+            </p>
+          </div>
+          <LogoCarousel />
         </div>
       </section>
       
