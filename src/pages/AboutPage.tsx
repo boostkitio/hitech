@@ -6,6 +6,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Badge, Award, Heart, Sparkles, Shield, Brush } from 'lucide-react';
+import LogoCarousel from '../components/home/LogoCarousel';
 
 const AboutPage: React.FC = () => {
   
@@ -65,10 +66,10 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | HiTech Aesthetics</title>
+        <title>About Our Clinic & Expert Team | HiTech Aesthetics</title>
         <meta 
           name="description" 
-          content="Meet our team of expert practitioners at HiTech Aesthetics. Learn about our mission, our clinic, and our commitment to excellence in medical aesthetics."
+          content="Discover the philosophy behind HiTech Aesthetics. Meet our expert practitioners, learn about our advanced technology, and see our fully-accredited credentials."
         />
       </Helmet>
       
@@ -121,7 +122,7 @@ const AboutPage: React.FC = () => {
               </div>
               
               <div className="mt-8">
-                <h3 className="text-xl mb-4">Expert care led by Eva Whittle</h3>
+                <h3 className="text-xl mb-4">Expert care led by advanced technology</h3>
                 <p className="text-neutral-600">
                   A warm and inviting experience
                 </p>
@@ -150,16 +151,29 @@ const AboutPage: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={missionInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative w-full max-w-xl mx-auto aspect-[3/4] rounded-lg overflow-hidden shadow-xl"
             >
               <LazyLoadImage
-                src="https://ik.imagekit.io/boostkit/HiTech/Eva.jpg?updatedAt=1749813265775"
+                src="https://ik.imagekit.io/boostkit/HiTech/Eva_Main.jpg?updatedAt=1750439456434"
                 alt="HiTech Aesthetics Clinic"
                 effect="blur"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+      
+      {/* Logos Section */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="mb-4">Our Trusted Partners & Technologies</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              We partner with industry-leading brands to bring you the safest and most effective treatments available.
+            </p>
+          </div>
+          <LogoCarousel />
         </div>
       </section>
       
@@ -218,13 +232,13 @@ const AboutPage: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={nataliaInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative h-[500px] rounded-lg overflow-hidden shadow-xl order-1 lg:order-2"
+              className="relative w-full max-w-xl mx-auto aspect-[3/4] rounded-lg overflow-hidden shadow-xl order-1 lg:order-2"
             >
               <LazyLoadImage
-                src="https://ik.imagekit.io/boostkit/HiTech/Natalia.jpg?updatedAt=1749813265775"
+                src="https://ik.imagekit.io/boostkit/HiTech/Natalia.jpg?updatedAt=1750439420221"
                 alt="Natalia - Permanent Makeup Specialist at HiTech Aesthetics"
                 effect="blur"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           </div>
@@ -256,13 +270,13 @@ const AboutPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={clinicInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-lg overflow-hidden shadow-md h-64 md:h-80"
+                className="rounded-lg overflow-hidden shadow-md aspect-[4/3]"
               >
                 <LazyLoadImage
                   src={image.image}
                   alt={image.alt}
                   effect="blur"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </motion.div>
             ))}

@@ -16,6 +16,7 @@ export default {
           700: '#7A6A5F',
           800: '#6B5C52',
           900: '#5A4B41',
+          950: '#1e1a17',
         },
         secondary: {
           DEFAULT: '#A68571',
@@ -98,6 +99,7 @@ export default {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'fade-in-up': 'fadeInUp 0.7s ease-out',
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'logo-scroll': 'logo-scroll 60s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -111,6 +113,10 @@ export default {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
+        },
+        'logo-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

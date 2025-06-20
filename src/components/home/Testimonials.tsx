@@ -24,6 +24,34 @@ const testimonials = [
     treatment: 'Polynucleotides',
     stars: 5,
     quote: 'I\'ve been visiting Eva at Hi-Tech for a year now and have seen a wonderful improvement in my skin by following her advice. The thing that\'s made the biggest difference is the polynucleotide injections - the results are really miraculous, I look ten years younger!'
+  },
+  {
+    id: 4,
+    name: 'Catherine Cook',
+    treatment: 'Hair Removal',
+    stars: 5,
+    quote: 'I cannot recommend Hitech aesthetics more! Eva has been outstanding during my laser hair removable treatments. She is thorough, always professional and her knowledge and expertise have shone through. Thank you so much for such fabulous results.'
+  },
+  {
+    id: 5,
+    name: 'Chris Walther',
+    treatment: 'Hair Removal',
+    stars: 5,
+    quote: 'Eva is fantastic. She is very friendly and knowledgeable. Great service from her, and I would definitely use again. Highly recommended!'
+  },
+  {
+    id: 6,
+    name: 'Salvatore Ferrari',
+    treatment: 'Hair Removal',
+    stars: 5,
+    quote: 'I\'ve been treated for the last 6 months and I\'m very pleased and satisfied with the outcome. I could see the results after the first treatment. Eva is amazing, very helpful and knowledgeable. Highly recommend!'
+  },
+  {
+    id: 7,
+    name: 'Aster Wright',
+    treatment: 'Hair Removal',
+    stars: 5,
+    quote: 'I get my face done here and couldn\'t be happier. Eva is absolutely wonderful, always takes time to do a really thorough job and make sure I\'m comfy. I couldn\'t recommend more.'
   }
 ];
 

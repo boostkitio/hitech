@@ -4,10 +4,12 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
 import PopupDisplayController from '../components/popups/PopupDisplayController';
+import WhatsAppWidget from '../components/common/WhatsAppWidget';
+import ScrollToTopButton from '../components/common/ScrollToTopButton';
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sans-serif bg-white">
       <Header />
       <motion.main 
         className="flex-grow"
@@ -20,6 +22,8 @@ const Layout: React.FC = () => {
       </motion.main>
       <Footer />
       <PopupDisplayController />
+      <WhatsAppWidget />
+      <ScrollToTopButton />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -12,11 +12,11 @@ import { treatments } from '../../data/treatments';
 const featuredIds = [
   'soprano-ice-platinum',
   'apilus-xcell',
-  'skinpen-microneedling',
-  'lynton-ipl',
   'botox',
+  'skinpen-microneedling',
+  'skin-boosters',
+  'lynton-ipl',
   'asce-exosomes',
-  'polynucleotides',
 ];
 
 const featuredTreatments = treatments.filter(t => featuredIds.includes(t.id));
@@ -32,6 +32,8 @@ const getVisibleTreatmentsCount = () => {
 const TreatmentCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(getVisibleTreatmentsCount());
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
   useEffect(() => {
     const handleResize = () => {
@@ -54,13 +56,28 @@ const TreatmentCarousel: React.FC = () => {
     );
   };
   
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(nextSlide, 3000);
+    }
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isPaused, currentIndex, visibleCount]);
+
   return (
-    <div className="relative w-full max-w-7xl mx-auto">
+    <div 
+      className="relative w-full max-w-7xl mx-auto"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="overflow-hidden">
         <motion.div 
           className="flex"
           animate={{ x: `-${currentIndex * (100 / visibleCount)}%` }}
-          transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+          transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
         >
           {featuredTreatments.map((treatment) => (
             <div 

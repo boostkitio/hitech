@@ -13,6 +13,7 @@ import FloatingActionButton from './components/common/FloatingActionButton';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'));
+const SkinMembershipPage = lazy(() => import('./pages/SkinMembershipPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
@@ -49,6 +50,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="treatments" element={<TreatmentsPage />} />
+            <Route path="skin-membership" element={<SkinMembershipPage />} />
             <Route path="treatments/soprano-ice-platinum" element={<SopranoIcePlatinum />} />
             <Route path="treatments/apilus-xcell" element={<ApilusXCell />} />
             <Route path="treatments/skinpen-microneedling" element={<SkinPenMicroneedling />} />

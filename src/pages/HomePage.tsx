@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Clock, Shield, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Star, Clock, Shield } from 'lucide-react';
 import TreatmentCarousel from '../components/home/TreatmentCarousel';
 import Testimonials from '../components/home/Testimonials';
 import FaqAccordion from '../components/home/FaqAccordion';
@@ -28,10 +28,10 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>HiTech Aesthetics | Luxury Medical Aesthetics Clinic London</title>
+        <title>HiTech Aesthetics | Luxury Medical Aesthetics Clinic Tunbridge Wells</title>
         <meta 
           name="description" 
-          content="HiTech Aesthetics offers premium medical aesthetic treatments in London with cutting-edge technology and personalised care. Book your consultation today."
+          content="HiTech Aesthetics offers premium medical aesthetic treatments in Tunbridge Wells with cutting-edge technology and personalised care. Book your consultation today."
         />
       </Helmet>
       
@@ -68,9 +68,10 @@ const HomePage: React.FC = () => {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-100">
               Experience the art of transformation with our advanced medical aesthetic treatments tailored to your unique beauty.
             </p>
+            <h4 className="text-lg font-light text-white mb-4">By Appointment only</h4>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn btn-secondary">
-                Book Consultation
+                Book A Visit
               </Link>
               <Link to="/treatments" className="btn btn-outline border-white text-white hover:bg-white/10">
                 Explore Treatments
@@ -209,53 +210,6 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           <LogoCarousel />
-        </div>
-      </section>
-      
-      {/* Contact Information Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white text-primary-800 rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <Shield size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Our Address</h3>
-                    <p className="text-primary-600">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Phone size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                    <p className="text-primary-600">
-                      <a href="tel:+441892338157" className="hover:text-primary-800 underline transition-colors">01892 338157</a>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Mail size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Email</h3>
-                    <p className="text-primary-600">
-                      <a href="mailto:info@hitechaesthetics.co.uk" className="hover:text-primary-800 underline transition-colors">info@hitechaesthetics.co.uk</a>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Clock size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
-                    <p className="text-primary-600">Monday - Friday: 9am - 6pm</p>
-                    <p className="text-primary-600">Saturday: 10am - 4pm</p>
-                    <p className="text-primary-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       
