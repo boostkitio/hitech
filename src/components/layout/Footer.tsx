@@ -110,12 +110,9 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-primary-700 mt-12 pt-8 text-white text-sm">
+        <div className="border-t border-white/20 mt-12 pt-8 text-white text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>&copy; 2025 HiTech Aesthetics. All rights reserved.</p>
-            <p className="mt-2 md:mt-0">
-              Designed and developed with excellence in mind.
-            </p>
           </div>
         </div>
       </div>

@@ -133,7 +133,7 @@ const SkinMembershipPage: React.FC = () => {
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 10% off other treatments</li>
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 5% off retail products</li>
                 </ul>
-                <Link to="/contact" className="btn btn-primary w-full">Select Plan</Link>
+                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
             </div>
 
             {/* Tier 2 (Most Popular) */}
@@ -147,7 +147,7 @@ const SkinMembershipPage: React.FC = () => {
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 10% off retail products</li>
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> Priority booking</li>
                 </ul>
-                <Link to="/contact" className="btn btn-secondary w-full">Select Plan</Link>
+                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
             </div>
 
             {/* Tier 3 */}
@@ -160,7 +160,7 @@ const SkinMembershipPage: React.FC = () => {
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 15% off retail products</li>
                     <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> Exclusive event access</li>
                 </ul>
-                <Link to="/contact" className="btn btn-primary w-full">Select Plan</Link>
+                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@ const SkinMembershipPage: React.FC = () => {
           <p className="text-neutral-200 mb-8 max-w-2xl mx-auto">
             Contact us today to learn more about our Skin Membership and start your journey towards a more radiant you.
           </p>
-          <Link to="/contact" className="btn btn-secondary">
+          <Link to="/contact" className="btn btn-primary font-bold shadow-lg">
             Join Now
           </Link>
         </div>

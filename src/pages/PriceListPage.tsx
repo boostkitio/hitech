@@ -218,22 +218,35 @@ const PriceListPage: React.FC = () => {
     <div className="mb-12">
       <h3 className="text-2xl font-semibold text-primary-800 mb-4">{title}</h3>
       {note && <p className="text-neutral-600 mb-4">{note}</p>}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto relative">
+        {/* Fade effect for scroll cue */}
+        <div className="pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-white/90 to-transparent z-10 hidden sm:block" />
         <div className="min-w-full bg-white border border-neutral-200 rounded-lg shadow-sm">
           {/* Headers */}
-          <div className="grid grid-cols-5 bg-neutral-50 font-semibold text-left text-sm text-neutral-600 uppercase tracking-wider">
+          <div className="grid grid-cols-5 bg-neutral-50 font-semibold text-left text-sm text-neutral-600 uppercase tracking-wider hidden sm:grid">
             {headers.map(h => <div key={h} className="p-4">{h}</div>)}
           </div>
           {/* Data */}
           <div>
             {data.map((row, i) => (
-              <div key={i} className="grid grid-cols-5 text-left border-t border-neutral-200">
-                <div className="p-4 font-medium text-neutral-800">{row.area || row.duration || row.name}</div>
-                <div className="p-4 text-neutral-600">{row.single || row.price}</div>
-                <div className="p-4 text-neutral-600">{row['3'] || row.course}</div>
-                <div className="p-4 text-neutral-600">{row['6']}</div>
-                <div className="p-4 text-neutral-600">{row['8']}</div>
-              </div>
+              <>
+                {/* Desktop row */}
+                <div key={i} className="grid grid-cols-5 text-left border-t border-neutral-200 hidden sm:grid">
+                  <div className="p-4 font-medium text-neutral-800">{row.area || row.duration || row.name}</div>
+                  <div className="p-4 text-neutral-600">{row.single || row.price}</div>
+                  <div className="p-4 text-neutral-600">{row['3'] || row.course}</div>
+                  <div className="p-4 text-neutral-600">{row['6']}</div>
+                  <div className="p-4 text-neutral-600">{row['8']}</div>
+                </div>
+                {/* Mobile stacked row */}
+                <div key={i + '-mobile'} className="flex flex-col border-t border-neutral-200 sm:hidden p-4 text-sm">
+                  <div className="font-medium text-neutral-800 mb-1">{row.area || row.duration || row.name}</div>
+                  {row.single || row.price ? <div className="flex justify-between"><span className="text-neutral-600">{headers[1]}:</span> <span>{row.single || row.price}</span></div> : null}
+                  {row['3'] || row.course ? <div className="flex justify-between"><span className="text-neutral-600">{headers[2]}:</span> <span>{row['3'] || row.course}</span></div> : null}
+                  {row['6'] ? <div className="flex justify-between"><span className="text-neutral-600">{headers[3]}:</span> <span>{row['6']}</span></div> : null}
+                  {row['8'] ? <div className="flex justify-between"><span className="text-neutral-600">{headers[4]}:</span> <span>{row['8']}</span></div> : null}
+                </div>
+              </>
             ))}
           </div>
         </div>
