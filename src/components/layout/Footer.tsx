@@ -19,12 +19,6 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://www.tiktok.com/@hitechaesthetics" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
-                <span className="sr-only">TikTok</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 2v4.5a4.5 4.5 0 0 0 4.5 4.5H22v3a7 7 0 1 1-7-7h3" />
-                </svg>
-              </a>
             </div>
           </div>
           
@@ -100,8 +94,7 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <Clock size={20} className="mr-2 text-secondary-400 flex-shrink-0 mt-1" />
                 <div className="text-neutral-300">
-                  <p className="mb-1">Mon-Fri: 9am - 6pm</p>
-                  <p className="mb-1">Saturday: 10am - 4pm</p>
+                  <p className="mb-1">Monday - Saturday: 9:30am - 5:30pm</p>
                   <p>Sunday: Closed</p>
                 </div>
               </li>

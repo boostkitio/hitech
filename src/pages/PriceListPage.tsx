@@ -369,7 +369,7 @@ const PriceListPage: React.FC = () => {
                                     {pkg.items.map(item => <li key={item} className="flex items-start"><Dot className="text-secondary-500 mt-1 mr-2 flex-shrink-0" />{item}</li>)}
                                 </ul>
                                 <div className="mt-auto">
-                                    <p className="font-bold text-green-600">Save {pkg.save}</p>
+                                    <p className="font-semibold text-primary-800">Save {pkg.save}</p>
                                     {pkg.note && <p className="text-sm text-neutral-500 mt-2">{pkg.note}</p>}
                                 </div>
                             </div>

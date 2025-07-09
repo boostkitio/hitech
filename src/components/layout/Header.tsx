@@ -337,6 +337,15 @@ const Header: React.FC = () => {
                   <Phone size={20} />
                   <span className="text-lg">01892 338157</span>
                 </a>
+                <a
+                  href="https://www.instagram.com/hitechaesthetics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-white space-x-2"
+                >
+                  <Instagram size={20} />
+                  <span className="text-lg">Instagram</span>
+                </a>
               </div>
             </nav>
           </div>
