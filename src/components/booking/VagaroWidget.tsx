@@ -47,7 +47,7 @@ const VagaroWidget: React.FC = () => {
     <div
       id="vagaro-widget-mount"
       style={{
-        minHeight: '500px',
+        minHeight: '800px',
         width: '100%',
         display: 'flex',
         justifyContent: 'center'
