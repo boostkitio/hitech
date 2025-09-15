@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const treatmentsMenuTimer = useRef<NodeJS.Timeout | null>(null);
   
   // Check if we're on a page that has a white background from the top
-  const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/');
+  const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/') || location.pathname === '/booking';
   
   useEffect(() => {
     setIsOpen(false);

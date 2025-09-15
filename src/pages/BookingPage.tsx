@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Calendar, Clock, MapPin, Phone } from 'lucide-react';
+import { Clock, MapPin, Phone } from 'lucide-react';
 
 const BookingPage: React.FC = () => {
   useEffect(() => {
@@ -23,7 +23,7 @@ const BookingPage: React.FC = () => {
         {/* Booking Information Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-600 mb-4">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white mb-4">
               <Clock size={24} />
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Opening Hours</h3>
@@ -35,7 +35,7 @@ const BookingPage: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-600 mb-4">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white mb-4">
               <MapPin size={24} />
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Location</h3>
@@ -47,7 +47,7 @@ const BookingPage: React.FC = () => {
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 text-primary-600 mb-4">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-600 text-white mb-4">
               <Phone size={24} />
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Contact</h3>
@@ -59,47 +59,30 @@ const BookingPage: React.FC = () => {
         </div>
 
         {/* Vagaro Widget Container */}
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Book Your Appointment Online</h2>
           <div className="flex justify-center">
-            <div className="w-full max-w-lg">
-              <div
-                id='frameTitle'
-                className='embedded-widget-title'
-                style={{
-                  fontSize: '23px',
-                  color: '#333',
-                  fontFamily: 'Arial, Helvetica, sans-serif',
-                  lineHeight: '24px',
-                  padding: '18px 10px 8px',
-                  textAlign: 'center',
-                  WebkitBoxSizing: 'border-box',
-                  MozBoxSizing: 'border-box',
-                  boxSizing: 'border-box'
-                }}
+            <iframe
+              src="https://www.vagaro.com/hitechaesthetics/book-now"
+              width="100%"
+              height="800"
+              frameBorder="0"
+              title="Book Now"
+              className="w-full max-w-5xl rounded-lg"
+              style={{ minHeight: '700px' }}
+            />
+          </div>
+          <div className="text-center mt-4 text-sm text-neutral-500">
+            <p>Having trouble with the booking widget? You can also book directly at{' '}
+              <a
+                href="https://www.vagaro.com/hitechaesthetics/book-now"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-700 underline"
               >
-                Book Now
-              </div>
-              <div
-                className="vagaro"
-                style={{
-                  width: '250px',
-                  padding: 0,
-                  border: 0,
-                  margin: '0 auto',
-                  textAlign: 'center'
-                }}
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    <style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style>
-                    <a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;
-                    <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
-                    <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
-                    <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
-                    <script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"></script>
-                  `
-                }}
-              />
-            </div>
+                our Vagaro booking page
+              </a>
+            </p>
           </div>
         </div>
 
