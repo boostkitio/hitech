@@ -61,20 +61,36 @@ const PopupDisplayController: React.FC = () => {
   useEffect(() => {
     const fetchActivePopups = async () => {
       try {
+        // Check if Supabase is properly configured
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+        const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+        if (!supabaseUrl || !supabaseKey) {
+          // Silently skip if Supabase is not configured
+          setActivePopups([]);
+          return;
+        }
+
         const { data, error } = await supabase
           .from('popups')
           .select('*')
           .eq('is_active', true);
 
         if (error) {
-          console.error('Error fetching active popups:', error);
-          setActivePopups([]); // Set to empty or handle error state
+          // Only log error in development, not production
+          if (import.meta.env.DEV) {
+            console.warn('Popup service unavailable:', error.message);
+          }
+          setActivePopups([]);
           return;
         }
         setActivePopups(data || []);
       } catch (err) {
-        console.error('Unexpected error fetching active popups:', err);
-        setActivePopups([]); // Set to empty or handle error state
+        // Silently fail - popups are not critical functionality
+        if (import.meta.env.DEV) {
+          console.warn('Popup service unavailable');
+        }
+        setActivePopups([]);
       }
     };
 

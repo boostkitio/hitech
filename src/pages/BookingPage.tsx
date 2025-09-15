@@ -58,31 +58,59 @@ const BookingPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Vagaro Widget Container */}
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Book Your Appointment Online</h2>
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.vagaro.com/hitechaesthetics/book-now"
-              width="100%"
-              height="800"
-              frameBorder="0"
-              title="Book Now"
-              className="w-full max-w-5xl rounded-lg"
-              style={{ minHeight: '700px' }}
-            />
-          </div>
-          <div className="text-center mt-4 text-sm text-neutral-500">
-            <p>Having trouble with the booking widget? You can also book directly at{' '}
+        {/* Booking Options */}
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Book Your Appointment</h2>
+
+          <div className="space-y-6">
+            {/* Online Booking Button */}
+            <div className="text-center">
               <a
                 href="https://www.vagaro.com/hitechaesthetics/book-now"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
+                className="inline-block bg-primary-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors duration-200 text-lg"
               >
-                our Vagaro booking page
+                Book Online Now
               </a>
-            </p>
+              <p className="mt-3 text-sm text-neutral-600">
+                Click the button above to book your appointment through our online booking system
+              </p>
+            </div>
+
+            {/* Alternative Booking Methods */}
+            <div className="border-t pt-6">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-4 text-center">Other Ways to Book</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-neutral-50 rounded-lg">
+                  <Phone className="w-8 h-8 text-primary-600 mx-auto mb-2" />
+                  <p className="font-medium text-neutral-900">Call Us</p>
+                  <a href="tel:+441892338157" className="text-primary-600 hover:text-primary-700">
+                    01892 338157
+                  </a>
+                </div>
+                <div className="text-center p-4 bg-neutral-50 rounded-lg">
+                  <MapPin className="w-8 h-8 text-primary-600 mx-auto mb-2" />
+                  <p className="font-medium text-neutral-900">Walk In</p>
+                  <p className="text-sm text-neutral-600">Visit us during opening hours</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Services Preview */}
+            <div className="border-t pt-6">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-4 text-center">Popular Treatments</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Botox</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Dermal Fillers</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Laser Hair Removal</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Skin Rejuvenation</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Chemical Peels</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Microneedling</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">LED Therapy</div>
+                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">PRP Treatment</div>
+              </div>
+            </div>
           </div>
         </div>
 
