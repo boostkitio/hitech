@@ -1,24 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
 
 const BookingPage: React.FC = () => {
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
 
-    // Load Vagaro widget script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#';
-    script.async = true;
+    // Create and inject the widget HTML with script
+    if (widgetContainerRef.current) {
+      // Clear any existing content
+      widgetContainerRef.current.innerHTML = '';
 
-    // Add script to document
-    document.body.appendChild(script);
+      // Create the widget HTML structure
+      const widgetHTML = `
+        <div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book Now</div>
+        <div class="vagaro" style="width:100%; max-width:800px; padding:0; border:0; margin:0 auto; text-align:center;">
+          <style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style>
+          <a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;
+          <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
+          <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
+          <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
+        </div>
+      `;
 
-    // Cleanup function to remove script when component unmounts
+      // Insert the HTML
+      widgetContainerRef.current.innerHTML = widgetHTML;
+
+      // Load the Vagaro script
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#';
+
+      // Append script to the widget container
+      widgetContainerRef.current.appendChild(script);
+    }
+
+    // Cleanup function
     return () => {
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
+      if (widgetContainerRef.current) {
+        widgetContainerRef.current.innerHTML = '';
       }
     };
   }, []);
@@ -77,43 +99,15 @@ const BookingPage: React.FC = () => {
         {/* Vagaro Widget Embedded */}
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto mb-8">
           <div className="flex justify-center">
-            <div style={{ width: '100%', maxWidth: '800px' }}>
-              {/* Vagaro Widget HTML */}
-              <div
-                id='frameTitle'
-                className='embedded-widget-title'
-                style={{
-                  fontSize: '23px',
-                  color: '#333',
-                  fontFamily: 'Arial, Helvetica, sans-serif',
-                  lineHeight: '24px',
-                  padding: '18px 10px 8px',
-                  textAlign: 'center',
-                  WebkitBoxSizing: 'border-box',
-                  MozBoxSizing: 'border-box',
-                  boxSizing: 'border-box'
-                }}
-              >
-                Book Now
-              </div>
-              <div
-                className="vagaro"
-                style={{
-                  width: '100%',
-                  padding: 0,
-                  border: 0,
-                  margin: '0 auto',
-                  textAlign: 'center',
-                  minHeight: '500px'
-                }}
-              >
-                <style>{`.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}`}</style>
-                <a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;
-                <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
-                <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
-                <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
-              </div>
-            </div>
+            {/* This div will contain the dynamically injected Vagaro widget */}
+            <div
+              ref={widgetContainerRef}
+              style={{
+                width: '100%',
+                maxWidth: '800px',
+                minHeight: '500px'
+              }}
+            />
           </div>
         </div>
 
