@@ -17,6 +17,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const PriceListPage = lazy(() => import('./pages/PriceListPage'));
+const BookingPage = lazy(() => import('./pages/BookingPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage'));
@@ -71,6 +72,7 @@ function App() {
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="resources" element={<ResourcesPage />} />
             <Route path="price-list" element={<PriceListPage />} />
+            <Route path="booking" element={<BookingPage />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="terms-of-service" element={<TermsOfService />} />
             <Route path="cookie-policy" element={<CookiePolicy />} />

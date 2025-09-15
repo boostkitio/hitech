@@ -220,6 +220,7 @@ const Header: React.FC = () => {
                 )}
               </div>
               <NavLink to="/skin-membership" className={navLinkClasses}>Skin Membership</NavLink>
+              <NavLink to="/booking" className={navLinkClasses}>Book Now</NavLink>
               <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
             </nav>
             
@@ -317,14 +318,20 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
-              <NavLink 
-                to="/skin-membership" 
+              <NavLink
+                to="/skin-membership"
                 className={mobileNavLinkClasses}
               >
                 Skin Membership
               </NavLink>
-              <NavLink 
-                to="/contact" 
+              <NavLink
+                to="/booking"
+                className={mobileNavLinkClasses}
+              >
+                Book Now
+              </NavLink>
+              <NavLink
+                to="/contact"
                 className={mobileNavLinkClasses}
               >
                 Contact
