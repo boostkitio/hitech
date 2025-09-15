@@ -5,6 +5,22 @@ const BookingPage: React.FC = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+
+    // Load Vagaro widget script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#';
+    script.async = true;
+
+    // Add script to document
+    document.body.appendChild(script);
+
+    // Cleanup function to remove script when component unmounts
+    return () => {
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
   }, []);
 
   return (
@@ -58,58 +74,80 @@ const BookingPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Booking Options */}
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Book Your Appointment</h2>
+        {/* Vagaro Widget Embedded */}
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto mb-8">
+          <div className="flex justify-center">
+            <div style={{ width: '100%', maxWidth: '800px' }}>
+              {/* Vagaro Widget HTML */}
+              <div
+                id='frameTitle'
+                className='embedded-widget-title'
+                style={{
+                  fontSize: '23px',
+                  color: '#333',
+                  fontFamily: 'Arial, Helvetica, sans-serif',
+                  lineHeight: '24px',
+                  padding: '18px 10px 8px',
+                  textAlign: 'center',
+                  WebkitBoxSizing: 'border-box',
+                  MozBoxSizing: 'border-box',
+                  boxSizing: 'border-box'
+                }}
+              >
+                Book Now
+              </div>
+              <div
+                className="vagaro"
+                style={{
+                  width: '100%',
+                  padding: 0,
+                  border: 0,
+                  margin: '0 auto',
+                  textAlign: 'center',
+                  minHeight: '500px'
+                }}
+              >
+                <style>{`.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}`}</style>
+                <a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;
+                <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
+                <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
+                <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div className="space-y-6">
-            {/* Online Booking Button */}
-            <div className="text-center">
+        {/* Alternative Booking Methods */}
+        <div className="bg-white rounded-lg shadow-lg p-6 max-w-4xl mx-auto mb-8">
+          <h3 className="text-lg font-semibold text-neutral-900 mb-4 text-center">Other Ways to Book</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="text-center p-4 bg-neutral-50 rounded-lg">
+              <Phone className="w-8 h-8 text-primary-600 mx-auto mb-2" />
+              <p className="font-medium text-neutral-900">Call Us</p>
+              <a href="tel:+441892338157" className="text-primary-600 hover:text-primary-700">
+                01892 338157
+              </a>
+            </div>
+            <div className="text-center p-4 bg-neutral-50 rounded-lg">
+              <MapPin className="w-8 h-8 text-primary-600 mx-auto mb-2" />
+              <p className="font-medium text-neutral-900">Walk In</p>
+              <p className="text-sm text-neutral-600">Visit us during opening hours</p>
+            </div>
+            <div className="text-center p-4 bg-neutral-50 rounded-lg">
+              <div className="w-8 h-8 text-primary-600 mx-auto mb-2 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                </svg>
+              </div>
+              <p className="font-medium text-neutral-900">Online Booking</p>
               <a
                 href="https://www.vagaro.com/hitechaesthetics/book-now"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-primary-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-primary-700 transition-colors duration-200 text-lg"
+                className="text-primary-600 hover:text-primary-700 text-sm"
               >
-                Book Online Now
+                Direct Link
               </a>
-              <p className="mt-3 text-sm text-neutral-600">
-                Click the button above to book your appointment through our online booking system
-              </p>
-            </div>
-
-            {/* Alternative Booking Methods */}
-            <div className="border-t pt-6">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4 text-center">Other Ways to Book</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-neutral-50 rounded-lg">
-                  <Phone className="w-8 h-8 text-primary-600 mx-auto mb-2" />
-                  <p className="font-medium text-neutral-900">Call Us</p>
-                  <a href="tel:+441892338157" className="text-primary-600 hover:text-primary-700">
-                    01892 338157
-                  </a>
-                </div>
-                <div className="text-center p-4 bg-neutral-50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-primary-600 mx-auto mb-2" />
-                  <p className="font-medium text-neutral-900">Walk In</p>
-                  <p className="text-sm text-neutral-600">Visit us during opening hours</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Services Preview */}
-            <div className="border-t pt-6">
-              <h3 className="text-lg font-semibold text-neutral-900 mb-4 text-center">Popular Treatments</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Botox</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Dermal Fillers</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Laser Hair Removal</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Skin Rejuvenation</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Chemical Peels</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">Microneedling</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">LED Therapy</div>
-                <div className="bg-primary-50 px-3 py-2 rounded text-center text-primary-800">PRP Treatment</div>
-              </div>
             </div>
           </div>
         </div>
