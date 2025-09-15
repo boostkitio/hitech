@@ -1,55 +1,14 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
 
+// Lazy load the widget component to isolate it
+const VagaroWidget = lazy(() => import('../components/booking/VagaroWidget'));
+
 const BookingPage: React.FC = () => {
-  const [widgetLoaded, setWidgetLoaded] = useState(false);
-  const [showWidget, setShowWidget] = useState(false);
-
-  // Use useMemo to create a stable widget ID that doesn't change on re-renders
-  const widgetId = useMemo(() => 'vagaro-widget-container', []);
-
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-
-    // Add a delay to ensure React has finished rendering
-    const timer = setTimeout(() => {
-      setShowWidget(true);
-
-      // Get the container div
-      const container = document.getElementById(widgetId);
-      console.log('Container found:', container);
-
-      if (container) {
-        // Set the HTML content exactly as it works in W3Schools
-        const widgetHTML = `<div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book Now</div><div class="vagaro" style="width:250px; padding:0; border:0; margin:0 auto; text-align:center;"><style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style><a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;<a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;<a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;<a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a><script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"></script></div>`;
-
-        container.innerHTML = widgetHTML;
-        console.log('Widget HTML injected');
-
-        // Mark as loaded after a short delay
-        setTimeout(() => {
-          setWidgetLoaded(true);
-          console.log('Widget marked as loaded');
-        }, 1000);
-      } else {
-        console.error('Container not found with ID:', widgetId);
-      }
-    }, 500);
-
-    // Cleanup function
-    return () => {
-      clearTimeout(timer);
-      // Clean up the widget container without causing React errors
-      const container = document.getElementById(widgetId);
-      if (container) {
-        // Clear content safely
-        while (container.firstChild) {
-          container.removeChild(container.firstChild);
-        }
-      }
-    };
-  }, [widgetId]);
+  }, []);
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-white to-neutral-50">
@@ -104,32 +63,21 @@ const BookingPage: React.FC = () => {
 
         {/* Vagaro Widget Embedded */}
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto mb-8">
-          <div className="flex justify-center">
-            {/* This div will contain the dynamically injected Vagaro widget */}
-            <div
-              id={widgetId}
-              style={{
-                width: '100%',
-                maxWidth: '800px',
-                minHeight: '500px',
-                position: 'relative'
-              }}
-            >
-              {!showWidget && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-                    <p className="text-neutral-600">Loading booking widget...</p>
-                  </div>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center min-h-[500px]">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                  <p className="text-neutral-600">Loading booking widget...</p>
                 </div>
-              )}
-            </div>
-          </div>
-          {widgetLoaded && (
-            <p className="text-xs text-center text-neutral-500 mt-4">
-              If the booking interface doesn't appear, please use the direct link below.
-            </p>
-          )}
+              </div>
+            }
+          >
+            <VagaroWidget />
+          </Suspense>
+          <p className="text-xs text-center text-neutral-500 mt-4">
+            If the booking interface doesn't appear, please use the direct link below.
+          </p>
         </div>
 
         {/* Alternative Booking Methods */}
