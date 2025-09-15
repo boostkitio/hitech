@@ -1,20 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 const BookingPage: React.FC = () => {
-  const widgetContainerRef = useRef<HTMLDivElement>(null);
   const [widgetLoaded, setWidgetLoaded] = useState(false);
+  const [showWidget, setShowWidget] = useState(false);
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
 
-    // Add a small delay to ensure DOM is ready
+    // Create a unique container ID for this widget instance
+    const widgetId = 'vagaro-widget-' + Date.now();
+
+    // Add a delay to ensure React has finished rendering
     const timer = setTimeout(() => {
-      if (widgetContainerRef.current && !widgetLoaded) {
-        // Create the widget HTML structure
-        const widgetHTML = `
+      setShowWidget(true);
+
+      // Create container div
+      const container = document.getElementById(widgetId);
+      if (container) {
+        // Set the HTML content
+        container.innerHTML = `
           <div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book Now</div>
           <div class="vagaro" style="width:100%; max-width:800px; padding:0; border:0; margin:0 auto; text-align:center;">
             <style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style>
@@ -22,54 +28,37 @@ const BookingPage: React.FC = () => {
             <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
             <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
             <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
+            <script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"></script>
           </div>
         `;
 
-        // Insert the HTML
-        widgetContainerRef.current.innerHTML = widgetHTML;
-
-        // Create and load the script
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#';
-        script.async = false;
-
-        // Add event listeners to track loading
-        script.onload = () => {
-          console.log('Vagaro script loaded successfully');
-          setWidgetLoaded(true);
-        };
-
-        script.onerror = () => {
-          console.error('Failed to load Vagaro script');
-        };
-
-        // Append to the specific container div within the widget
-        const vagaroDiv = widgetContainerRef.current.querySelector('.vagaro');
-        if (vagaroDiv) {
-          vagaroDiv.appendChild(script);
-        }
+        // Mark as loaded after a short delay
+        setTimeout(() => setWidgetLoaded(true), 500);
       }
-    }, 100);
+    }, 200);
+
+    // Store the widget ID for cleanup
+    const currentWidgetId = widgetId;
 
     // Cleanup function
     return () => {
       clearTimeout(timer);
-      if (widgetContainerRef.current) {
-        widgetContainerRef.current.innerHTML = '';
+      // Clean up the widget container without causing React errors
+      const container = document.getElementById(currentWidgetId);
+      if (container) {
+        // Clear content safely
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
       }
     };
   }, []);
 
+  // Create widget ID outside JSX for use in the div
+  const widgetId = 'vagaro-widget-' + Date.now();
+
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-white to-neutral-50">
-      {/* Add Vagaro script via Helmet as a fallback */}
-      <Helmet>
-        <script
-          type="text/javascript"
-          src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"
-        />
-      </Helmet>
       <div className="container-custom">
         {/* Page Header */}
         <div className="text-center mb-12">
@@ -124,7 +113,7 @@ const BookingPage: React.FC = () => {
           <div className="flex justify-center">
             {/* This div will contain the dynamically injected Vagaro widget */}
             <div
-              ref={widgetContainerRef}
+              id={widgetId}
               style={{
                 width: '100%',
                 maxWidth: '800px',
@@ -132,7 +121,7 @@ const BookingPage: React.FC = () => {
                 position: 'relative'
               }}
             >
-              {!widgetLoaded && (
+              {!showWidget && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
@@ -144,7 +133,7 @@ const BookingPage: React.FC = () => {
           </div>
           {widgetLoaded && (
             <p className="text-xs text-center text-neutral-500 mt-4">
-              Widget loaded. If you don't see the booking interface, please try the direct link below.
+              If the booking interface doesn't appear, please use the direct link below.
             </p>
           )}
         </div>
