@@ -1,50 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
 
 const BookingPage: React.FC = () => {
   const [widgetLoaded, setWidgetLoaded] = useState(false);
   const [showWidget, setShowWidget] = useState(false);
 
+  // Use useMemo to create a stable widget ID that doesn't change on re-renders
+  const widgetId = useMemo(() => 'vagaro-widget-container', []);
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-
-    // Create a unique container ID for this widget instance
-    const widgetId = 'vagaro-widget-' + Date.now();
 
     // Add a delay to ensure React has finished rendering
     const timer = setTimeout(() => {
       setShowWidget(true);
 
-      // Create container div
+      // Get the container div
       const container = document.getElementById(widgetId);
+      console.log('Container found:', container);
+
       if (container) {
-        // Set the HTML content
-        container.innerHTML = `
-          <div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book Now</div>
-          <div class="vagaro" style="width:100%; max-width:800px; padding:0; border:0; margin:0 auto; text-align:center;">
-            <style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style>
-            <a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;
-            <a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;
-            <a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;
-            <a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a>
-            <script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"></script>
-          </div>
-        `;
+        // Set the HTML content exactly as it works in W3Schools
+        const widgetHTML = `<div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'>Book Now</div><div class="vagaro" style="width:250px; padding:0; border:0; margin:0 auto; text-align:center;"><style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style><a href="https://www.vagaro.com/en-gb/pro/">Powered by Vagaro</a>&nbsp;<a href="https://www.vagaro.com/en-gb/pro/salon-software">Salon Software</a>,&nbsp;<a href="https://www.vagaro.com/en-gb/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;<a href="https://www.vagaro.com/en-gb/pro/fitness-software">Fitness Software</a><script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqoCZ0nEJOcT3qmV35y79oz34mC2PeFJ4mC30m9cyUeJUtjP0dDxkJEvwRapWUep2sERAJDXwOapcUbfY?v=loBDWG4BYCkF4xzcQSEIv1krqOQHlzDJmWdoSoyHDwiW#"></script></div>`;
+
+        container.innerHTML = widgetHTML;
+        console.log('Widget HTML injected');
 
         // Mark as loaded after a short delay
-        setTimeout(() => setWidgetLoaded(true), 500);
+        setTimeout(() => {
+          setWidgetLoaded(true);
+          console.log('Widget marked as loaded');
+        }, 1000);
+      } else {
+        console.error('Container not found with ID:', widgetId);
       }
-    }, 200);
-
-    // Store the widget ID for cleanup
-    const currentWidgetId = widgetId;
+    }, 500);
 
     // Cleanup function
     return () => {
       clearTimeout(timer);
       // Clean up the widget container without causing React errors
-      const container = document.getElementById(currentWidgetId);
+      const container = document.getElementById(widgetId);
       if (container) {
         // Clear content safely
         while (container.firstChild) {
@@ -52,10 +49,7 @@ const BookingPage: React.FC = () => {
         }
       }
     };
-  }, []);
-
-  // Create widget ID outside JSX for use in the div
-  const widgetId = 'vagaro-widget-' + Date.now();
+  }, [widgetId]);
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-white to-neutral-50">
