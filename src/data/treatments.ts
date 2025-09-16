@@ -8,7 +8,7 @@ export const treatments: Treatment[] = [
     name: 'Soprano Ice Platinum Laser Hair Removal',
     description: 'The Gold Standard in Pain-Free Hair Removal',
     longDescription: 'Experience the revolutionary Soprano Ice Platinum technology - the most advanced laser hair removal system available. Our state-of-the-art device combines three laser wavelengths to target different tissue depths, ensuring effective treatment for all skin types.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/laserHi_Tech.webp?updatedAt=1758015799803',
     benefits: [
       'Virtually painless treatment',
       'Suitable for all skin types',
@@ -42,7 +42,7 @@ export const treatments: Treatment[] = [
     name: 'Apilus xCell Electrolysis',
     description: 'Permanent Hair Removal for All Hair Types',
     longDescription: 'The Apilus xCell represents the pinnacle of electrolysis technology. Perfect for treating white, blonde, red, or gray hairs that laser cannot target, as well as smaller, precise areas.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/electrolysisHi_Tech.webp?updatedAt=1758015869551',
     benefits: [
       '100% permanent hair removal',
       'Treats all hair colors',
@@ -76,7 +76,7 @@ export const treatments: Treatment[] = [
     name: 'SkinPen Microneedling',
     description: 'Collagen Induction Therapy for Natural Skin Renewal',
     longDescription: 'SkinPen is the first FDA-cleared microneedling device, creating controlled micro-injuries to stimulate your body\'s natural healing process and collagen production.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/microneedlingHi_Tech.webp?updatedAt=1758015096316',
     treats: [
       'Fine lines and wrinkles',
       'Acne scars',
@@ -109,7 +109,7 @@ export const treatments: Treatment[] = [
     name: 'Lynton IPL Treatments',
     description: 'Advanced Photo-Rejuvenation Technology',
     longDescription: 'Our Lynton IPL system delivers precise light energy to target specific skin concerns without damaging surrounding tissue.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/lynton%20resurfacingHi_Tech.webp?updatedAt=1758016130538',
     treatmentOptions: [
       'Pigmentation Removal: Age spots, sun damage, freckles',
       'Vascular Treatments: Spider veins, rosacea, broken capillaries',
@@ -172,7 +172,7 @@ export const treatments: Treatment[] = [
     name: 'Lynton Laser Resurfacing',
     description: 'Precision Skin Renewal',
     longDescription: 'Our fractional laser technology removes damaged skin layer by layer with precision, revealing fresh, healthy skin beneath.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/lynton%20resurfacingHi_Tech.webp?updatedAt=1758016130538',
     treats: [
       'Deep wrinkles',
       'Acne scars',
@@ -237,7 +237,7 @@ export const treatments: Treatment[] = [
     name: 'Botox',
     description: 'Precision Wrinkle Relaxation',
     longDescription: 'Our expert practitioners use advanced injection techniques to achieve natural-looking results that preserve your facial expressions while smoothing unwanted lines.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/botox2Hi_Tech.webp?updatedAt=1758015091455',
     treatmentAreas: [
       'Forehead lines',
       'Crow\'s feet',
@@ -272,7 +272,7 @@ export const treatments: Treatment[] = [
     name: 'Polynucleotides',
     description: 'Next-Generation Skin Regeneration',
     longDescription: 'Bio-stimulating injectable treatment that activates fibroblasts to produce collagen and elastin naturally.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.webp?updatedAt=1758015583169',
     benefits: [
       'Deep hydration',
       'Improved skin elasticity',
@@ -304,7 +304,7 @@ export const treatments: Treatment[] = [
     name: 'Skin Boosters',
     description: 'Injectable Hydration from Within',
     longDescription: 'Hyaluronic acid-based treatments that hydrate skin from the inside out, improving skin quality, elasticity, and radiance.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/skinboosterHi_Tech.webp?updatedAt=1758016013283',
     treatmentOptions: [
       'Profhilo',
       'Seventy Hyal',
@@ -339,7 +339,7 @@ export const treatments: Treatment[] = [
     name: 'Mesotox',
     description: 'Micro-Botox for Skin Refinement',
     longDescription: 'An innovative technique using diluted Botox injected superficially to improve skin quality without freezing facial expressions.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/mesotoxHi_Tech.webp?updatedAt=1758016052188',
     benefits: [
       'Reduces pore size',
       'Improves skin texture',
@@ -373,7 +373,7 @@ export const treatments: Treatment[] = [
     name: 'ASCE+ Exosomes',
     description: 'Cutting-Edge Regenerative Treatment',
     longDescription: 'Revolutionary topical treatment containing billions of growth factors and proteins to accelerate skin healing and regeneration.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/exosomesHi_Tech.webp?updatedAt=1758016212590',
     benefits: [
       'Accelerated healing post-procedure',
       'Enhanced treatment results',
@@ -433,7 +433,7 @@ export const treatments: Treatment[] = [
     name: 'Relaxing Facials',
     description: 'Luxury Skincare Experiences',
     longDescription: 'Bespoke facial treatments combining professional-grade products with relaxation techniques for the ultimate pampering experience.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/facial2Hi_Tech.webp?updatedAt=1758016255995',
     treatmentOptions: [
       'Hydrating Facial',
       'Anti-Aging Facial',
@@ -463,7 +463,7 @@ export const treatments: Treatment[] = [
     name: 'Chemical Peels',
     description: 'Professional Skin Resurfacing',
     longDescription: 'Medical-grade chemical solutions to exfoliate damaged skin layers and reveal healthier, more radiant skin.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/chemicalpeelHi_Tech.webp?updatedAt=1758016298221',
     peelTypes: [
       'Light Peels: Glow enhancement, mild exfoliation',
       'Medium Peels: Pigmentation, fine lines, acne',
