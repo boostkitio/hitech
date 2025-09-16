@@ -132,7 +132,7 @@ const Header: React.FC = () => {
               <span>Find Us</span>
             </a>
             <a 
-              href="https://www.instagram.com/hitech_aesthetics/" 
+              href="https://www.instagram.com/hitechaesthetics/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
@@ -345,7 +345,7 @@ const Header: React.FC = () => {
                   <span className="text-lg">01892 338157</span>
                 </a>
                 <a
-                  href="https://www.instagram.com/hitechaesthetics"
+                  href="https://www.instagram.com/hitechaesthetics/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-white space-x-2"

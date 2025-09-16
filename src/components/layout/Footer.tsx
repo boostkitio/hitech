@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               HiTech Aesthetics provides luxury medical aesthetics treatments with cutting-edge technology and personalised care.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://www.instagram.com/hitechaesthetics" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
+              <a href="https://www.instagram.com/hitechaesthetics/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-secondary-400 transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>

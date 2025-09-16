@@ -378,7 +378,7 @@ const ContactPage: React.FC = () => {
                       Book consultations and treatments directly through our secure online system.
                     </p>
                     <a 
-                      href="https://booking.example.com/hitech-aesthetics" 
+                      href="https://www.vagaro.com/hitechaesthetics/book-now" 
                       className="btn btn-primary inline-flex items-center"
                       target="_blank"
                       rel="noopener noreferrer"
