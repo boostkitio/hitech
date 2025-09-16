@@ -33,22 +33,22 @@ const AboutPage: React.FC = () => {
   const clinicImages = [
     {
       id: 1,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_1_Hi_Tech.webp?updatedAt=1758019128107&tr=w-997%2Ch-752%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_1_Hi_Tech.webp?updatedAt=1758019128107&tr=w-800%2Ch-600%2Cfo-custom%2Ccm-extract',
       alt: 'Reception area',
     },
     {
       id: 2,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_2_Hi_Tech.webp?updatedAt=1758019083935&tr=w-1000%2Ch-680%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_2_Hi_Tech.webp?updatedAt=1758019083935&tr=w-800%2Ch-600%2Cfo-custom%2Ccm-extract',
       alt: 'Treatment room',
     },
     {
       id: 3,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_3_Hi_Tech.webp?updatedAt=1758019171238&tr=w-952%2Ch-752%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_3_Hi_Tech.webp?updatedAt=1758019171238&tr=w-800%2Ch-600%2Cfo-custom%2Ccm-extract',
       alt: 'Consultation room',
     },
     {
       id: 4,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269&tr=w-1000%2Ch-680%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269&tr=w-800%2Ch-600%2Cfo-custom%2Ccm-extract',
       alt: 'Relaxation area',
     },
   ];
