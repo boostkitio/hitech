@@ -98,7 +98,7 @@ const ContactPage: React.FC = () => {
       } else {
         throw new Error('Form submission failed');
       }
-    } catch (error) {
+    } catch {
       setFormStatus({
         submitted: true,
         success: false,

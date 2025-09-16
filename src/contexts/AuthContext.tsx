@@ -3,7 +3,7 @@ import { supabase } from '../lib/supabaseClient';
 import { Session, User as SupabaseUser } from '@supabase/supabase-js';
 
 // Define the shape of our application's user object, which can be based on SupabaseUser
-interface AppUser extends SupabaseUser {}
+type AppUser = SupabaseUser
 
 // Define the shape of the AuthContext
 interface AuthContextType {

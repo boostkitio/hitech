@@ -36,7 +36,6 @@ const VagaroWidget: React.FC = () => {
       const vagaroDiv = widgetContainer.querySelector('.vagaro');
       if (vagaroDiv) {
         vagaroDiv.appendChild(script);
-        console.log('Vagaro script appended and should execute');
       }
     }, 100);
 

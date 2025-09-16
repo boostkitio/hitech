@@ -85,7 +85,7 @@ const PopupDisplayController: React.FC = () => {
           return;
         }
         setActivePopups(data || []);
-      } catch (err) {
+      } catch {
         // Silently fail - popups are not critical functionality
         if (import.meta.env.DEV) {
           console.warn('Popup service unavailable');

@@ -45,9 +45,10 @@ const AdminDashboardPage: React.FC = () => {
 
       if (fetchError) throw fetchError;
       setPopups(data || []);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error fetching popups:', err);
-      setError(err.message || 'Failed to fetch popups.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch popups.';
+      setError(errorMessage);
     }
     setIsLoadingData(false);
   }, [user]);
@@ -121,9 +122,10 @@ const AdminDashboardPage: React.FC = () => {
       setShowForm(false);
       resetForm();
       await fetchPopups();
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error saving popup:', err);
-      setError(err.message || 'Failed to save popup.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to save popup.';
+      setError(errorMessage);
     }
     setIsSubmitting(false);
   };
@@ -140,9 +142,10 @@ const AdminDashboardPage: React.FC = () => {
         .eq('user_id', user.id);
       if (updateError) throw updateError;
       await fetchPopups();
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error toggling popup status:', err);
-      setError(err.message || 'Failed to update popup status.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to update popup status.';
+      setError(errorMessage);
     }
     setIsSubmitting(false);
   };
@@ -164,9 +167,10 @@ const AdminDashboardPage: React.FC = () => {
           handleCancelForm(); 
         }
         await fetchPopups();
-      } catch (err: any) {
+      } catch (err) {
         console.error('Error deleting popup:', err);
-        setError(err.message || 'Failed to delete popup.');
+        const errorMessage = err instanceof Error ? err.message : 'Failed to delete popup.';
+        setError(errorMessage);
       }
       setIsSubmitting(false);
     }

@@ -42,7 +42,7 @@ const LoginPage: React.FC = () => {
         // and ProtectedRoute will allow navigation.
         navigate(from, { replace: true });
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
     }
   };
