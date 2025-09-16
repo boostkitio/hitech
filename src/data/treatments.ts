@@ -205,7 +205,7 @@ export const treatments: Treatment[] = [
     name: 'Dermalux LED Light Therapy',
     description: 'Healing Light for Healthy Skin',
     longDescription: 'Medical-grade LED phototherapy using clinically proven wavelengths to trigger the skin\'s natural rejuvenation processes.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/ledHi_Tech.webp?updatedAt=1758015096364',
     treatmentOptions: [
       'Red Light: Anti-aging, collagen stimulation',
       'Blue Light: Acne treatment, antibacterial',
@@ -403,7 +403,7 @@ export const treatments: Treatment[] = [
     name: 'PRP Hair Restoration',
     description: 'Natural Hair Growth Stimulation',
     longDescription: 'Platelet-Rich Plasma therapy uses your body\'s own growth factors to stimulate dormant hair follicles and promote new hair growth.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/PRP_Hair_Restoration_Hi_Tech.webp?updatedAt=1758018498017',
     benefits: [
       'Natural hair growth',
       'Increased hair density',
@@ -521,7 +521,7 @@ export const treatments: Treatment[] = [
     name: 'Permanent Makeup',
     description: 'By Master Artist Natalia',
     longDescription: 'Semi-permanent cosmetic tattooing for effortless, long-lasting beauty.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Permanent_Makeup_Hi_Tech.webp?updatedAt=1758018515795&tr=w-992%2Ch-752%2Cfo-custom%2Ccm-extract',
     services: [
       'Microblading/Nano brows',
       'Powder brows',

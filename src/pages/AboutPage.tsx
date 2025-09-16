@@ -33,22 +33,22 @@ const AboutPage: React.FC = () => {
   const clinicImages = [
     {
       id: 1,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva2_Lo.jpg?updatedAt=1749813392239',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_1_Hi_Tech.webp?updatedAt=1758019128107&tr=w-997%2Ch-752%2Cfo-custom%2Ccm-extract',
       alt: 'Reception area',
     },
     {
       id: 2,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva3_Lo.jpg?updatedAt=1749813392216',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_2_Hi_Tech.webp?updatedAt=1758019083935',
       alt: 'Treatment room',
     },
     {
       id: 3,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva1_Lo.jpg?updatedAt=1749813392184',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_3_Hi_Tech.webp?updatedAt=1758019171238&tr=w-952%2Ch-752%2Cfo-custom%2Ccm-extract',
       alt: 'Consultation room',
     },
     {
       id: 4,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Eva_Lo.jpg?updatedAt=1749813392115',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269',
       alt: 'Relaxation area',
     },
   ];
