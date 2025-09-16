@@ -95,7 +95,7 @@ const SkinMembershipPage: React.FC = () => {
               className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <LazyLoadImage
-                src="https://ik.imagekit.io/boostkit/HiTech/membership-placeholder.jpg"
+                src="https://ik.imagekit.io/boostkit/HiTech/consultationHi_Tech.webp?updatedAt=1758015091660"
                 alt="Skin Membership at HiTech Aesthetics"
                 effect="blur"
                 className="w-full h-full object-cover"
