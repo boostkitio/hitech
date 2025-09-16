@@ -11,12 +11,14 @@ const ContactPage: React.FC = () => {
     phone: '',
     service: '',
     message: '',
+    'bot-field': '', // Honeypot field for spam protection
   });
   const [formStatus, setFormStatus] = useState<{
     submitted: boolean;
     success: boolean;
     message: string;
   } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
@@ -38,9 +40,9 @@ const ContactPage: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Simple validation
     if (!formData.name || !formData.email || !formData.phone) {
       setFormStatus({
@@ -50,23 +52,61 @@ const ContactPage: React.FC = () => {
       });
       return;
     }
-    
-    // Form submission would happen here in a real application
-    // For this demo, we'll simulate a successful submission
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message. We will be in touch shortly.',
-    });
-    
-    // Reset form after successful submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: '',
-    });
+
+    // Don't submit if honeypot is filled (spam protection)
+    if (formData['bot-field']) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setFormStatus(null);
+
+    // Encode form data for Netlify Forms
+    const encode = (data: Record<string, string>) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+    };
+
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          ...formData,
+        }),
+      });
+
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: 'Thank you for your message. We will be in touch shortly.',
+        });
+
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+          'bot-field': '',
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Sorry, there was an error submitting your message. Please try again or contact us directly.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -126,7 +166,27 @@ const ContactPage: React.FC = () => {
                 </div>
               )}
               
-              <form onSubmit={handleSubmit}>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+              >
+                {/* Hidden fields for Netlify Forms */}
+                <input type="hidden" name="form-name" value="contact" />
+
+                {/* Honeypot field - hidden from users */}
+                <div style={{ display: 'none' }}>
+                  <label>
+                    Don't fill this out if you're human:
+                    <input
+                      name="bot-field"
+                      value={formData['bot-field']}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </div>
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-primary-700 mb-2">
                     Full Name <span className="text-red-500">*</span>
@@ -231,10 +291,13 @@ const ContactPage: React.FC = () => {
                 
                 <button
                   type="submit"
-                  className="btn btn-primary w-full flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className={`btn btn-primary w-full flex items-center justify-center ${
+                    isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
                 >
                   <Send size={18} className="mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
                 <p className="text-xs text-primary-500 mt-3">
                   By submitting this form, you agree to our privacy policy and consent to being contacted regarding your enquiry.
