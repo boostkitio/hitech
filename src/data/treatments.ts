@@ -140,7 +140,7 @@ export const treatments: Treatment[] = [
     name: 'Lynton Radio-Frequency',
     description: 'Non-Surgical Skin Tightening & Lifting',
     longDescription: 'Advanced RF technology heats the deeper layers of skin to stimulate collagen production and achieve a natural lifting effect.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Lynton_Radiofrequency_Hi_Tech.webp?updatedAt=1758025815760',
     benefits: [
       'Skin tightening and firming',
       'Wrinkle reduction',
@@ -373,7 +373,7 @@ export const treatments: Treatment[] = [
     name: 'ASCE+ Exosomes',
     description: 'Cutting-Edge Regenerative Treatment',
     longDescription: 'Revolutionary topical treatment containing billions of growth factors and proteins to accelerate skin healing and regeneration.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/exosomesHi_Tech.webp?updatedAt=1758016212590',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/exosomesHi_Tech.webp?updatedAt=1758025538820&tr=w-663%2Ch-502%2Cfo-custom%2Ccm-extract',
     benefits: [
       'Accelerated healing post-procedure',
       'Enhanced treatment results',
