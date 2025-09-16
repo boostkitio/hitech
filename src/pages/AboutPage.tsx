@@ -38,7 +38,7 @@ const AboutPage: React.FC = () => {
     },
     {
       id: 2,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_2_Hi_Tech.webp?updatedAt=1758019083935&tr=w-1000%2Ch-750%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_2_Hi_Tech.webp?updatedAt=1758019083935&tr=w-1000%2Ch-680%2Cfo-custom%2Ccm-extract',
       alt: 'Treatment room',
     },
     {
@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
     },
     {
       id: 4,
-      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269&tr=w-1000%2Ch-750%2Cfo-custom%2Ccm-extract',
+      image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269&tr=w-1000%2Ch-680%2Cfo-custom%2Ccm-extract',
       alt: 'Relaxation area',
     },
   ];
