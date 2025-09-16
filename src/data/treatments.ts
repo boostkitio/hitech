@@ -8,7 +8,7 @@ export const treatments: Treatment[] = [
     name: 'Soprano Ice Platinum Laser Hair Removal',
     description: 'The Gold Standard in Pain-Free Hair Removal',
     longDescription: 'Experience the revolutionary Soprano Ice Platinum technology - the most advanced laser hair removal system available. Our state-of-the-art device combines three laser wavelengths to target different tissue depths, ensuring effective treatment for all skin types.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/laserHi_Tech.webp?updatedAt=1758015799803',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/laserHi_Tech.webp?updatedAt=1758015799803&tr=w-662%2Ch-503%2Cfo-custom%2Ccm-extract',
     benefits: [
       'Virtually painless treatment',
       'Suitable for all skin types',
@@ -42,7 +42,7 @@ export const treatments: Treatment[] = [
     name: 'Apilus xCell Electrolysis',
     description: 'Permanent Hair Removal for All Hair Types',
     longDescription: 'The Apilus xCell represents the pinnacle of electrolysis technology. Perfect for treating white, blonde, red, or gray hairs that laser cannot target, as well as smaller, precise areas.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/electrolysisHi_Tech.webp?updatedAt=1758015869551',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/electrolysisHi_Tech.webp?updatedAt=1758015869551&tr=w-662%2Ch-503%2Cfo-custom%2Ccm-extract',
     benefits: [
       '100% permanent hair removal',
       'Treats all hair colors',
@@ -109,7 +109,7 @@ export const treatments: Treatment[] = [
     name: 'Lynton IPL Treatments',
     description: 'Advanced Photo-Rejuvenation Technology',
     longDescription: 'Our Lynton IPL system delivers precise light energy to target specific skin concerns without damaging surrounding tissue.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/lynton%20resurfacingHi_Tech.webp?updatedAt=1758016130538',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/iplHi_Tech.webp?updatedAt=1758016880043&tr=w-660%2Ch-502%2Cfo-custom%2Ccm-extract',
     treatmentOptions: [
       'Pigmentation Removal: Age spots, sun damage, freckles',
       'Vascular Treatments: Spider veins, rosacea, broken capillaries',
@@ -339,7 +339,7 @@ export const treatments: Treatment[] = [
     name: 'Mesotox',
     description: 'Micro-Botox for Skin Refinement',
     longDescription: 'An innovative technique using diluted Botox injected superficially to improve skin quality without freezing facial expressions.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/mesotoxHi_Tech.webp?updatedAt=1758016052188',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/mesotox2Hi_Tech.webp?updatedAt=1758016811961&tr=w-645%2Ch-502%2Cfo-custom%2Ccm-extract',
     benefits: [
       'Reduces pore size',
       'Improves skin texture',
@@ -492,7 +492,7 @@ export const treatments: Treatment[] = [
     name: 'ZO Medical Skincare',
     description: 'Prescription-Strength Home Care',
     longDescription: 'Dr. Zein Obagi\'s advanced skincare line, available exclusively through medical professionals.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/ZOSkincare_Hi_Tech.webp?updatedAt=1758017254420&tr=w-972%2Ch-774%2Cfo-custom%2Ccm-extract',
     productLines: [
       'Anti-aging protocols',
       'Acne management systems',
