@@ -205,7 +205,7 @@ const AboutPage: React.FC = () => {
               className="relative w-full max-w-xl mx-auto aspect-[3/4] rounded-lg overflow-hidden shadow-xl"
             >
               <LazyLoadImage
-                src="https://ik.imagekit.io/boostkit/HiTech/Eva_Main.jpg?updatedAt=1750439456434"
+                src="https://ik.imagekit.io/boostkit/HiTech/Eva_About.jpg?updatedAt=1759841745376"
                 alt="HiTech Aesthetics Clinic"
                 effect="blur"
                 className="w-full h-full object-cover"

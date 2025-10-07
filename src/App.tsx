@@ -23,6 +23,7 @@ const LoginPage = lazy(() => import('./pages/LoginPage'));
 const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage'));
 
 // Lazy load treatment pages
+const Hydrafacial = lazy(() => import('./pages/treatments/Hydrafacial'));
 const SopranoIcePlatinum = lazy(() => import('./pages/treatments/SopranoIcePlatinum'));
 const ApilusXCell = lazy(() => import('./pages/treatments/ApilusXCell'));
 const SkinPenMicroneedling = lazy(() => import('./pages/treatments/SkinPenMicroneedling'));
@@ -51,6 +52,7 @@ function App() {
             <Route path="about" element={<AboutPage />} />
             <Route path="treatments" element={<TreatmentsPage />} />
             <Route path="skin-membership" element={<SkinMembershipPage />} />
+            <Route path="treatments/hydrafacial" element={<Hydrafacial />} />
             <Route path="treatments/soprano-ice-platinum" element={<SopranoIcePlatinum />} />
             <Route path="treatments/apilus-xcell" element={<ApilusXCell />} />
             <Route path="treatments/skinpen-microneedling" element={<SkinPenMicroneedling />} />
