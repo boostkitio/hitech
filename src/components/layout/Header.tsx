@@ -79,9 +79,9 @@ const Header: React.FC = () => {
   };
   
   const priceListMenu = [
-    { id: 'soprano-ice-platinum', name: 'Soprano Ice Platinum' },
+    { id: 'soprano-ice-platinum', name: 'Laser Hair Removal' },
     { id: 'electrolysis', name: 'Apilus xCell Pro Electrolysis' },
-    { id: 'lynton-3juve', name: 'Lynton 3JUVE IPL & Laser' },
+    { id: 'lynton-3juve', name: 'Lynton IPL & Laser Resurfacing' },
     { id: 'skinpen', name: 'SkinPen Microneedling' },
     { id: 'dermalux', name: 'Dermalux LED Therapy' },
     { id: 'prp', name: 'PRP Restoration' },
