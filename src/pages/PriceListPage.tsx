@@ -476,13 +476,16 @@ const PriceListPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-primary-900 mb-4">Gift Cards</h2>
                 <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6">
                     <p className="text-neutral-600 mb-4">Available in the following denominations. Gift cards can be used for all treatments and do not expire.</p>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-4 mb-6">
                         {otherPrices.giftCards.map(card => (
                             <div key={card.name} className="bg-secondary-500 text-white font-bold text-lg rounded-md px-6 py-3 shadow">
                                 {card.name}
                             </div>
                         ))}
                     </div>
+                    <p className="text-neutral-600 text-sm">
+                        Contact the clinic to request a digital or physical copy on <a href="mailto:info@hitechaesthetics.com" className="text-primary-600 hover:text-primary-800 underline">info@hitechaesthetics.com</a>
+                    </p>
                 </div>
              </div>
            </section>
