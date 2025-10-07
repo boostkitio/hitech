@@ -18,6 +18,79 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatment }) => {
       <Helmet>
         <title>{treatment.name} | HiTech Aesthetics</title>
         <meta name="description" content={treatment.description} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": treatment.name,
+            "description": treatment.longDescription,
+            "procedureType": "Cosmetic",
+            "performedBy": {
+              "@type": "MedicalBusiness",
+              "name": "HiTech Aesthetics",
+              "url": "https://hitechaesthetics.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "9 Goods Station Road",
+                "addressLocality": "Tunbridge Wells",
+                "postalCode": "TN1 2DJ",
+                "addressCountry": "GB"
+              },
+              "telephone": "+441892338157"
+            },
+            ...(treatment.treatmentAreas && {
+              "bodyLocation": Array.isArray(treatment.treatmentAreas)
+                ? treatment.treatmentAreas.join(', ')
+                : treatment.treatmentAreas
+            }),
+            ...(treatment.duration && { "duration": treatment.duration }),
+            ...(treatment.recovery && { "followup": treatment.recovery }),
+            ...(treatment.price && { "estimatedCost": treatment.price }),
+            ...(treatment.benefits && { "indication": treatment.benefits.join(', ') })
+          })}
+        </script>
+        {treatment.faqs && treatment.faqs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": treatment.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            })}
+          </script>
+        )}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hitechaesthetics.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Treatments",
+                "item": "https://hitechaesthetics.com/treatments"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": treatment.name,
+                "item": `https://hitechaesthetics.com/treatments/${treatment.id}`
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">

@@ -37,6 +37,26 @@ const SkinMembershipPage: React.FC = () => {
           name="description"
           content="Join our exclusive Skin Membership programme at HiTech Aesthetics for consistent, professional skin treatments tailored to your needs."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hitechaesthetics.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Skin Membership",
+                "item": "https://hitechaesthetics.com/skin-membership"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Header Section */}

@@ -58,10 +58,30 @@ const AboutPage: React.FC = () => {
     <>
       <Helmet>
         <title>About Our Clinic & Expert Team | HiTech Aesthetics</title>
-        <meta 
-          name="description" 
+        <meta
+          name="description"
           content="Discover the philosophy behind HiTech Aesthetics. Meet our expert practitioners, learn about our advanced technology, and see our fully-accredited credentials."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hitechaesthetics.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://hitechaesthetics.com/about"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       {/* Header Section */}

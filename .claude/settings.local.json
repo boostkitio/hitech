@@ -14,5 +14,11 @@
       "Bash(sed:*)"
     ],
     "deny": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "sanity",
+    "chrome-devtools",
+    "context7",
+    "bright-data"
+  ]
 }
