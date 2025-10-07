@@ -185,7 +185,7 @@ const AboutPage: React.FC = () => {
               <h2 className="mb-6">Meet Natalia</h2>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Our permanent makeup specialist, Natalia, brings over 5 years of experience in creating natural, beautiful enhancements that frame and define your features.
+                  Our master make up artist, Natalia, brings over 8 years of experience in creating natural, beautiful enhancements that frame and define your features.
                 </p>
                 <p>
                   Specialising in microblading, powder brows, and lip blushing, Natalia combines artistic precision with advanced techniques to achieve results that look effortlessly natural.
