@@ -9,7 +9,7 @@ type AppUser = SupabaseUser
 interface AuthContextType {
   user: AppUser | null;
   session: Session | null;
-  login: (email?: string, password?: string) => Promise<{ error: Error | null }>; 
+  login: (email?: string, password?: string) => Promise<{ error: Error | null }>;
   logout: () => Promise<{ error: Error | null }>;
   isLoading: boolean;
 }
@@ -27,7 +27,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    
+
     // Check initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -77,10 +77,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-export const useAuth = () => {
+// Hook must be exported separately to avoid fast-refresh warning
+export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-};
+}

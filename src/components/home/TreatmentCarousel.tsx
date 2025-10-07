@@ -34,7 +34,7 @@ const TreatmentCarousel: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(getVisibleTreatmentsCount());
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  
+
   useEffect(() => {
     const handleResize = () => {
       setVisibleCount(getVisibleTreatmentsCount());
@@ -45,17 +45,17 @@ const TreatmentCarousel: React.FC = () => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       (prevIndex + 1) % (featuredTreatments.length - visibleCount + 1)
     );
   };
-  
+
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       (prevIndex - 1 + (featuredTreatments.length - visibleCount + 1)) % (featuredTreatments.length - visibleCount + 1)
     );
   };
-  
+
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(nextSlide, 3000);
@@ -65,7 +65,7 @@ const TreatmentCarousel: React.FC = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isPaused, currentIndex, visibleCount]);
+  }, [isPaused, currentIndex, visibleCount, nextSlide]);
 
   return (
     <div 

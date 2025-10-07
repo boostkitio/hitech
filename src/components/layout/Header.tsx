@@ -108,12 +108,12 @@ const Header: React.FC = () => {
       <div className="bg-primary-900 text-white py-2 hidden md:block">
         <div className="container-custom">
           <div className="flex justify-end items-center space-x-6 text-sm">
-            <a 
-              href="mailto:info@hitechaesthetics.co.uk" 
+            <a
+              href="mailto:info@hitechaesthetics.com"
               className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
             >
               <Mail size={14} />
-              <span>info@hitechaesthetics.co.uk</span>
+              <span>info@hitechaesthetics.com</span>
             </a>
             <a 
               href="tel:+441892338157" 

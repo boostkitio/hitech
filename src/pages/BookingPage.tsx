@@ -31,8 +31,7 @@ const BookingPage: React.FC = () => {
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Opening Hours</h3>
             <p className="text-neutral-600">
-              Monday - Friday: 9:00 AM - 6:00 PM<br />
-              Saturday: 9:00 AM - 4:00 PM<br />
+              Monday - Saturday: 9:00am - 5:30pm<br />
               Sunday: Closed
             </p>
           </div>
@@ -56,7 +55,7 @@ const BookingPage: React.FC = () => {
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Contact</h3>
             <p className="text-neutral-600">
               Phone: 01892 338157<br />
-              Email: info@hitechaesthetics.co.uk
+              Email: info@hitechaesthetics.com
             </p>
           </div>
         </div>

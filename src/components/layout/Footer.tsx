@@ -89,12 +89,12 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 text-secondary-400 flex-shrink-0" />
-                <a href="mailto:info@hitechaesthetics.co.uk" className="text-neutral-300 hover:text-secondary-400 transition-colors">info@hitechaesthetics.co.uk</a>
+                <a href="mailto:info@hitechaesthetics.com" className="text-neutral-300 hover:text-secondary-400 transition-colors">info@hitechaesthetics.com</a>
               </li>
               <li className="flex items-start">
                 <Clock size={20} className="mr-2 text-secondary-400 flex-shrink-0 mt-1" />
                 <div className="text-neutral-300">
-                  <p className="mb-1">Monday - Saturday: 9:30am - 5:30pm</p>
+                  <p className="mb-1">Monday - Saturday: 9:00am - 5:30pm</p>
                   <p>Sunday: Closed</p>
                 </div>
               </li>
