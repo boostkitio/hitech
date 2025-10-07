@@ -23,11 +23,6 @@ const faqs = [
     id: 4,
     question: 'Are consultations complimentary?',
     answer: 'Yes, we offer complimentary initial consultations. This allows us to assess your needs, discuss your aesthetic goals, and recommend the most suitable treatments for you. The consultation also provides an opportunity for you to ask questions and learn more about the procedures you\'re interested in.'
-  },
-  {
-    id: 5,
-    question: 'What qualifications do your practitioners have?',
-    answer: 'All our practitioners are fully qualified medical professionals with extensive training and experience in aesthetic medicine. Our team includes doctors, nurses, and aestheticians who regularly update their skills through continuous professional development. We maintain strict standards and follow best practices to ensure safe and effective treatments.'
   }
 ];
 
