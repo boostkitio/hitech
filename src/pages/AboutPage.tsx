@@ -96,46 +96,85 @@ const AboutPage: React.FC = () => {
               animate={missionInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="mb-6">Our Philosophy</h2>
+              <h2 className="mb-6">Welcome to HiTech Aesthetics</h2>
               <div className="prose prose-lg max-w-none">
-                <p>
-                  We specialise in unisex treatments including Soprano laser hair removal, SkinPen micro-needling, ZO chemical peels, lip augmentation, dermal fillers, anti-wrinkle injections, skin boosters, therapeutic massages, and advanced medical skincare.
+                <p className="text-lg font-medium text-primary-800">
+                  Where advanced technology meets timeless beauty.
                 </p>
                 <p>
-                  Our fully qualified therapists stay ahead with continuous training, ensuring you receive personalised care in a friendly, safe, and professional setting. And yes, we proudly offer tailored treatments for men!
+                  Founded four years ago, HiTech Aesthetics was born from a vision to redefine aesthetic excellence, delivering transformative treatments with precision, artistry, and care.
                 </p>
                 <p>
-                  Experience the speed, safety, and lasting results of our market-leading Soprano laser technology. Discover a new level of confidence today.
+                  Every detail of our clinic has been designed to provide a discreet, luxurious experience led by professionals who are passionate about innovation and results.
                 </p>
-                <p className="font-medium">
-                  Tailored treatments to your individual needs
-                </p>
-              </div>
-              
-              <div className="mt-8">
-                <h3 className="text-xl mb-4">Expert care led by advanced technology</h3>
-                <p className="text-neutral-600">
-                  A warm and inviting experience
+                <p>
+                  Our founder, Eva, is a mother and entrepreneur who set out to create a private sanctuary where clients could feel completely at ease—a place where science and sophistication work in harmony to reveal each individual's most confident, radiant self.
                 </p>
               </div>
 
-              {/* Logo Placeholders */}
               <div className="mt-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {[1, 2, 3, 4].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-center p-6 bg-neutral-50 rounded-lg aspect-square"
-                    >
-                      <div className="text-center">
-                        <div className="w-16 h-16 mx-auto mb-2 bg-neutral-200 rounded-lg flex items-center justify-center">
-                          <Award className="text-neutral-400" size={32} />
-                        </div>
-                        <p className="text-xs text-neutral-500">Logo {item}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-2xl font-semibold mb-4">Our Expertise</h3>
+                <p className="text-neutral-700 mb-4">
+                  At HiTech Aesthetics, we specialise in advanced, results-driven treatments using world-renowned technologies for unparalleled performance and safety.
+                </p>
+                <p className="text-neutral-700 mb-4 font-medium">Our services include:</p>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-neutral-700">
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Soprano laser hair removal</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Apilus xCell electrolysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>HydraFacial</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Lynton IPL & laser skin resurfacing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>SkinPen microneedling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Obagi & ZO Skin Health</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Medical-grade chemical peels</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Anti-wrinkle injections & biostimulators</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Exosome & stem cell therapy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="text-primary-600 mr-2 mt-1 flex-shrink-0" size={18} />
+                    <span>Skin boosters</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8 prose prose-lg max-w-none">
+                <p>
+                  Each treatment is tailored to your unique skin needs, ensuring a truly bespoke approach to beauty and wellbeing.
+                </p>
+                <p>
+                  Our highly qualified clinicians undergo continuous training, upholding the highest standards of care and safety in a refined, serene environment.
+                </p>
+                <p>
+                  We proudly offer our full range of treatments to both women and men seeking exceptional, natural-looking results.
+                </p>
+                <p className="font-medium text-primary-800">
+                  Experience the precision, comfort, and enduring results of our market-leading Soprano laser technology, and discover a new era of confidence and rejuvenation with HiTech Aesthetics—where luxury meets innovation.
+                </p>
               </div>
             </motion.div>
             
