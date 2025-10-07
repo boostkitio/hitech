@@ -75,9 +75,9 @@ const PriceListPage: React.FC = () => {
   };
   
   const electrolysisData = [
-    { duration: '10 minutes', price: '£30' },
-    { duration: '20 minutes', price: '£60' },
-    { duration: '30 minutes', price: '£80' },
+    { duration: '10 minutes', price: '£35' },
+    { duration: '20 minutes', price: '£55' },
+    { duration: '30 minutes', price: '£75' },
   ];
 
   const lyntonData = {
