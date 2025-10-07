@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Badge, Award, Heart, Sparkles, Shield, Brush } from 'lucide-react';
+import { Award, Heart, Brush } from 'lucide-react';
 import LogoCarousel from '../components/home/LogoCarousel';
 
 const AboutPage: React.FC = () => {
@@ -51,15 +51,6 @@ const AboutPage: React.FC = () => {
       image: 'https://ik.imagekit.io/boostkit/HiTech/Clinic_4_Hi_Tech.webp?updatedAt=1758019083269&tr=w-800%2Ch-600%2Cfo-custom%2Ccm-extract',
       alt: 'Relaxation area',
     },
-  ];
-  
-  const credentials = [
-    { id: 1, name: 'Save Face Accredited', description: 'Government-approved treatment provider register', icon: <Badge className="text-primary-600" size={24} /> },
-    { id: 2, name: 'British College of Aesthetic Medicine', description: 'Professional medical aesthetics training', icon: <Award className="text-primary-600" size={24} /> },
-    { id: 3, name: 'Allergan Medical Institute', description: 'Advanced injectable treatment certification', icon: <Heart className="text-primary-600" size={24} /> },
-    { id: 4, name: 'CQC Compliant', description: 'Meeting healthcare quality standards', icon: <Shield className="text-primary-600" size={24} /> },
-    { id: 5, name: 'Lynton Certified', description: 'Authorized laser equipment training', icon: <Sparkles className="text-primary-600" size={24} /> },
-    { id: 6, name: 'Insurance & Indemnity', description: 'Full professional coverage for all treatments', icon: <Award className="text-primary-600" size={24} /> }
   ];
   
 
@@ -127,19 +118,20 @@ const AboutPage: React.FC = () => {
                   A warm and inviting experience
                 </p>
               </div>
-              
-              {/* Credentials */}
+
+              {/* Logo Placeholders */}
               <div className="mt-8">
-                <h3 className="text-xl mb-4">Our Credentials & Certifications</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {credentials.map(credential => (
-                    <div key={credential.id} className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <div className="mr-3 mt-1">
-                        {credential.icon}
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-primary-800 mb-1">{credential.name}</h4>
-                        <p className="text-sm text-neutral-600">{credential.description}</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {[1, 2, 3, 4].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center justify-center p-6 bg-neutral-50 rounded-lg aspect-square"
+                    >
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-2 bg-neutral-200 rounded-lg flex items-center justify-center">
+                          <Award className="text-neutral-400" size={32} />
+                        </div>
+                        <p className="text-xs text-neutral-500">Logo {item}</p>
                       </div>
                     </div>
                   ))}
