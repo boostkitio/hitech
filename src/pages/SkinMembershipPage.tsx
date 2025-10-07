@@ -5,21 +5,26 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star } from 'lucide-react';
+import { Check, Mail } from 'lucide-react';
 
 const SkinMembershipPage: React.FC = () => {
-  
+
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  
+
   const [membershipRef, membershipInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  
-  const [tiersRef, tiersInView] = useInView({
+
+  const [stepsRef, stepsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [benefitsRef, benefitsInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -28,14 +33,14 @@ const SkinMembershipPage: React.FC = () => {
     <>
       <Helmet>
         <title>Skin Membership | HiTech Aesthetics</title>
-        <meta 
-          name="description" 
-          content="Join our exclusive Skin Membership program at HiTech Aesthetics for year-round skin perfection. Discover our membership tiers and benefits."
+        <meta
+          name="description"
+          content="Join our exclusive Skin Membership programme at HiTech Aesthetics for consistent, professional skin treatments tailored to your needs."
         />
       </Helmet>
-      
+
       {/* Header Section */}
-      <section 
+      <section
         ref={headerRef}
         className="pt-32 pb-20 bg-primary-600 text-white"
       >
@@ -46,16 +51,19 @@ const SkinMembershipPage: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-white mb-6">Skin Membership</h1>
+            <h1 className="text-white mb-6">HiTech Aesthetics Skin Membership</h1>
             <p className="text-xl text-neutral-100">
-              Unlock exclusive access to premium skincare treatments and enjoy radiant, healthy skin all year round with our tailored membership program.
+              Problematic skin? Breakouts? Pigmentation? Acne scarring? Dehydration? Dull skin?
+            </p>
+            <p className="text-xl text-neutral-100 mt-4">
+              Or maybe you have good skin and want it to stay that way! This is where our skin membership comes in.
             </p>
           </motion.div>
         </div>
       </section>
-      
+
       {/* Membership Details Section */}
-      <section 
+      <section
         ref={membershipRef}
         className="py-20 bg-white"
       >
@@ -66,28 +74,38 @@ const SkinMembershipPage: React.FC = () => {
               animate={membershipInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="mb-6">Your Path to Flawless Skin</h2>
+              <h2 className="mb-6">Why Skin Membership?</h2>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Our Skin Membership is designed for those who are committed to achieving and maintaining their best-ever skin. We believe that consistency is key to long-lasting results, which is why we've created a program that makes exceptional skincare accessible and rewarding.
+                  We know skin changes take time and commitment. We also know how busy life gets and how hard it is to find time for facials and other skin treatments.
                 </p>
                 <p>
-                  As a member, you'll receive a personalised treatment plan, regular advanced treatments, and exclusive discounts on our full range of products and services. Let us be your partner in your journey to radiant confidence.
+                  Skin needs also change every season and it is difficult for people to know what to book. So many of us want to commit to getting regular treatments, and with this in mind, we created a skin membership.
+                </p>
+                <p className="font-medium text-primary-800">
+                  Think of it like a gym membership or personal training; consistency and professional input will get you the best results.
                 </p>
               </div>
-              
-              <div className="mt-8">
-                <h3 className="text-xl mb-4">Membership Perks</h3>
-                <ul className="list-disc list-inside text-neutral-600 space-y-2">
-                    <li>Regular advanced facial treatments</li>
-                    <li>Exclusive discounts on all treatments and products</li>
-                    <li>Priority booking and flexible scheduling</li>
-                    <li>Personalised skincare plan and progress tracking</li>
-                    <li>Invitations to member-only events</li>
-                </ul>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://www.vagaro.com/hitechaesthetics/book-now"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary inline-flex items-center justify-center"
+                >
+                  Book Online
+                </a>
+                <a
+                  href="mailto:info@hitechaesthetics.com"
+                  className="btn btn-secondary inline-flex items-center justify-center"
+                >
+                  <Mail size={18} className="mr-2" />
+                  Email Us
+                </a>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={membershipInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -105,81 +123,217 @@ const SkinMembershipPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Membership Tiers Section */}
-      <section 
-        ref={tiersRef}
+      {/* How It Works Section */}
+      <section
+        ref={stepsRef}
         className="py-20 bg-neutral-50"
       >
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={tiersInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="mb-4">Choose Your Membership</h2>
-            <p className="text-neutral-600 max-w-3xl mx-auto">
-              We offer several tiers to suit your individual skincare needs and goals.
+            <h2 className="mb-4">How It Works</h2>
+            <p className="text-neutral-600 max-w-3xl mx-auto text-lg">
+              Come in once a month for a year and get whichever skin treatment is right for you, depending on how your skin behaves.
             </p>
+            <p className="text-neutral-600 max-w-3xl mx-auto mt-4">
+              Please book online a free consultation or email us if you'd like to sign up.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.vagaro.com/hitechaesthetics/book-now"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary inline-flex items-center justify-center"
+              >
+                Book Online
+              </a>
+              <a
+                href="mailto:info@hitechaesthetics.com"
+                className="btn btn-secondary inline-flex items-center justify-center"
+              >
+                <Mail size={18} className="mr-2" />
+                Email Us
+              </a>
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tier 1 */}
-            <div className="border rounded-lg p-8 text-center bg-white shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">Glow</h3>
-                <p className="text-4xl font-bold text-primary-600 mb-4">£99<span className="text-lg font-normal">/month</span></p>
-                <ul className="text-left space-y-3 my-6 text-neutral-600">
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> One signature treatment per month</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 10% off other treatments</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 5% off retail products</li>
-                </ul>
-                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white rounded-lg shadow-lg p-6"
+            >
+              <div className="bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                01
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Skin Assessment</h3>
+              <p className="text-neutral-600">
+                We assess your skin by performing an in-depth skin analysis and set a realistic treatment plan in place.
+              </p>
+            </motion.div>
 
-            {/* Tier 2 (Most Popular) */}
-            <div className="border-2 border-primary-600 rounded-lg p-8 text-center bg-white shadow-2xl relative">
-                <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-bold">Most Popular</div>
-                <h3 className="text-2xl font-bold mb-4">Radiance</h3>
-                <p className="text-4xl font-bold text-primary-600 mb-4">£149<span className="text-lg font-normal">/month</span></p>
-                <ul className="text-left space-y-3 my-6 text-neutral-600">
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> One advanced treatment per month</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 15% off other treatments</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 10% off retail products</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> Priority booking</li>
-                </ul>
-                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
-            </div>
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-lg shadow-lg p-6"
+            >
+              <div className="bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                02
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Payment Plan</h3>
+              <p className="text-neutral-600">
+                You pay £500 upfront at the end of the consultation if this is suitable for you and then £189.99 per month for the rest of the year.
+              </p>
+            </motion.div>
 
-            {/* Tier 3 */}
-            <div className="border rounded-lg p-8 text-center bg-white shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">Ultimate</h3>
-                <p className="text-4xl font-bold text-primary-600 mb-4">£249<span className="text-lg font-normal">/month</span></p>
-                <ul className="text-left space-y-3 my-6 text-neutral-600">
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> Two signature/advanced treatments per month</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 20% off other treatments</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> 15% off retail products</li>
-                    <li className="flex items-center"><Star size={16} className="text-yellow-500 mr-2"/> Exclusive event access</li>
-                </ul>
-                <Link to="/contact" className="btn btn-primary w-full font-bold shadow-lg">Select Plan</Link>
-            </div>
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white rounded-lg shadow-lg p-6"
+            >
+              <div className="bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                03
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Monthly Treatments</h3>
+              <p className="text-neutral-600">
+                Visit us monthly for a customised skin treatment tailored to your needs. Our therapist can recommend the most suitable treatment for you. We love combining treatments for the best results.
+              </p>
+            </motion.div>
+
+            {/* Step 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={stepsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white rounded-lg shadow-lg p-6"
+            >
+              <div className="bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">
+                04
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Cost-Effective Care</h3>
+              <p className="text-neutral-600">
+                This works out more cost-effectively, and you don't have to think about what to do. We have an hour to do whichever treatment is right for you.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
-      
+
+      {/* Treatments & Benefits Section */}
+      <section
+        ref={benefitsRef}
+        className="py-20 bg-white"
+      >
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Available Treatments */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={benefitsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+              className="bg-neutral-50 rounded-lg p-8"
+            >
+              <h2 className="text-2xl font-bold mb-6">Available Treatments</h2>
+              <ul className="space-y-3 text-neutral-700">
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Hydrafacial</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Chemical Peels</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>IPL</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Radio Frequency skin tightening</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Microneedling</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>LED Light Therapy</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Skin Booster</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-primary-600 mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span>Exosomes</span>
+                </li>
+              </ul>
+              <p className="text-sm text-neutral-500 mt-6 italic">
+                Please note: This does not include any hair removal treatments for face or body.
+              </p>
+            </motion.div>
+
+            {/* Member Benefits */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={benefitsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-primary-600 text-white rounded-lg p-8"
+            >
+              <h2 className="text-2xl font-bold mb-6">Member Benefits</h2>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <Check className="text-white mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">15% off Obagi and ZO Obagi medical-grade skincare products</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-white mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">10% off any laser hair removal packages</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <section className="bg-primary-600 text-white py-20">
         <div className="container-custom text-center">
           <h2 className="text-white mb-4">Ready to Transform Your Skin?</h2>
           <p className="text-neutral-200 mb-8 max-w-2xl mx-auto">
-            Contact us today to learn more about our Skin Membership and start your journey towards a more radiant you.
+            Contact us today to learn more about our Skin Membership and start your journey towards healthier, more radiant skin.
           </p>
-          <Link to="/contact" className="btn btn-primary font-bold shadow-lg">
-            Join Now
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://www.vagaro.com/hitechaesthetics/book-now"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary inline-flex items-center justify-center font-bold"
+            >
+              Book Free Consultation
+            </a>
+            <a
+              href="mailto:info@hitechaesthetics.com"
+              className="btn btn-primary inline-flex items-center justify-center font-bold"
+            >
+              <Mail size={18} className="mr-2" />
+              Email Us
+            </a>
+          </div>
         </div>
       </section>
     </>
   );
 };
 
-export default SkinMembershipPage; 
+export default SkinMembershipPage;
