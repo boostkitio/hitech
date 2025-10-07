@@ -68,10 +68,9 @@ const PriceListPage: React.FC = () => {
         { area: 'Abdomen', single: '£105', '3': '£300', '6': '£330', '8': '£450' },
     ],
     packages: [
-        { name: 'Full legs', price: '£899' },
-        { name: 'Full face including neck', price: '£1,299' },
-        { name: 'Full back', price: '£899' },
-        { name: 'Bikini extend and underarms', price: '£555' },
+        { name: 'Body Package (Underarms, Bikini, Lower legs, Knees)', price: '£899' },
+        { name: 'Face Package (Upper lip, Chin, Cheeks, Sideburns, Jawline)', price: '£999' },
+        { name: 'Male Body Package (Full back, shoulders & chest) - Limited Offer!', price: '£1,399' },
     ]
   };
   
