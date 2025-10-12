@@ -130,13 +130,13 @@ const SkinMembershipPage: React.FC = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={membershipInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative rounded-lg overflow-hidden shadow-xl"
             >
               <LazyLoadImage
                 src="https://ik.imagekit.io/boostkit/HiTech/consultationHi_Tech.webp?updatedAt=1758015091660"
                 alt="Skin Membership at HiTech Aesthetics"
                 effect="blur"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain rounded-lg"
               />
             </motion.div>
           </div>

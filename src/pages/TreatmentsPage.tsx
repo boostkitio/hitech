@@ -45,7 +45,7 @@ const TreatmentsPage: React.FC = () => {
     skinRejuvenation: {
       title: "Skin Rejuvenation",
       description: "A comprehensive range of treatments to improve skin texture, tone, and overall appearance.",
-      treatments: treatments.filter(t => ['lynton-ipl', 'lynton-laser', 'lynton-rf', 'skinpen-microneedling', 'chemical-peels', 'relaxing-facials', 'zo-skincare', 'asce-exosomes'].includes(t.id))
+      treatments: treatments.filter(t => ['hydrafacial', 'skinpen-microneedling', 'lynton-ipl', 'lynton-laser', 'lynton-rf', 'chemical-peels', 'relaxing-facials', 'zo-skincare', 'asce-exosomes'].includes(t.id))
     },
     advancedTherapies: {
       title: "Advanced Therapies",
