@@ -42,7 +42,7 @@ const BookingPage: React.FC = () => {
             </div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-2">Location</h3>
             <p className="text-neutral-600">
-              Hi Tech Aesthetics<br />
+              HiTech Aesthetics<br />
               Tunbridge Wells<br />
               Kent, United Kingdom
             </p>
