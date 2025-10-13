@@ -32,7 +32,7 @@ const TreatmentsPage: React.FC = () => {
   }, [location]);
 
   const treatmentCategories = {
-    hairRemoval: {
+    hairremoval: {
       title: "Hair Removal Treatments",
       description: "Advanced solutions for permanent hair reduction, suitable for all skin types.",
       treatments: treatments.filter(t => ['soprano-ice-platinum', 'apilus-xcell'].includes(t.id))
@@ -42,12 +42,12 @@ const TreatmentsPage: React.FC = () => {
       description: "Restore volume, smooth lines, and enhance your features with our range of injectable treatments.",
       treatments: treatments.filter(t => ['botox', 'skin-boosters', 'polynucleotides', 'prp-hair', 'mesotox'].includes(t.id))
     },
-    skinRejuvenation: {
+    skinrejuvenation: {
       title: "Skin Rejuvenation",
       description: "A comprehensive range of treatments to improve skin texture, tone, and overall appearance.",
       treatments: treatments.filter(t => ['hydrafacial', 'skinpen-microneedling', 'lynton-ipl', 'lynton-laser', 'lynton-rf', 'chemical-peels', 'relaxing-facials', 'zo-skincare', 'asce-exosomes'].includes(t.id))
     },
-    advancedTherapies: {
+    advancedtherapies: {
       title: "Advanced Therapies",
       description: "Specialized treatments using cutting-edge technology for targeted results.",
       treatments: treatments.filter(t => ['dermalux-led', 'permanent-makeup'].includes(t.id))

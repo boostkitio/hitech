@@ -231,24 +231,37 @@ const Hydrafacial: React.FC = () => {
         {/* Hero Section */}
         <section className="relative bg-gradient-to-b from-primary-50 to-white">
           <div className="container mx-auto px-4 py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-                HydraFacial Treatment
-              </h1>
-              <p className="text-xl text-neutral-600 mb-4">
-                Experience instant radiance with the revolutionary HydraFacial treatment
-              </p>
-              <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-                Transform your skin in just 30 minutes with our advanced Syndeo HydraFacial technology.
-                This non-invasive, pain-free treatment uses patented Vortex-Fusion Technology to cleanse,
-                extract, and hydrate your skin, delivering immediate, visible results with no downtime.
-              </p>
-            </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
+                  HydraFacial Treatment
+                </h1>
+                <p className="text-xl text-neutral-600 mb-4">
+                  Experience instant radiance with the revolutionary HydraFacial treatment
+                </p>
+                <p className="text-lg text-neutral-700">
+                  Transform your skin in just 30 minutes with our advanced Syndeo HydraFacial technology.
+                  This non-invasive, pain-free treatment uses patented Vortex-Fusion Technology to cleanse,
+                  extract, and hydrate your skin, delivering immediate, visible results with no downtime.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <img
+                  src="https://ik.imagekit.io/boostkit/HiTech/hydrafacialHi_Tech.webp?updatedAt=1758016094803&tr=w-600"
+                  alt="HydraFacial Treatment"
+                  className="rounded-2xl shadow-2xl w-full"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -327,6 +340,19 @@ const Hydrafacial: React.FC = () => {
         <section className="py-16 bg-neutral-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex justify-center mb-8"
+              >
+                <img
+                  src="https://ik.imagekit.io/boostkit/HiTech/Verified-Provider-Sticker_6-inches_2025x800.webp?updatedAt=1760368488429"
+                  alt="HydraFacial Verified Provider"
+                  className="h-32 w-auto"
+                />
+              </motion.div>
               <h2 className="text-3xl font-bold text-neutral-900 mb-4">
                 How HydraFacial Works
               </h2>
