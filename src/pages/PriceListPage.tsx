@@ -68,9 +68,24 @@ const PriceListPage: React.FC = () => {
         { area: 'Abdomen', single: '£105', '3': '£300', '6': '£330', '8': '£450' },
     ],
     packages: [
-        { name: 'Body Package (Underarms, Bikini, Lower legs, Knees)', price: '£899' },
-        { name: 'Face Package (Upper lip, Chin, Cheeks, Sideburns, Jawline)', price: '£999' },
-        { name: 'Male Body Package (Full back, shoulders & chest) - Limited Offer!', price: '£1,399' },
+        {
+          name: 'Body Package',
+          price: '£999',
+          sessions: '6 sessions',
+          areas: ['Underarms', 'Bikini', 'Lower legs', 'Knees', 'Toes & Feet']
+        },
+        {
+          name: 'Face Package',
+          price: '£999',
+          sessions: '6 sessions',
+          areas: ['Upper lip', 'Chin', 'Cheeks', 'Sideburns', 'Jawline']
+        },
+        {
+          name: 'Male Body Package',
+          price: '£999',
+          sessions: '6 sessions',
+          areas: ['Full back & shoulders']
+        },
     ]
   };
   
@@ -314,12 +329,21 @@ const PriceListPage: React.FC = () => {
                 <PriceTable title="Medium Areas" headers={['Area', 'Single', '3 Sessions', '6 Sessions', '8 Sessions']} data={laserHairRemovalData.medium} />
                 <PriceTable title="Large Areas" headers={['Area', 'Single', '3 Sessions', '6 Sessions', '8 Sessions']} data={laserHairRemovalData.large} />
                 <div className="mb-12">
-                  <h3 className="text-2xl font-semibold text-primary-800 mb-4">Popular Laser Packages (6 Sessions)</h3>
-                  <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <h3 className="text-2xl font-semibold text-primary-800 mb-6">Popular Laser Packages</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {laserHairRemovalData.packages.map((pkg, i) => (
-                      <div key={i} className="flex justify-between items-center border-b border-neutral-100 pb-4 last:border-b-0 md:border-b-0">
-                        <p className="text-neutral-800">{pkg.name}</p>
-                        <p className="font-semibold text-primary-800">{pkg.price}</p>
+                      <div key={i} className="bg-white border-2 border-primary-200 rounded-lg shadow-lg p-6">
+                        <h4 className="text-xl font-bold text-primary-900 mb-2">{pkg.name}</h4>
+                        <p className="text-2xl font-bold text-primary-600 mb-2">{pkg.price}</p>
+                        <p className="text-sm text-neutral-600 mb-4">({pkg.sessions})</p>
+                        <ul className="space-y-2">
+                          {pkg.areas.map((area, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <Check className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-neutral-700">{area}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     ))}
                   </div>
