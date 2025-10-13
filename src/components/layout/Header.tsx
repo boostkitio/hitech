@@ -79,9 +79,10 @@ const Header: React.FC = () => {
   };
   
   const priceListMenu = [
-    { id: 'soprano-ice-platinum', name: 'Laser Hair Removal' },
+    { id: 'soprano-ice-platinum', name: 'Soprano Laser Hair Removal' },
     { id: 'electrolysis', name: 'Apilus xCell Pro Electrolysis' },
     { id: 'lynton-3juve', name: 'Lynton IPL & Laser Resurfacing' },
+    { id: 'hydrafacial', name: 'Syndeo HydraFacial' },
     { id: 'skinpen', name: 'SkinPen Microneedling' },
     { id: 'dermalux', name: 'Dermalux LED Therapy' },
     { id: 'prp', name: 'PRP Restoration' },
@@ -220,8 +221,8 @@ const Header: React.FC = () => {
                 )}
               </div>
               <NavLink to="/skin-membership" className={navLinkClasses}>Skin Membership</NavLink>
-              <NavLink to="/booking" className={navLinkClasses}>Book Now</NavLink>
               <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
+              <Link to="/booking" className="btn btn-primary btn-sm">Book Now</Link>
             </nav>
             
             {/* Mobile menu button */}
@@ -325,17 +326,17 @@ const Header: React.FC = () => {
                 Skin Membership
               </NavLink>
               <NavLink
-                to="/booking"
-                className={mobileNavLinkClasses}
-              >
-                Book Now
-              </NavLink>
-              <NavLink
                 to="/contact"
                 className={mobileNavLinkClasses}
               >
                 Contact
               </NavLink>
+              <Link
+                to="/booking"
+                className="btn btn-primary mt-4"
+              >
+                Book Now
+              </Link>
               <div className="pt-8 flex flex-col items-center space-y-4">
                 <a 
                   href="tel:+441892338157" 

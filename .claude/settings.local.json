@@ -11,7 +11,13 @@
       "Bash(npm run dev:*)",
       "Bash(npx tsc:*)",
       "Bash(rg:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(timeout:*)",
+      "Read(//tmp/chrome-devtools-mcp-WlHjna/**)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Laser Hair Removal packages and update HydraFacial pricing\n\n- Created new Laser Hair Removal Packages page with three £999 packages:\n  * Body Package (underarms, bikini, lower legs, knees, toes & feet)\n  * Face Package (upper lip, chin, cheeks, sideburns, jawline)\n  * Male Body Package (full back & shoulders)\n  \n- Completely rewrote HydraFacial page with new pricing:\n  * Syndeo Signature: £99 (was £120) - 30 min\n  * Deluxe: £159 (was £170) - 45 min with LED therapy\n  * Platinum: £179 (was £190) - 60 min with lymphatic drainage\n  \n- Enhanced HydraFacial page with:\n  * Visual pricing cards with original price comparison\n  * 3-step process explanation with icons\n  * Expanded FAQ section (9 questions)\n  * Benefits grid and skin concerns list\n  \n- Fixed Skin Membership page image container display\n- Updated routing in App.tsx for new laser packages page\n- Moved HydraFacial to Skin Rejuvenation category\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git log:*)"
     ],
     "deny": []
   },

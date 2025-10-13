@@ -138,7 +138,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'How long do results last?',
-    answer: 'Results duration varies by treatment: Botox lasts 3-4 months, dermal fillers 6-18 months, and permanent treatments like laser hair removal provide long-lasting results with maintenance.',
+    answer: 'Results duration varies by treatment: Botox lasts 3-4 months, dermal fillers 6-18 months, and permanent treatments like Soprano laser hair removal provide long-lasting results with maintenance.',
     category: 'Treatments'
   },
   {

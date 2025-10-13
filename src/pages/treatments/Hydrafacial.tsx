@@ -19,8 +19,8 @@ const treatmentLevels: TreatmentLevel[] = [
   {
     id: 'signature',
     name: 'Syndeo HydraFacial Signature',
-    price: '£99',
-    originalPrice: '£120',
+    price: '£109',
+    originalPrice: '',
     duration: '30 minutes',
     description: 'Essential cleansing and hydration for instant radiance.',
     includes: [
@@ -34,8 +34,8 @@ const treatmentLevels: TreatmentLevel[] = [
   {
     id: 'deluxe',
     name: 'HydraFacial Deluxe',
-    price: '£159',
-    originalPrice: '£170',
+    price: '£169',
+    originalPrice: '',
     duration: '45 minutes',
     description: 'Enhanced treatment with personalised skin boosters and LED therapy.',
     includes: [
@@ -50,8 +50,8 @@ const treatmentLevels: TreatmentLevel[] = [
   {
     id: 'platinum',
     name: 'HydraFacial Platinum',
-    price: '£179',
-    originalPrice: '£190',
+    price: '£189',
+    originalPrice: '',
     duration: '60 minutes',
     description: 'The ultimate HydraFacial experience with lymphatic drainage and premium serums.',
     includes: [
@@ -143,7 +143,7 @@ const Hydrafacial: React.FC = () => {
         <title>HydraFacial Treatment in Tunbridge Wells | HiTech Aesthetics</title>
         <meta
           name="description"
-          content="Experience the revolutionary HydraFacial treatment at HiTech Aesthetics. Instant results with no downtime. Signature, Deluxe & Platinum options. Special offers from £99. Book now!"
+          content="Experience the revolutionary HydraFacial treatment at HiTech Aesthetics. Instant results with no downtime. Signature, Deluxe & Platinum options from £109. Book now!"
         />
         <meta
           name="keywords"
@@ -171,8 +171,8 @@ const Hydrafacial: React.FC = () => {
             },
             "offers": {
               "@type": "AggregateOffer",
-              "lowPrice": "99",
-              "highPrice": "179",
+              "lowPrice": "109",
+              "highPrice": "189",
               "priceCurrency": "GBP"
             }
           })}
@@ -237,10 +237,6 @@ const Hydrafacial: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="inline-flex items-center gap-2 bg-secondary-100 text-secondary-800 px-4 py-2 rounded-full mb-6">
-                <Sparkles className="w-4 h-4" />
-                <span className="font-semibold text-sm">LIMITED TIME OFFER</span>
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
                 HydraFacial Treatment
               </h1>
@@ -291,9 +287,11 @@ const Hydrafacial: React.FC = () => {
                       <span className="text-4xl font-bold text-primary-600">
                         {level.price}
                       </span>
-                      <span className="text-xl text-neutral-400 line-through">
-                        {level.originalPrice}
-                      </span>
+                      {level.originalPrice && (
+                        <span className="text-xl text-neutral-400 line-through">
+                          {level.originalPrice}
+                        </span>
+                      )}
                     </div>
                     <div className="flex items-center justify-center gap-2 text-neutral-600 mb-4">
                       <Clock className="w-4 h-4" />
@@ -504,7 +502,6 @@ const Hydrafacial: React.FC = () => {
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
               Book your HydraFacial treatment today and discover why it's the world's most popular facial treatment.
-              Limited time offers available!
             </p>
             <Link to="/contact" className="btn btn-secondary">
               Book Your Treatment

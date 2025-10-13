@@ -318,7 +318,7 @@ const SkinMembershipPage: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <Check className="text-white mr-3 mt-1 flex-shrink-0" size={20} />
-                  <span className="text-lg">10% off any laser hair removal packages</span>
+                  <span className="text-lg">10% off any Soprano laser hair removal packages</span>
                 </li>
               </ul>
             </motion.div>

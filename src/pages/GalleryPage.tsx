@@ -21,7 +21,7 @@ const galleryImages: GalleryImage[] = [
     treatment: 'Soprano Ice Platinum',
     before: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
     after: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
-    description: 'Full leg laser hair removal after 6 sessions'
+    description: 'Full leg Soprano laser hair removal after 6 sessions'
   },
   {
     id: '2',

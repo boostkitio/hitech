@@ -5,10 +5,10 @@ export const treatments: Treatment[] = [
   // Hair Removal Treatments
   {
     id: 'soprano-ice-platinum',
-    name: 'Soprano Ice Platinum Laser Hair Removal',
+    name: 'Soprano Laser Hair Removal',
     description: 'The Gold Standard in Pain-Free Hair Removal',
     longDescription: 'Experience the revolutionary Soprano Ice Platinum technology - the most advanced laser hair removal system available. Our state-of-the-art device combines three laser wavelengths to target different tissue depths, ensuring effective treatment for all skin types.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/laserHi_Tech.webp?updatedAt=1758015799803&tr=w-662%2Ch-503%2Cfo-custom%2Ccm-extract',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Soprano_Ice_MaleHiTech.webp?updatedAt=1760367075535',
     benefits: [
       'Virtually painless treatment',
       'Suitable for all skin types',
@@ -56,7 +56,7 @@ export const treatments: Treatment[] = [
     price: 'From £80 per session',
     faqs: [
       {
-        question: 'How does electrolysis compare to laser hair removal?',
+        question: 'How does electrolysis compare to Soprano laser hair removal?',
         answer: 'Electrolysis is the only FDA-approved method for permanent hair removal and can treat all hair colors, unlike laser which works best on dark hair.'
       },
       {
@@ -573,7 +573,7 @@ export const treatments: Treatment[] = [
     name: 'Permanent Makeup',
     description: 'By Master Artist Natalia',
     longDescription: 'Semi-permanent cosmetic tattooing for effortless, long-lasting beauty.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Permanent_Makeup_Hi_Tech.webp?updatedAt=1758018515795&tr=w-992%2Ch-752%2Cfo-custom%2Ccm-extract',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Permanent_MakeUpHiTech.webp?updatedAt=1760367075758',
     services: [
       'Microblading/Nano brows',
       'Powder brows',

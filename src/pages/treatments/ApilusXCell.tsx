@@ -40,7 +40,7 @@ const ApilusXCell: React.FC = () => {
       },
       {
         question: 'Is it suitable for all hair types?',
-        answer: 'Yes, Apilus xCell is effective on all hair types and colors, including white, blonde, and fine hairs that cannot be treated with laser hair removal.'
+        answer: 'Yes, Apilus xCell is effective on all hair types and colors, including white, blonde, and fine hairs that cannot be treated with Soprano laser hair removal.'
       },
       {
         question: 'How many sessions will I need?',

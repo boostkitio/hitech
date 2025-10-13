@@ -11,12 +11,12 @@ import { treatments } from '../../data/treatments';
 
 const featuredIds = [
   'soprano-ice-platinum',
-  'apilus-xcell',
-  'botox',
+  'hydrafacial',
   'skinpen-microneedling',
-  'skin-boosters',
+  'botox',
   'lynton-ipl',
-  'asce-exosomes',
+  'apilus-xcell',
+  'polynucleotides',
 ];
 
 const featuredTreatments = treatments.filter(t => featuredIds.includes(t.id));

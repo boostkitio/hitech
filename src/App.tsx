@@ -4,9 +4,9 @@ import Layout from './layouts/Layout';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 import CookieConsent from './components/common/CookieConsent';
 import ProtectedRoute from './components/common/ProtectedRoute';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import CookiePolicy from './pages/CookiePolicy';
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage'));
+const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -77,9 +77,9 @@ function App() {
             <Route path="resources" element={<ResourcesPage />} />
             <Route path="price-list" element={<PriceListPage />} />
             <Route path="booking" element={<BookingPage />} />
-            <Route path="privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="terms-of-service" element={<TermsOfService />} />
-            <Route path="cookie-policy" element={<CookiePolicy />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="terms-of-service" element={<TermsOfServicePage />} />
+            <Route path="cookie-policy" element={<CookiePolicyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
           {/* Standalone routes (e.g., without the main layout) */}

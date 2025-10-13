@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 <Link to="/treatments/botox" className="text-neutral-300 hover:text-secondary-400 transition-colors">Botox</Link>
               </li>
               <li>
-                <Link to="/treatments/soprano-ice-platinum" className="text-neutral-300 hover:text-secondary-400 transition-colors">Laser Hair Removal</Link>
+                <Link to="/treatments/soprano-ice-platinum" className="text-neutral-300 hover:text-secondary-400 transition-colors">Soprano Laser Hair Removal</Link>
               </li>
               <li>
                 <Link to="/treatments/skinpen-microneedling" className="text-neutral-300 hover:text-secondary-400 transition-colors">Microneedling</Link>

@@ -131,6 +131,12 @@ const PriceListPage: React.FC = () => {
     ]
   };
   
+  const hydrafacialData = [
+    { name: 'Syndeo HydraFacial Signature', price: '£109', duration: '30 minutes' },
+    { name: 'HydraFacial Deluxe', price: '£169', duration: '45 minutes' },
+    { name: 'HydraFacial Platinum', price: '£189', duration: '60 minutes' },
+  ];
+
   const otherPrices = {
     skinpen: [
         { name: 'SkinPen single session', price: '£300' },
@@ -279,7 +285,7 @@ const PriceListPage: React.FC = () => {
     <>
       <Helmet>
         <title>Treatment Price List | HiTech Aesthetics</title>
-        <meta name="description" content="View our complete price list for all aesthetic treatments in Tunbridge Wells, including laser hair removal, injectables, facials, and more. Transparent pricing for all services." />
+        <meta name="description" content="View our complete price list for all aesthetic treatments in Tunbridge Wells, including Soprano laser hair removal, injectables, facials, and more. Transparent pricing for all services." />
       </Helmet>
 
       {/* Header */}
@@ -301,7 +307,7 @@ const PriceListPage: React.FC = () => {
           {/* Soprano Ice Platinum */}
           <section id="soprano-ice-platinum" className="py-20 bg-white">
             <div className="container-custom">
-                <h2 className="text-3xl font-bold text-primary-900 mb-2">Soprano Ice Platinum Laser Hair Removal</h2>
+                <h2 className="text-3xl font-bold text-primary-900 mb-2">Soprano Laser Hair Removal</h2>
                 <p className="text-lg text-neutral-600 mb-4">Virtually Pain-Free Permanent Hair Reduction</p>
                 <NoteBox text="Patch test required for all new clients" />
                 <PriceTable title="Small Areas" headers={['Area', 'Single', '3 Sessions', '6 Sessions', '8 Sessions']} data={laserHairRemovalData.small} />
@@ -378,24 +384,31 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
 
+          {/* HydraFacial */}
+          <section id="hydrafacial" className="py-20 bg-neutral-50">
+            <div className="container-custom">
+              <SimplePriceList title="Syndeo HydraFacial Treatments" data={hydrafacialData} />
+            </div>
+          </section>
+
           {/* Other Sections */}
-          <section id="skinpen" className="py-20 bg-neutral-50">
+          <section id="skinpen" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="SkinPen Microneedling" data={otherPrices.skinpen} />
             </div>
           </section>
-          <section id="dermalux" className="py-20 bg-white">
+          <section id="dermalux" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="Dermalux LED Light Therapy" data={otherPrices.dermalux} />
             </div>
           </section>
-          <section id="prp" className="py-20 bg-neutral-50">
+          <section id="prp" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="PRP Skin and Hair Restoration" data={otherPrices.prp} />
             </div>
           </section>
 
-          <section id="botox" className="py-20 bg-white">
+          <section id="botox" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Anti-Wrinkle Injections (Botox)</h2>
               <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
@@ -409,19 +422,19 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
           
-          <section id="chemical-peels" className="py-20 bg-neutral-50">
+          <section id="chemical-peels" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Chemical Peels" data={otherPrices.peels} />
             </div>
           </section>
 
-          <section id="facials" className="py-20 bg-white">
+          <section id="facials" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="Facials" data={otherPrices.facials} />
             </div>
           </section>
 
-          <section id="skin-boosters" className="py-20 bg-neutral-50">
+          <section id="skin-boosters" className="py-20 bg-white">
             <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Skin Boosters</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -441,13 +454,13 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
 
-          <section id="fat-dissolving" className="py-20 bg-white">
+          <section id="fat-dissolving" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="Fat Dissolving (Lemon Bottle)" data={otherPrices.fatDissolving} />
             </div>
           </section>
 
-           <section id="polynucleotides" className="py-20 bg-neutral-50">
+           <section id="polynucleotides" className="py-20 bg-white">
              <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Vitaran Polynucleotides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -465,13 +478,13 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
 
-          <section id="permanent-makeup" className="py-20 bg-white">
+          <section id="permanent-makeup" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="Permanent Makeup by Master Natalia" data={otherPrices.permanentMakeup} />
             </div>
           </section>
 
-           <section id="gift-cards" className="py-20 bg-neutral-50">
+           <section id="gift-cards" className="py-20 bg-white">
              <div className="container-custom">
                 <h2 className="text-3xl font-bold text-primary-900 mb-4">Gift Cards</h2>
                 <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6">

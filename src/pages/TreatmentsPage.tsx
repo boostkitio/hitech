@@ -84,7 +84,7 @@ const TreatmentsPage: React.FC = () => {
     <>
       <Helmet>
         <title>Aesthetic Treatments in Tunbridge Wells | HiTech Aesthetics</title>
-        <meta name="description" content="Explore our wide range of advanced aesthetic treatments in Tunbridge Wells, including laser hair removal, injectables, skin rejuvenation, and facials. Book your consultation today." />
+        <meta name="description" content="Explore our wide range of advanced aesthetic treatments in Tunbridge Wells, including Soprano laser hair removal, injectables, skin rejuvenation, and facials. Book your consultation today." />
       </Helmet>
 
       <section className="pt-32 pb-20 bg-primary-600 text-white">

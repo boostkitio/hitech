@@ -319,7 +319,10 @@ const ContactPage: React.FC = () => {
                     <MapPin size={24} className="mr-4 text-primary-800 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-semibold mb-1">Our Address</h3>
-                      <p className="text-primary-600">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
+                      <p className="text-primary-600 mb-3">114 Camden Road, Tunbridge Wells, TN1 2QX</p>
+                      <p className="text-primary-600 text-sm mb-2">
+                        <strong>Parking:</strong> <a href="https://tunbridgewells.gov.uk/parking/car-parks/find-a-car-park/beech-street" target="_blank" rel="noopener noreferrer" className="text-primary-700 hover:text-primary-900 underline">Beech Street Car Park</a> and <a href="https://tunbridgewells.gov.uk/parking/car-parks/find-a-car-park/camden-road" target="_blank" rel="noopener noreferrer" className="text-primary-700 hover:text-primary-900 underline">Camden Road Car Park</a> are 1 minute walk away from the clinic, and you can use the RingGo app to pay.
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">

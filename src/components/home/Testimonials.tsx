@@ -14,9 +14,9 @@ const testimonials = [
   {
     id: 2,
     name: 'Amy White',
-    treatment: 'Laser Hair Removal',
+    treatment: 'Soprano Laser Hair Removal',
     stars: 5,
-    quote: 'Professional, friendly, knowledgeable and makes you feel at ease and looked after. Have been getting laser hair removal with Eva and wouldn\'t go anywhere else.'
+    quote: 'Professional, friendly, knowledgeable and makes you feel at ease and looked after. Have been getting Soprano laser hair removal with Eva and wouldn\'t go anywhere else.'
   },
   {
     id: 3,

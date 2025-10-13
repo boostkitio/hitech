@@ -4,9 +4,9 @@ import TreatmentPage from './TreatmentTemplate';
 const SopranoIcePlatinum: React.FC = () => {
   const treatment = {
     id: 'soprano-ice-platinum',
-    name: 'Soprano Ice Platinum Laser Hair Removal',
+    name: 'Soprano Laser Hair Removal',
     description: 'The gold standard in pain-free hair removal, suitable for all skin types.',
-    longDescription: 'Experience the revolutionary Soprano Ice Platinum laser hair removal system, the most advanced and comfortable hair removal solution available. This cutting-edge technology combines three wavelengths to effectively target hair follicles while keeping your skin cool and comfortable throughout the treatment.',
+    longDescription: 'Experience the revolutionary Soprano Ice Platinum system, the most advanced and comfortable hair removal solution available. This cutting-edge technology combines three wavelengths to effectively target hair follicles while keeping your skin cool and comfortable throughout the treatment.',
     image: 'https://ik.imagekit.io/boostkit/HiTech/Soprano_Ice.jpg?updatedAt=1759842296076',
     benefits: [
       'Virtually painless treatment',

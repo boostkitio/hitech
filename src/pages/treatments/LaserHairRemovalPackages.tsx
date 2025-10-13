@@ -77,17 +77,17 @@ const LaserHairRemovalPackages: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Laser Hair Removal Packages | HiTech Aesthetics</title>
+        <title>Soprano Laser Hair Removal Packages | HiTech Aesthetics</title>
         <meta
           name="description"
-          content="Discover our comprehensive laser hair removal packages using Soprano Ice Platinum technology. Face, body, and male packages from £999 for 6 sessions in Tunbridge Wells."
+          content="Discover our comprehensive Soprano laser hair removal packages using Soprano Ice Platinum technology. Face, body, and male packages from £999 for 6 sessions in Tunbridge Wells."
         />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalProcedure",
-            "name": "Laser Hair Removal Packages",
-            "description": "Comprehensive laser hair removal treatment packages using Soprano Ice Platinum technology",
+            "name": "Soprano Laser Hair Removal Packages",
+            "description": "Comprehensive Soprano laser hair removal treatment packages using Soprano Ice Platinum technology",
             "procedureType": "Cosmetic",
             "performedBy": {
               "@type": "MedicalBusiness",
@@ -138,7 +138,7 @@ const LaserHairRemovalPackages: React.FC = () => {
               {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "Laser Hair Removal Packages",
+                "name": "Soprano Laser Hair Removal Packages",
                 "item": "https://hitechaesthetics.com/treatments/laser-hair-removal-packages"
               }
             ]
@@ -168,7 +168,7 @@ const LaserHairRemovalPackages: React.FC = () => {
               className="max-w-4xl mx-auto text-center"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-                Laser Hair Removal Packages
+                Soprano Laser Hair Removal Packages
               </h1>
               <p className="text-xl text-neutral-600 mb-8">
                 Experience the gold standard in pain-free hair removal with our Soprano Ice Platinum technology.
@@ -234,7 +234,7 @@ const LaserHairRemovalPackages: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-neutral-900 text-center mb-12">
-                Why Choose Our Laser Hair Removal?
+                Why Choose Our Soprano Laser Hair Removal?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <motion.div
@@ -248,7 +248,7 @@ const LaserHairRemovalPackages: React.FC = () => {
                     Soprano Ice Platinum Technology
                   </h3>
                   <p className="text-neutral-600">
-                    The gold standard in laser hair removal, combining three wavelengths for optimal results across all skin types.
+                    The gold standard in Soprano laser hair removal, combining three wavelengths for optimal results across all skin types.
                   </p>
                 </motion.div>
                 <motion.div
