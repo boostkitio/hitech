@@ -314,14 +314,14 @@ const AboutPage: React.FC = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {clinicImages.map((image, index) => (
               <motion.div
                 key={image.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={clinicInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-lg overflow-hidden shadow-md h-[400px]"
+                className="rounded-lg overflow-hidden shadow-md h-[500px]"
               >
                 <LazyLoadImage
                   src={image.image}
