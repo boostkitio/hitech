@@ -321,14 +321,14 @@ const AboutPage: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={clinicInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-lg overflow-hidden shadow-md h-[500px]"
+                className="rounded-lg overflow-hidden shadow-md aspect-[2/3]"
               >
                 <LazyLoadImage
                   src={image.image}
                   alt={image.alt}
                   effect="blur"
                   className="w-full h-full object-cover"
-                  style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                  style={{ height: '100%', width: '100%', objectFit: 'contain' }}
                 />
               </motion.div>
             ))}
