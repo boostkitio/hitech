@@ -76,7 +76,7 @@ export const treatments: Treatment[] = [
     name: 'HydraFacial Treatment',
     description: 'Instant Radiance with Patented Vortex Technology',
     longDescription: 'HydraFacial is a non-invasive, pain-free facial treatment that uses patented Vortex Fusion Technology to cleanse, extract, and hydrate your skin. This revolutionary treatment delivers immediate, visible results with no downtime, leaving your skin glowing, refreshed, and rejuvenated.',
-    image: 'https://ik.imagekit.io/boostkit/HiTech/Microneedling.jpg?updatedAt=1749817105725',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_3.webp?updatedAt=1760800038396',
     benefits: [
       'Immediate, visible results',
       'No downtime or discomfort',
