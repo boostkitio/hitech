@@ -256,9 +256,64 @@ const Hydrafacial: React.FC = () => {
                 className="relative"
               >
                 <img
-                  src="https://ik.imagekit.io/boostkit/HiTech/hydrafacialHi_Tech.webp?updatedAt=1758016094803&tr=w-600"
+                  src="https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_3.webp?updatedAt=1760800038396&tr=w-600"
                   alt="HydraFacial Treatment"
                   className="rounded-2xl shadow-2xl w-full"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+                See HydraFacial in Action
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Experience the transformative power of HydraFacial treatment
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_1.webp?updatedAt=1760799902804&tr=w-500"
+                  alt="HydraFacial Treatment Process"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_2.webp?updatedAt=1760799902786&tr=w-500"
+                  alt="HydraFacial Technology"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src="https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_3.webp?updatedAt=1760800038396&tr=w-500"
+                  alt="HydraFacial Results"
+                  className="w-full h-full object-cover"
                 />
               </motion.div>
             </div>
