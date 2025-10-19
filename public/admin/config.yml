@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: mattboostkit/hitech
+  branch: main
+  auth_type: implicit
+  app_id: Ov23liPEMSBdrvkNRQjb
+
+local_backend: true
+
+site_url: "https://hitechaesthetics.com"
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "promotions"
+    label: "Promotions"
+    label_singular: "Promotion"
+    files:
+      - label: "Popup Offers"
+        name: "popup_offers"
+        file: "src/data/promotions.json"
+        fields:
+          - label: "Promotions"
+            name: "promotions"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Lowercase slug used in the site code." }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Content (HTML)", name: "content", widget: "text", hint: "HTML allowed. This content is injected directly into the popup." }
+              - { label: "Delay (seconds)", name: "delaySeconds", widget: "number", min: 0, default: 5 }
+              - { label: "Active", name: "isActive", widget: "boolean", default: false }

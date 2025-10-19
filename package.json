@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.17",
-    "@supabase/supabase-js": "^2.49.9",
     "framer-motion": "^11.0.8",
     "imagekitio-react": "^1.1.1",
     "lucide-react": "^0.344.0",

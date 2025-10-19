@@ -22,8 +22,8 @@ npx tsc --noEmit    # Type-check without building (no script defined)
 ### Application Structure
 This is a **Vite + React SPA** for a medical aesthetics practice with:
 - **Public website**: Marketing pages (Home, About, Treatments, Contact)
-- **Admin dashboard**: Protected routes for managing popup messages
-- **Authentication**: Supabase-based login system
+- **Promotion management**: Git-backed Decap CMS admin at `/admin/`
+- **Popup delivery**: Client-side controller that reads static JSON data
 
 ### Key Architectural Patterns
 
@@ -32,15 +32,15 @@ This is a **Vite + React SPA** for a medical aesthetics practice with:
    - Routes defined in App.tsx with React Router v6
    - 404 handling with NotFoundPage component
 
-2. **Authentication Flow**
-   - AuthContext provides user state and methods globally
-   - Protected routes check authentication before rendering
-   - Supabase client initialized in src/lib/supabase.ts
+2. **Decap CMS Workflow**
+   - `/public/admin/index.html` bootstraps Decap CMS with a GitHub backend
+   - Editors update `src/data/promotions.json` through the CMS
+   - Netlify rebuilds the site on commit to keep popups current
 
 3. **Data Management**
-   - Static treatment data in src/data/treatments.ts
-   - Popup messages stored in Supabase database
-   - No state management library - React Context for auth only
+   - Static treatment data in `src/data/treatments.ts`
+   - Popup messages stored in `src/data/promotions.json`
+   - No global state library required; React hooks manage local interactions
 
 4. **Component Organization**
    - `/components/ui/`: Generic reusable components (Button, LoadingSpinner, OptimizedImage)
@@ -58,15 +58,15 @@ This is a **Vite + React SPA** for a medical aesthetics practice with:
 
 **Vite** is configured with:
 - React plugin for JSX/TSX support
-- Manual chunks for vendor code splitting (react, supabase, framer-motion)
+- Manual chunks for vendor code splitting (react, framer-motion)
 - Terser minification in production
 - Source maps disabled in production
 
 ### Environment Variables
 
-Required for Supabase integration:
-- `VITE_SUPABASE_URL`: Your Supabase project URL
-- `VITE_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+Required for ImageKit integration:
+- `VITE_IMAGEKIT_URL_ENDPOINT`: Your ImageKit delivery endpoint
+- `VITE_IMAGEKIT_PUBLIC_KEY`: Public key used by the image components
 
 Access in code via `import.meta.env.VITE_*`
 
@@ -89,10 +89,10 @@ Deployed on **Netlify** with:
    - Individual treatment pages in src/pages/treatments/
    - Use existing TreatmentLayout for consistency
 
-3. **Using Supabase**
-   - Import client from src/lib/supabase.ts
-   - Use AuthContext for user state
-   - Check src/pages/admin/ for database query examples
+3. **Managing Promotions**
+   - Update content through Decap CMS (`/admin/`) or edit `src/data/promotions.json`
+   - Ensure each promotion has a unique `id` and `delaySeconds`
+   - Active promotions (`isActive: true`) will be scheduled by `PopupDisplayController`
 
 4. **Performance Considerations**
    - Use OptimizedImage component for images (placeholder ready)

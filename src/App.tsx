@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 import CookieConsent from './components/common/CookieConsent';
-import ProtectedRoute from './components/common/ProtectedRoute';
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage'));
 const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage'));
@@ -19,9 +18,6 @@ const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const PriceListPage = lazy(() => import('./pages/PriceListPage'));
 const BookingPage = lazy(() => import('./pages/BookingPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
-const LoginPage = lazy(() => import('./pages/LoginPage'));
-const AdminDashboardPage = lazy(() => import('./pages/AdminDashboardPage'));
-
 // Lazy load treatment pages
 const Hydrafacial = lazy(() => import('./pages/treatments/Hydrafacial'));
 const SopranoIcePlatinum = lazy(() => import('./pages/treatments/SopranoIcePlatinum'));
@@ -82,9 +78,6 @@ function App() {
             <Route path="cookie-policy" element={<CookiePolicyPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
-          {/* Standalone routes (e.g., without the main layout) */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/admin" element={<ProtectedRoute><AdminDashboardPage /></ProtectedRoute>} />
         </Routes>
       </Suspense>
       <CookieConsent />

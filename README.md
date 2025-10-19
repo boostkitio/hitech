@@ -28,8 +28,8 @@ All documentation has been organized in the `/docs` folder:
 ## Deployment
 
 This project is deployed on Netlify. Make sure to set the following environment variables:
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
+- `VITE_IMAGEKIT_URL_ENDPOINT`
+- `VITE_IMAGEKIT_PUBLIC_KEY`
 
 ## Tech Stack
 
@@ -37,5 +37,5 @@ This project is deployed on Netlify. Make sure to set the following environment 
 - TypeScript
 - Vite
 - Tailwind CSS
-- Supabase (Auth & Database)
+- Decap CMS (Git-backed content editing)
 - React Router v6

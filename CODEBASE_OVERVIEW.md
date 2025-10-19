@@ -8,8 +8,8 @@ This document provides a high-level overview of the HiTech Aesthetics codebase, 
 - **Frontend:** React 18, TypeScript, Vite
 - **Styling:** Tailwind CSS
 - **Routing:** React Router v6
-- **State/Context:** React Context API
-- **Backend/DB/Auth:** Supabase
+- **State/Context:** Local component state and hooks
+- **Content Management:** Decap CMS (Git-backed)
 - **UI Libraries:** Lucide React (icons), Framer Motion (animations), React Helmet Async (SEO)
 - **Deployment:** Netlify
 
@@ -19,14 +19,13 @@ This document provides a high-level overview of the HiTech Aesthetics codebase, 
 ```
 /src
   /components      # Reusable UI and logic components
-    /common        # Shared utilities (auth, widgets, etc.)
+    /common        # Shared utilities (widgets, announcements, etc.)
     /home          # Homepage-specific components
     /layout        # Header, Footer, etc.
     /popups        # Popup system
     /ui            # UI primitives (spinners, images)
-  /contexts        # React context providers (e.g., AuthContext)
+  /data            # JSON data sources (treatments, promotions)
   /layouts         # Layout wrappers (e.g., main site layout)
-  /lib             # External library configs (e.g., Supabase client)
   /pages           # All routeable pages (Home, About, Treatments, etc.)
     /treatments    # Individual treatment detail pages & template
   /types           # TypeScript type definitions
@@ -39,20 +38,20 @@ This document provides a high-level overview of the HiTech Aesthetics codebase, 
 - **Layout.tsx** wraps all main pages with a shared header, footer, and popup controller.
 - **TreatmentsPage.tsx** lists all treatments and links to individual treatment pages.
 - **Individual treatment pages** (e.g., `/treatments/soprano-ice-platinum`) are implemented in `/pages/treatments/` and use a shared `TreatmentTemplate` for consistent layout.
-- **AdminDashboardPage** is a protected route, only accessible to authenticated users.
+- **Decap CMS** is served from the static `/public/admin/` directory and handles promo editing outside the React router.
 
 ---
 
-## Authentication
-- Managed via **Supabase** and the `AuthContext` in `/contexts/AuthContext.tsx`.
-- Provides `login`, `logout`, and user/session state to the app.
-- Protected routes use the `ProtectedRoute` component to restrict access.
+## Promotions & CMS
+- Decap CMS (configured in `public/admin/config.yml`) provides a Git-backed UI for managing popup promotions.
+- Published promotions are stored in `src/data/promotions.json` and bundled with the site at build time.
+- Popups are displayed by `PopupDisplayController`, which reads active promotions and schedules their display.
 
 ---
 
 ## State & Data Flow
 - Most data is static (treatments, FAQs, etc.) and defined in page components or imported from type files.
-- Global state (auth) is managed via React Context.
+- Promotions and announcements come from `src/data/promotions.json`, edited through Decap CMS.
 - No Redux or other global state libraries are used.
 
 ---
@@ -75,7 +74,7 @@ This document provides a high-level overview of the HiTech Aesthetics codebase, 
 ---
 
 ## Environment Variables
-- `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are required for Supabase integration (set in Netlify for deployment).
+- `VITE_IMAGEKIT_URL_ENDPOINT` and `VITE_IMAGEKIT_PUBLIC_KEY` power the ImageKit integration used across treatment imagery.
 
 ---
 

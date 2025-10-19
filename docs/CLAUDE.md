@@ -6,15 +6,15 @@ HiTech Aesthetics is a React-based website built with Vite, TypeScript, and Tail
 ## Technology Stack
 - **Frontend**: React 18, TypeScript, Vite
 - **Styling**: Tailwind CSS, PostCSS
-- **Backend**: Supabase (Authentication & Database)
+- **Content Management**: Decap CMS (Git-backed promotions)
 - **Routing**: React Router v6
 - **Deployment**: Netlify
 - **UI Libraries**: Lucide React (icons), React Helmet Async (SEO)
 
 ## Key Features
 1. **Public Pages**: Home, About, Treatments, Contact
-2. **Authentication**: Login system with Supabase
-3. **Admin Dashboard**: Protected route for managing popup messages
+2. **Promotions**: Popup offers managed through Decap CMS
+3. **CMS Admin**: Static `/admin/` dashboard that writes to `src/data/promotions.json`
 4. **Responsive Design**: Mobile-first approach
 5. **Performance**: Lazy loading, code splitting
 6. **SEO**: React Helmet for meta tags
@@ -28,16 +28,15 @@ HiTech Aesthetics is a React-based website built with Vite, TypeScript, and Tail
     /layout - Header and Footer
     /popups - Popup system
     /ui - UI utilities (LoadingSpinner, OptimizedImage)
-  /contexts - React contexts (AuthContext)
+  /data - JSON data sources (treatments, promotions)
   /layouts - Layout wrapper
-  /lib - External library configs (Supabase)
   /pages - All page components
 ```
 
 ## Environment Variables
 Required for deployment:
-- `VITE_SUPABASE_URL` - Supabase project URL
-- `VITE_SUPABASE_ANON_KEY` - Supabase anonymous key
+- `VITE_IMAGEKIT_URL_ENDPOINT` - ImageKit delivery endpoint
+- `VITE_IMAGEKIT_PUBLIC_KEY` - ImageKit public key
 
 ## Important Commands
 - `npm run dev` - Start development server
@@ -47,7 +46,8 @@ Required for deployment:
 - `npm run typecheck` - Run TypeScript type checking
 
 ## Recent Changes (February 2025)
-- Fixed authentication flow with proper environment variables on Netlify
+- Migrated popup management from Supabase to a Git-backed Decap CMS workflow
+- Retired Supabase authentication flow in favour of static build-time CMS edits
 - Added _redirects file for SPA routing support
 - Cleaned up debug console.log statements
 - Removed unused .bolt and .claude directories
@@ -60,9 +60,9 @@ Required for deployment:
   - Responsive design with sticky sidebar on larger screens
 
 ## Common Issues & Solutions
-1. **404 on routes in production**: Ensure _redirects file exists in public folder
-2. **Auth not working**: Check environment variables are set in Netlify (VITE_ prefix, not REACT_APP_)
-3. **Supabase connection**: Verify environment variables are correctly set
+1. **404 on routes in production**: Ensure `_redirects` file exists in `public/`
+2. **Decap CMS GitHub auth**: Confirm the `backend.repo` value in `public/admin/config.yml` matches the deployed repository
+3. **Missing popup updates**: Trigger a Netlify rebuild after committing `src/data/promotions.json`
 
 ## Development Notes
 - Always use VITE_ prefix for environment variables
@@ -72,5 +72,5 @@ Required for deployment:
 
 ## Future Considerations
 - Implement image optimization when more images are added
-- Consider adding more admin features to the dashboard
+- Consider extending Decap CMS with additional collections (blogs, testimonials)
 - Potential for adding booking system integration

@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { supabase } from '../../lib/supabaseClient'; // Adjusted path if necessary
+import React, { useEffect, useMemo, useState } from 'react';
+import promotionsData from '../../data/promotions.json';
 
 interface PopupConfig {
   id: string;
-  name: string; // name is kept for potential future use, though not directly displayed by IndividualPopup
+  name: string;
   content: string;
-  delay_seconds: number; // Updated to snake_case
-  is_active: boolean;    // Updated to snake_case
-  // user_id and created_at are not strictly needed for display but exist in Supabase table
+  delaySeconds: number;
+  isActive: boolean;
 }
 
 interface IndividualPopupProps {
@@ -55,60 +54,27 @@ const IndividualPopup: React.FC<IndividualPopupProps> = ({ id, content, onClose 
 };
 
 const PopupDisplayController: React.FC = () => {
-  const [activePopups, setActivePopups] = useState<PopupConfig[]>([]);
+  const activePopups = useMemo<PopupConfig[]>(
+    () => promotionsData.promotions.filter((popup) => popup.isActive),
+    []
+  );
   const [visiblePopups, setVisiblePopups] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    const fetchActivePopups = async () => {
-      try {
-        // Check if Supabase is properly configured
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-        if (!supabaseUrl || !supabaseKey) {
-          // Silently skip if Supabase is not configured
-          setActivePopups([]);
-          return;
-        }
-
-        const { data, error } = await supabase
-          .from('popups')
-          .select('*')
-          .eq('is_active', true);
-
-        if (error) {
-          // Only log error in development, not production
-          if (import.meta.env.DEV) {
-            console.warn('Popup service unavailable:', error.message);
-          }
-          setActivePopups([]);
-          return;
-        }
-        setActivePopups(data || []);
-      } catch {
-        // Silently fail - popups are not critical functionality
-        if (import.meta.env.DEV) {
-          console.warn('Popup service unavailable');
-        }
-        setActivePopups([]);
-      }
-    };
-
-    fetchActivePopups();
-    // Supabase real-time subscriptions could be used here for live updates if desired
-  }, []);
 
   useEffect(() => {
     const timers: number[] = [];
 
-    activePopups.forEach(popup => {
-      if (!visiblePopups.has(popup.id)) {
-        const timer = setTimeout(() => {
-          setVisiblePopups(prev => new Set(prev).add(popup.id));
-        }, popup.delay_seconds * 1000); // Updated to use delay_seconds
+    activePopups
+      .filter((popup) => !visiblePopups.has(popup.id))
+      .forEach((popup) => {
+        const timer = window.setTimeout(() => {
+          setVisiblePopups((prev) => {
+            const next = new Set(prev);
+            next.add(popup.id);
+            return next;
+          });
+        }, (popup.delaySeconds ?? 0) * 1000);
         timers.push(timer);
-      }
-    });
+      });
 
     return () => {
       timers.forEach(clearTimeout);
@@ -131,7 +97,7 @@ const PopupDisplayController: React.FC = () => {
         .filter(popup => visiblePopups.has(popup.id))
         .map(popup => (
           <IndividualPopup key={popup.id} id={popup.id} content={popup.content} onClose={handleClosePopup} />
-      ))}
+        ))}
     </>
   );
 };

@@ -1,0 +1,18 @@
+{
+  "promotions": [
+    {
+      "id": "welcome-offer",
+      "name": "Welcome Offer",
+      "content": "<p><strong>New clients save 15%</strong> on their first treatment when booking before 30 November. Use code <em>WELCOME15</em> at checkout.</p>",
+      "delaySeconds": 6,
+      "isActive": true
+    },
+    {
+      "id": "winter-skin-event",
+      "name": "Winter Skin Event",
+      "content": "<p>Combine a HydraFacial with Dermalux LED therapy for only <strong>£195</strong>. Limited appointments each week.</p>",
+      "delaySeconds": 12,
+      "isActive": false
+    }
+  ]
+}

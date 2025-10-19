@@ -24,9 +24,10 @@
     "deny": []
   },
   "enabledMcpjsonServers": [
-    "sanity",
     "chrome-devtools",
     "context7",
-    "bright-data"
-  ]
+    "bright-data",
+    "sanity"
+  ],
+  "enableAllProjectMcpServers": true
 }
