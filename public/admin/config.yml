@@ -5,9 +5,9 @@ backend:
   auth_type: implicit
   app_id: Ov23liPEMSBdrvkNRQjb
 
-local_backend: true
+# local_backend: true  # Commented out for production - uncomment for local development
 
-site_url: "https://hitechaesthetics.com"
+site_url: "https://www.hitechaesthetics.com"
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
