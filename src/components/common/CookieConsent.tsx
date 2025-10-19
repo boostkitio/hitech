@@ -5,20 +5,27 @@ const CookieConsent: React.FC = () => {
   const [visible, setVisible] = useState(false);
   
   useEffect(() => {
-    // Check if user has already accepted cookies
-    const hasConsent = localStorage.getItem('cookie-consent');
-    if (!hasConsent) {
-      // Show the cookie banner after a short delay
-      const timer = setTimeout(() => {
-        setVisible(true);
-      }, 1500);
-      
-      return () => clearTimeout(timer);
+    // Check if user has already made a choice
+    const storedPreference = localStorage.getItem('cookie-consent');
+    if (storedPreference === 'accepted' || storedPreference === 'declined') {
+      return;
     }
+
+    // Show the cookie banner after a short delay
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
   
   const acceptCookies = () => {
-    localStorage.setItem('cookie-consent', 'true');
+    localStorage.setItem('cookie-consent', 'accepted');
+    setVisible(false);
+  };
+
+  const declineCookies = () => {
+    localStorage.setItem('cookie-consent', 'declined');
     setVisible(false);
   };
   
@@ -44,13 +51,13 @@ const CookieConsent: React.FC = () => {
               Accept All
             </button>
             <button 
-              onClick={() => setVisible(false)}
+              onClick={declineCookies}
               className="btn btn-outline btn-sm"
             >
               Decline
             </button>
             <button 
-              onClick={() => setVisible(false)}
+              onClick={declineCookies}
               className="text-neutral-500 hover:text-neutral-700"
               aria-label="Close cookie consent"
             >

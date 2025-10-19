@@ -409,10 +409,10 @@ const ContactPage: React.FC = () => {
                 <div className="border-t pt-6">
                   <h4 className="font-medium mb-3">Booking Information:</h4>
                   <ul className="text-sm text-neutral-600 space-y-1">
-                    <li>• One Time Free Consultation</li>
-                    <li>• 48-hour cancellation policy applies</li>
-                    <li>• Please arrive on time for appointments</li>
-                    <li>• Patch tests may be required 48 hours before treatment</li>
+                    <li>One Time Free Consultation</li>
+                    <li>48-hour cancellation policy applies</li>
+                    <li>Please arrive on time for appointments</li>
+                    <li>Patch tests may be required 48 hours before treatment</li>
                   </ul>
                 </div>
               </div>
@@ -424,19 +424,19 @@ const ContactPage: React.FC = () => {
                   <div className="bg-neutral-50 rounded-lg p-4">
                     <h3 className="font-medium mb-2">Payment Methods</h3>
                     <ul className="text-sm text-neutral-600 space-y-1">
-                      <li>• Cash</li>
-                      <li>• Card payments</li>
-                      <li>• Bank transfer</li>
-                      <li>• Apple Pay / Google Pay</li>
+                      <li>Cash</li>
+                      <li>Card payments</li>
+                      <li>Bank transfer</li>
+                      <li>Apple Pay / Google Pay</li>
                     </ul>
                   </div>
                   <div className="bg-neutral-50 rounded-lg p-4">
                     <h3 className="font-medium mb-2">Finance Options</h3>
                     <ul className="text-sm text-neutral-600 space-y-1">
-                      <li>• 0% finance available</li>
-                      <li>• Split payment plan</li>
-                      <li>• No credit check needed</li>
-                      <li>• Ask about payment plans</li>
+                      <li>0% finance available</li>
+                      <li>Split payment plan</li>
+                      <li>No credit check needed</li>
+                      <li>Ask about payment plans</li>
                     </ul>
                   </div>
                 </div>
