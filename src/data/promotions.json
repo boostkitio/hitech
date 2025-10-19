@@ -5,7 +5,7 @@
       "name": "Welcome Offer",
       "content": "<p><strong>New clients save 15%</strong> on their first treatment when booking before 30 November. Use code <em>WELCOME15</em> at checkout.</p>",
       "delaySeconds": 6,
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "winter-skin-event",
