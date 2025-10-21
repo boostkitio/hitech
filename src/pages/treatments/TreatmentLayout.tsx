@@ -329,6 +329,16 @@ const TreatmentLayout: React.FC<TreatmentLayoutProps> = ({ treatment }) => {
                     <p className="text-primary-600 text-lg font-semibold">{treatment.price}</p>
                   </div>
                 </div>
+
+                {/* Book Now Button */}
+                <div className="mt-8">
+                  <Link
+                    to="/booking"
+                    className="btn btn-primary btn-lg w-full"
+                  >
+                    Book Now
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -366,24 +376,6 @@ const TreatmentLayout: React.FC<TreatmentLayoutProps> = ({ treatment }) => {
             </div>
           </section>
         )}
-
-        {/* CTA Section */}
-        <section className="py-16 bg-primary-600">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Ready to Transform Your Look?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8">
-              Book your consultation today and take the first step towards your aesthetic goals.
-            </p>
-            <Link
-              to="/booking"
-              className="btn btn-secondary"
-            >
-              Book Now
-            </Link>
-          </div>
-        </section>
       </div>
     </>
   );
