@@ -251,10 +251,10 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatment }) => {
               Book your consultation today and take the first step towards your aesthetic goals.
             </p>
             <Link
-              to="/contact"
+              to="/booking"
               className="btn btn-secondary"
             >
-              Free Consultation
+              Book Now
             </Link>
           </div>
         </section>

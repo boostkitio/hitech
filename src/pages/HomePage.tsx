@@ -70,7 +70,7 @@ const HomePage: React.FC = () => {
             </p>
             <h4 className="text-lg font-light text-white mb-4">By Appointment only</h4>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn btn-secondary">
+              <Link to="/booking" className="btn btn-secondary">
                 Book A Visit
               </Link>
               <Link to="/treatments" className="btn btn-outline border-white text-white hover:bg-white/10">
