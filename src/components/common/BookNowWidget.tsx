@@ -5,7 +5,7 @@ const BookNowWidget: React.FC = () => {
   return (
     <Link
       to="/booking"
-      className="fixed top-24 right-0 bg-primary-600/80 text-white py-4 px-2 rounded-l-md shadow-md hover:bg-primary-600 focus:outline-none transition-all z-40 md:hidden"
+      className="fixed top-24 right-0 bg-primary-600/80 text-white py-4 px-2 rounded-r-md shadow-md hover:bg-primary-600 focus:outline-none transition-all z-40 md:hidden"
       aria-label="Book Now"
       style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}
     >
