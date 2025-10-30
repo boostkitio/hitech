@@ -106,39 +106,39 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Top Menu Bar */}
-      <div className="bg-primary-900 text-white py-2 hidden md:block">
+      <div className="bg-primary-950 text-white py-2.5 hidden md:block shadow-sm">
         <div className="container-custom">
-          <div className="flex justify-end items-center space-x-6 text-sm">
+          <div className="flex justify-end items-center space-x-6 text-sm font-medium">
             <a
               href="mailto:info@hitechaesthetics.com"
-              className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
+              className="flex items-center space-x-1.5 hover:text-neutral-200 transition-colors duration-200"
             >
-              <Mail size={14} />
+              <Mail size={15} />
               <span>info@hitechaesthetics.com</span>
             </a>
-            <a 
-              href="tel:+441892338157" 
-              className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
+            <a
+              href="tel:+441892338157"
+              className="flex items-center space-x-1.5 hover:text-neutral-200 transition-colors duration-200"
             >
-              <Phone size={14} />
+              <Phone size={15} />
               <span>01892 338157</span>
             </a>
-            <a 
-              href="https://maps.app.goo.gl/vH8fydk778fYzAus9" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/vH8fydk778fYzAus9"
+              target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
+              className="flex items-center space-x-1.5 hover:text-neutral-200 transition-colors duration-200"
             >
-              <MapPin size={14} />
+              <MapPin size={15} />
               <span>Find Us</span>
             </a>
-            <a 
-              href="https://www.instagram.com/hitechaesthetics/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center space-x-1 hover:text-primary-200 transition-colors duration-200"
+            <a
+              href="https://www.instagram.com/hitechaesthetics/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1.5 hover:text-neutral-200 transition-colors duration-200"
             >
-              <Instagram size={14} />
+              <Instagram size={15} />
               <span>Instagram</span>
             </a>
           </div>
