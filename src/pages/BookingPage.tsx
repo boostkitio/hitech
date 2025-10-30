@@ -6,8 +6,19 @@ const VagaroWidget = lazy(() => import('../components/booking/VagaroWidget'));
 
 const BookingPage: React.FC = () => {
   useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
+    // Check if there's a hash in the URL
+    if (window.location.hash === '#widget') {
+      // Wait for the component to render, then scroll to the widget
+      setTimeout(() => {
+        const element = document.getElementById('booking-widget');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Scroll to top when component mounts
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -61,7 +72,7 @@ const BookingPage: React.FC = () => {
         </div>
 
         {/* Vagaro Widget Embedded */}
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto mb-8">
+        <div id="booking-widget" className="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto mb-8">
           <Suspense
             fallback={
               <div className="flex items-center justify-center min-h-[800px]">
