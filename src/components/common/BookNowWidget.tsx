@@ -9,7 +9,7 @@ const BookNowWidget: React.FC = () => {
       aria-label="Book Now"
       style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', transform: 'rotate(180deg)' }}
     >
-      <span className="font-bold text-[10px] tracking-wider">BOOK</span>
+      <span className="font-bold text-[10px] tracking-wider">BOOK NOW</span>
     </Link>
   );
 };
