@@ -5,10 +5,11 @@ const BookNowWidget: React.FC = () => {
   return (
     <Link
       to="/booking"
-      className="fixed bottom-20 right-6 bg-primary-800 text-white rounded-full px-6 py-3 shadow-lg hover:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors z-40 md:hidden flex items-center justify-center"
+      className="fixed top-24 right-0 bg-primary-800 text-white py-8 px-3 shadow-lg hover:bg-primary-900 focus:outline-none transition-colors z-40 md:hidden"
       aria-label="Book Now"
+      style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
     >
-      <span className="font-semibold text-sm">Book Now</span>
+      <span className="font-bold text-sm tracking-widest">BOOK NOW</span>
     </Link>
   );
 };
