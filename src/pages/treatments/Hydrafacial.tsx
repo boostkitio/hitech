@@ -277,21 +277,6 @@ const Hydrafacial: React.FC = () => {
               </p>
             </div>
 
-            {/* Video Embed */}
-            <div className="flex justify-center mb-12">
-              <div className="w-full max-w-sm mx-auto">
-                <div className="relative overflow-hidden rounded-xl shadow-lg" style={{ paddingBottom: '177.78%' }}>
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://imagekit.io/player/embed/boostkit/HiTech/Hydrafacial.mp4?controls=true&autoplay=false&loop=false&background=%23000000&updatedAt=1761831717657&thumbnail=https%3A%2F%2Fik.imagekit.io%2Fboostkit%2FHiTech%2FHydrafacial.mp4%2Fik-thumbnail.jpg%3FupdatedAt%3D1761831717657&updatedAt=1761831717657"
-                    title="HydraFacial Treatment Video"
-                    frameBorder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                  />
-                </div>
-              </div>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -306,6 +291,8 @@ const Hydrafacial: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </motion.div>
+
+              {/* Video Embed */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -313,12 +300,17 @@ const Hydrafacial: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <img
-                  src="https://ik.imagekit.io/boostkit/HiTech/HydraFacial_HiTech_2.webp?updatedAt=1760799902786&tr=w-500"
-                  alt="HydraFacial Technology"
-                  className="w-full h-full object-cover"
-                />
+                <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://imagekit.io/player/embed/boostkit/HiTech/Hydrafacial.mp4?controls=true&autoplay=false&loop=false&background=%23000000&updatedAt=1761831717657&thumbnail=https%3A%2F%2Fik.imagekit.io%2Fboostkit%2FHiTech%2FHydrafacial.mp4%2Fik-thumbnail.jpg%3FupdatedAt%3D1761831717657&updatedAt=1761831717657"
+                    title="HydraFacial Treatment Video"
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                  />
+                </div>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
