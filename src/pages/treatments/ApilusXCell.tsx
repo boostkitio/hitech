@@ -26,7 +26,7 @@ const ApilusXCell: React.FC = () => {
       'Any body area'
     ],
     sessions: 'Multiple sessions required for permanent results',
-    course: 'Customized treatment plan based on hair growth',
+    course: 'Customised treatment plan based on hair growth',
     frequency: 'Every 2-4 weeks',
     touchups: 'Occasional maintenance sessions may be needed',
     duration: '15-60 minutes depending on area',

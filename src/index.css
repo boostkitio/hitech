@@ -65,7 +65,7 @@
   }
   
   a {
-    @apply text-primary-600 hover:text-primary-800 transition-colors duration-300;
+    @apply text-primary-800 hover:text-primary-800 transition-colors duration-300;
   }
 }
 

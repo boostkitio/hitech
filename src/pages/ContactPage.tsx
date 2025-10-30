@@ -299,7 +299,7 @@ const ContactPage: React.FC = () => {
                   <Send size={18} className="mr-2" />
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
-                <p className="text-xs text-primary-500 mt-3">
+                <p className="text-xs text-neutral-700 mt-3">
                   By submitting this form, you agree to our privacy policy and consent to being contacted regarding your enquiry.
                 </p>
               </form>

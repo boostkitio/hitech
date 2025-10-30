@@ -112,7 +112,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'What should I expect during my first consultation?',
-    answer: 'Your first consultation includes a comprehensive skin analysis, discussion of your aesthetic goals, medical history review, and personalized treatment recommendations. This typically takes 45-60 minutes.',
+    answer: 'Your first consultation includes a comprehensive skin analysis, discussion of your aesthetic goals, medical history review, and personalised treatment recommendations. This typically takes 45-60 minutes.',
     category: 'General'
   },
   {
@@ -128,7 +128,7 @@ const faqs: FAQ[] = [
   // Treatment FAQs
   {
     question: 'How do I know which treatment is right for me?',
-    answer: 'During your consultation, our expert practitioners will assess your skin, discuss your goals, and recommend the most suitable treatments. We create personalized treatment plans for each patient.',
+    answer: 'During your consultation, our expert practitioners will assess your skin, discuss your goals, and recommend the most suitable treatments. We create personalised treatment plans for each patient.',
     category: 'Treatments'
   },
   {

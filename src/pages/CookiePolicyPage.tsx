@@ -14,7 +14,7 @@ const CookiePolicyPage: React.FC = () => {
         <section className="pt-32 pb-12 bg-primary-600 text-white">
           <div className="container-custom">
             <h1 className="text-white mb-4">Cookie Policy</h1>
-            <p className="text-xl text-primary-100">Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+            <p className="text-xl text-white">Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
           </div>
         </section>
 

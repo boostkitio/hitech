@@ -13,7 +13,6 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'));
 const SkinMembershipPage = lazy(() => import('./pages/SkinMembershipPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
-const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const PriceListPage = lazy(() => import('./pages/PriceListPage'));
 const BookingPage = lazy(() => import('./pages/BookingPage'));
@@ -69,7 +68,6 @@ function App() {
             <Route path="treatments/zo-skincare" element={<ZOSkincare />} />
             <Route path="treatments/permanent-makeup" element={<PermanentMakeup />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="gallery" element={<GalleryPage />} />
             <Route path="resources" element={<ResourcesPage />} />
             <Route path="price-list" element={<PriceListPage />} />
             <Route path="booking" element={<BookingPage />} />
@@ -81,7 +79,6 @@ function App() {
         </Routes>
       </Suspense>
       <CookieConsent />
-      {/* <FloatingActionButton /> */}
     </>
   );
 }

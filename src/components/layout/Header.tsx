@@ -164,6 +164,15 @@ const Header: React.FC = () => {
                 className="relative"
                 onMouseEnter={handleTreatmentsMenuEnter}
                 onMouseLeave={handleTreatmentsMenuLeave}
+                onFocus={handleTreatmentsMenuEnter}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                    if (treatmentsMenuTimer.current) {
+                      clearTimeout(treatmentsMenuTimer.current);
+                    }
+                    setIsTreatmentsMenuOpen(false);
+                  }
+                }}
               >
                 <NavLink to="/treatments" className={navLinkClasses}>
                   <span className="flex items-center">
@@ -189,10 +198,19 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </div>
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={handlePriceMenuEnter}
                 onMouseLeave={handlePriceMenuLeave}
+                onFocus={handlePriceMenuEnter}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                    if (priceMenuTimer.current) {
+                      clearTimeout(priceMenuTimer.current);
+                    }
+                    setIsPriceMenuOpen(false);
+                  }
+                }}
               >
                 <NavLink to="/price-list" className={navLinkClasses}>
                   <span className="flex items-center">
@@ -204,7 +222,7 @@ const Header: React.FC = () => {
                   </span>
                 </NavLink>
                 {isPriceMenuOpen && (
-                  <div 
+                  <div
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-10 fade-in-fast"
                   >
                     {priceListMenu.map((item) => (

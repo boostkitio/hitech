@@ -41,7 +41,7 @@ export const treatments: Treatment[] = [
     id: 'apilus-xcell',
     name: 'Apilus xCell Electrolysis',
     description: 'Permanent Hair Removal for All Hair Types',
-    longDescription: 'The Apilus xCell represents the pinnacle of electrolysis technology. Perfect for treating white, blonde, red, or gray hairs that laser cannot target, as well as smaller, precise areas.',
+    longDescription: 'The Apilus xCell represents the pinnacle of electrolysis technology. Perfect for treating white, blonde, red, or grey hairs that laser cannot target, as well as smaller, precise areas.',
     image: 'https://ik.imagekit.io/boostkit/HiTech/electrolysisHi_Tech.webp?updatedAt=1758015869551&tr=w-662%2Ch-503%2Cfo-custom%2Ccm-extract',
     benefits: [
       '100% permanent hair removal',
@@ -259,7 +259,7 @@ export const treatments: Treatment[] = [
     longDescription: 'Medical-grade LED phototherapy using clinically proven wavelengths to trigger the skin\'s natural rejuvenation processes.',
     image: 'https://ik.imagekit.io/boostkit/HiTech/ledHi_Tech.webp?updatedAt=1758015096364',
     treatmentOptions: [
-      'Red Light: Anti-aging, collagen stimulation',
+      'Red Light: Anti-ageing, collagen stimulation',
       'Blue Light: Acne treatment, antibacterial',
       'Near-Infrared: Healing, pain relief'
     ],
@@ -488,7 +488,7 @@ export const treatments: Treatment[] = [
     image: 'https://ik.imagekit.io/boostkit/HiTech/facial2Hi_Tech.webp?updatedAt=1758016255995',
     treatmentOptions: [
       'Hydrating Facial',
-      'Anti-Aging Facial',
+      'Anti-Ageing Facial',
       'Brightening Facial',
       'Deep Cleansing Facial',
       'Sensitive Skin Facial'

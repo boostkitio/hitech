@@ -87,8 +87,6 @@ const PopupDisplayController: React.FC = () => {
       next.delete(id);
       return next;
     });
-    // Optional: Mark as seen for the session to not show again
-    // sessionStorage.setItem(`popup_seen_${id}`, 'true');
   };
 
   return (

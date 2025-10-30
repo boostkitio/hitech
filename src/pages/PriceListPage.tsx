@@ -312,7 +312,7 @@ const PriceListPage: React.FC = () => {
           className="container-custom text-center"
         >
           <h1 className="text-white mb-6">Clinic Treatment Price List</h1>
-          <p className="text-xl text-neutral-100 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Transparent pricing for our full range of advanced aesthetic treatments. Please note that prices are subject to change and a consultation may be required.
           </p>
         </motion.div>

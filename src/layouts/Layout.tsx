@@ -9,8 +9,15 @@ import ScrollToTopButton from '../components/common/ScrollToTopButton';
 const Layout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen font-sans-serif bg-white">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
       <Header />
       <motion.main
+        id="main-content"
         className="flex-grow"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

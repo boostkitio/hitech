@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h1 className="text-white mb-6">Redefining Beauty Through Technology</h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-100">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white">
               Experience the art of transformation with our advanced medical aesthetic treatments tailored to your unique beauty.
             </p>
             <h4 className="text-lg font-light text-white mb-4">By Appointment only</h4>
@@ -243,7 +243,7 @@ const HomePage: React.FC = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-white mb-6">Begin Your Transformation Today</h2>
-            <p className="text-xl mb-8 text-primary-200">
+            <p className="text-xl mb-8 text-white">
               Schedule your personalised consultation and take the first step towards enhancing your natural beauty.
             </p>
             <Link to="/contact" className="btn btn-secondary btn-lg">
