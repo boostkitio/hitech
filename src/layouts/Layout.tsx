@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
 import PopupDisplayController from '../components/popups/PopupDisplayController';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import BookNowWidget from '../components/common/BookNowWidget';
 
 const Layout: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const Layout: React.FC = () => {
       <Footer />
       <PopupDisplayController />
       <ScrollToTopButton />
+      <BookNowWidget />
     </div>
   );
 };
