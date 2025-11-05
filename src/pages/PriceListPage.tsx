@@ -150,6 +150,9 @@ const PriceListPage: React.FC = () => {
     { name: 'Syndeo HydraFacial Signature', price: '£109', duration: '30 minutes' },
     { name: 'HydraFacial Deluxe', price: '£169', duration: '45 minutes' },
     { name: 'HydraFacial Platinum', price: '£189', duration: '60 minutes' },
+    { name: 'Course of 3 HydraFacials', price: '£500' },
+    { name: 'Course of 6 HydraFacials', price: '£965' },
+    { name: 'Course of 12 HydraFacials', price: '£1,700' },
   ];
 
   const otherPrices = {
