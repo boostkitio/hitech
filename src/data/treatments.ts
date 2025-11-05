@@ -333,9 +333,9 @@ export const treatments: Treatment[] = [
       'Natural regeneration'
     ],
     treatmentAreas: 'Face, neck, hands, décolletage',
-    course: '3 treatments, 3 weeks apart',
+    course: '3 treatments, 4 weeks apart',
     duration: '30-45 minutes',
-    price: 'From £400 per treatment',
+    price: 'From £200 per treatment',
     faqs: [
       {
         question: 'What are polynucleotides?',

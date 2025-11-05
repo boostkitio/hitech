@@ -399,6 +399,99 @@ const Hydrafacial: React.FC = () => {
           </div>
         </section>
 
+        {/* Popular Packages */}
+        <section className="py-16 bg-gradient-to-b from-white to-primary-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+                Popular Treatment Packages
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Save more with our treatment courses and maintain your radiant skin with regular HydraFacial sessions
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-neutral-200"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Starter Course
+                  </h3>
+                  <div className="text-5xl font-bold text-primary-600 mb-2">
+                    £500
+                  </div>
+                  <div className="text-neutral-600 mb-6">
+                    Course of 3 HydraFacials
+                  </div>
+                  <p className="text-sm text-neutral-500 mb-8">
+                    Perfect for trying regular treatments and seeing cumulative benefits
+                  </p>
+                  <Link to="/contact" className="btn btn-outline w-full">
+                    Book Course
+                  </Link>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-neutral-200"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Intensive Course
+                  </h3>
+                  <div className="text-5xl font-bold text-primary-600 mb-2">
+                    £965
+                  </div>
+                  <div className="text-neutral-600 mb-6">
+                    Course of 6 HydraFacials
+                  </div>
+                  <p className="text-sm text-neutral-500 mb-8">
+                    Most popular option for significant, lasting skin transformation
+                  </p>
+                  <Link to="/contact" className="btn btn-outline w-full">
+                    Book Course
+                  </Link>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-neutral-200"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Ultimate Course
+                  </h3>
+                  <div className="text-5xl font-bold text-primary-600 mb-2">
+                    £1,700
+                  </div>
+                  <div className="text-neutral-600 mb-6">
+                    Course of 12 HydraFacials
+                  </div>
+                  <p className="text-sm text-neutral-500 mb-8">
+                    Year-long commitment to maintaining perfect, radiant skin
+                  </p>
+                  <Link to="/contact" className="btn btn-outline w-full">
+                    Book Course
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* How It Works - 3 Step Process */}
         <section className="py-16 bg-neutral-50">
           <div className="container mx-auto px-4">

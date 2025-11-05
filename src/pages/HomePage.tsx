@@ -156,9 +156,9 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Treatments Carousel Section */}
-      <section 
+      <section
         ref={treatmentsRef}
         className="section bg-primary-50 py-20"
       >
