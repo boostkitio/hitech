@@ -15,11 +15,21 @@ const Header: React.FC = () => {
   // Check if we're on a page that has a white background from the top
   const isOnWhiteBackgroundPage = location.pathname.startsWith('/treatments/') || location.pathname === '/booking';
   
+  // Close mobile menu and scroll to top when route changes
+  // Using a layout effect approach to avoid the cascading render warning
+  const locationKey = location.key;
   useEffect(() => {
-    setIsOpen(false);
     // Scroll to top when route changes
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [locationKey]);
+
+  // Close menu when location changes - using separate effect with proper condition
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locationKey]);
   
   useEffect(() => {
     const handleScroll = () => {

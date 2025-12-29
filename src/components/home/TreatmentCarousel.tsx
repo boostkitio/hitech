@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -44,17 +44,17 @@ const TreatmentCarousel: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       (prevIndex + 1) % (featuredTreatments.length - visibleCount + 1)
     );
-  };
+  }, [visibleCount]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       (prevIndex - 1 + (featuredTreatments.length - visibleCount + 1)) % (featuredTreatments.length - visibleCount + 1)
     );
-  };
+  }, [visibleCount]);
 
   useEffect(() => {
     if (!isPaused) {
@@ -65,7 +65,7 @@ const TreatmentCarousel: React.FC = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isPaused, currentIndex, visibleCount, nextSlide]);
+  }, [isPaused, nextSlide]);
 
   return (
     <div 
