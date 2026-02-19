@@ -84,8 +84,8 @@ const Header: React.FC = () => {
 
   const mobileNavLinkClasses = ({ isActive }: { isActive: boolean }) => {
     return isActive
-      ? 'text-2xl font-bold text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
-      : 'text-2xl font-bold text-white hover:bg-white/10 rounded-full px-6 py-2 transition-colors duration-200';
+      ? 'text-2xl font-bold text-white visited:text-white bg-white/10 rounded-full px-6 py-2 underline underline-offset-8'
+      : 'text-2xl font-bold text-white visited:text-white hover:bg-white/10 rounded-full px-6 py-2 transition-colors duration-200';
   };
   
   const priceListMenu = [
@@ -314,7 +314,7 @@ const Header: React.FC = () => {
                           setIsTreatmentsMenuOpen(false);
                           setIsOpen(false);
                         }}
-                        className="block py-2 text-lg font-bold text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
+                        className="block py-2 text-lg font-bold text-white visited:text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
@@ -339,7 +339,7 @@ const Header: React.FC = () => {
                           setIsPriceMenuOpen(false);
                           setIsOpen(false);
                         }}
-                        className="block py-2 text-lg font-bold text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
+                        className="block py-2 text-lg font-bold text-white visited:text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
