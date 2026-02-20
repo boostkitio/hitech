@@ -141,26 +141,25 @@ const PriceListPage: React.FC = () => {
         { area: 'Chest', single: '£105', '3': '£300', '6': '£330', '8': '£450' },
         { area: 'Abdomen', single: '£105', '3': '£300', '6': '£330', '8': '£450' },
     ],
-    packages: [
-        {
-          name: 'Body Package',
-          price: '£999',
-          sessions: '6 sessions',
-          areas: ['Underarms', 'Bikini', 'Lower legs', 'Knees', 'Toes & Feet']
-        },
-        {
-          name: 'Face Package',
-          price: '£999',
-          sessions: '6 sessions',
-          areas: ['Upper lip', 'Chin', 'Cheeks', 'Sideburns', 'Jawline']
-        },
-        {
-          name: 'Male Body Package',
-          price: '£999',
-          sessions: '6 sessions',
-          areas: ['Full back & shoulders']
-        },
-    ]
+    maintenancePackage: {
+      name: 'Maintenance Full Body Laser Hair Removal Package',
+      price: '£350',
+      priceNote: 'per session',
+      treatmentTime: '1 hour 15 minutes',
+      deposit: '£165',
+      areas: [
+        'Lower legs (including knees)',
+        'Upper legs',
+        'Bikini',
+        'Underarms',
+        'Upper arms',
+        'Lower arms',
+      ],
+      description: 'Maintain beautifully smooth, long-lasting results with our exclusive full body laser maintenance package, designed for clients who have already completed a course of treatments and wish to preserve their outcome.',
+      note: 'Areas within this package cannot be exchanged; however, additional areas may be added at an additional investment.',
+      consultation: 'All treatments are subject to individual suitability following a professional consultation to ensure the safest and most effective results.',
+      tagline: 'Experience clinical precision, comfort and consistently refined results with every session.',
+    }
   };
   
   const electrolysisData = [
@@ -332,23 +331,35 @@ const PriceListPage: React.FC = () => {
                 <PriceTable title="Medium Areas" headers={['Area', 'Single', '3 Sessions', '6 Sessions', '8 Sessions']} data={laserHairRemovalData.medium} />
                 <PriceTable title="Large Areas" headers={['Area', 'Single', '3 Sessions', '6 Sessions', '8 Sessions']} data={laserHairRemovalData.large} />
                 <div className="mb-12">
-                  <h3 className="text-2xl font-semibold text-primary-800 mb-6">Popular Laser Packages</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {laserHairRemovalData.packages.map((pkg, i) => (
-                      <div key={i} className="bg-white border-2 border-primary-200 rounded-lg shadow-lg p-6">
-                        <h4 className="text-xl font-bold text-primary-900 mb-2">{pkg.name}</h4>
-                        <p className="text-2xl font-bold text-primary-600 mb-2">{pkg.price}</p>
-                        <p className="text-sm text-neutral-600 mb-4">({pkg.sessions})</p>
-                        <ul className="space-y-2">
-                          {pkg.areas.map((area, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <Check className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" />
-                              <span className="text-neutral-700">{area}</span>
-                            </li>
-                          ))}
-                        </ul>
+                  <h3 className="text-2xl font-semibold text-primary-800 mb-6">{laserHairRemovalData.maintenancePackage.name}</h3>
+                  <div className="max-w-2xl mx-auto bg-white border-2 border-primary-200 rounded-lg shadow-lg p-8">
+                    <p className="text-neutral-700 mb-6">{laserHairRemovalData.maintenancePackage.description}</p>
+                    <div className="flex flex-wrap gap-6 mb-6">
+                      <div>
+                        <p className="text-sm text-neutral-500 uppercase tracking-wide font-medium">Investment</p>
+                        <p className="text-2xl font-bold text-primary-600">{laserHairRemovalData.maintenancePackage.price} <span className="text-base font-normal text-neutral-600">{laserHairRemovalData.maintenancePackage.priceNote}</span></p>
                       </div>
-                    ))}
+                      <div>
+                        <p className="text-sm text-neutral-500 uppercase tracking-wide font-medium">Treatment Time</p>
+                        <p className="text-lg font-semibold text-neutral-800">{laserHairRemovalData.maintenancePackage.treatmentTime}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-neutral-500 uppercase tracking-wide font-medium">Deposit</p>
+                        <p className="text-lg font-semibold text-neutral-800">{laserHairRemovalData.maintenancePackage.deposit}</p>
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-neutral-900 text-sm uppercase tracking-wide mb-3">Treatment Areas</h4>
+                    <ul className="space-y-2 mb-6">
+                      {laserHairRemovalData.maintenancePackage.areas.map((area, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <Check className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-neutral-700">{area}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-sm text-neutral-600 mb-2">{laserHairRemovalData.maintenancePackage.note}</p>
+                    <p className="text-sm text-neutral-600 mb-4">{laserHairRemovalData.maintenancePackage.consultation}</p>
+                    <p className="text-primary-700 font-medium italic">{laserHairRemovalData.maintenancePackage.tagline}</p>
                   </div>
                 </div>
             </div>
