@@ -2,6 +2,43 @@
 import { Treatment } from '../types/treatment';
 
 export const treatments: Treatment[] = [
+  // Skin Tightening
+  {
+    id: 'sofwave',
+    name: 'Sofwave',
+    description: 'Non-Invasive Skin Tightening & Lifting',
+    longDescription: 'Sofwave uses FDA-cleared SUPERB™ ultrasound technology to stimulate your body\'s natural collagen production. Tighten and lift skin on the face, neck, and brow — with no needles, no surgery, and no downtime.',
+    image: 'https://ik.imagekit.io/boostkit/HiTech/Sofwave/Sofwave_19.jpeg?updatedAt=1772384370699',
+    benefits: [
+      'Single session treatment',
+      'No downtime required',
+      'Safe for all skin types and tones',
+      'FDA-cleared technology',
+      'Non-invasive — no needles or surgery',
+      'Results last up to 2 years'
+    ],
+    treatmentAreas: 'Face, neck, brow',
+    sessions: '1 session',
+    duration: '30–45 minutes',
+    results: 'Visible improvement over 12 weeks, lasting up to 2 years',
+    recovery: 'None',
+    price: 'From £500',
+    faqs: [
+      {
+        question: 'What is Sofwave and how does it work?',
+        answer: 'Sofwave uses proprietary SUPERB™ ultrasound technology to deliver precise energy at 1.5mm depth in the mid-dermis, triggering your body\'s natural collagen regeneration process.'
+      },
+      {
+        question: 'Is Sofwave painful?',
+        answer: 'Most patients describe the sensation as warm and tolerable. The integrated Sofcool™ cooling system protects the skin surface, making the treatment comfortable without anaesthesia.'
+      },
+      {
+        question: 'How many sessions do I need?',
+        answer: 'Most patients achieve excellent results with just one session. Annual maintenance treatments are recommended for long-term results.'
+      }
+    ]
+  },
+
   // Hair Removal Treatments
   {
     id: 'soprano-ice-platinum',

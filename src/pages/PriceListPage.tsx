@@ -321,8 +321,33 @@ const PriceListPage: React.FC = () => {
       </section>
 
       <main>
+          {/* Sofwave Skin Tightening */}
+          <section id="sofwave" className="py-20 bg-white">
+            <div className="container-custom">
+              <h2 className="text-3xl font-bold text-primary-900 mb-2">Sofwave (Skin Tightening Treatment)</h2>
+              <p className="text-lg text-neutral-600 mb-2">Non-Invasive Ultrasound Skin Tightening & Lifting</p>
+              <div className="inline-block bg-secondary-500 text-white text-sm font-semibold px-3 py-1 rounded-full mb-6">
+                Special Offer
+              </div>
+              <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6 space-y-4">
+                {[
+                  { name: 'Full Face, Brow Lift & Neck', price: '£2,000' },
+                  { name: 'Full Face', price: '£1,700' },
+                  { name: 'Lower Face & Neck', price: '£1,500' },
+                  { name: 'Neck', price: '£1,300' },
+                  { name: 'Brow Lift', price: '£500' },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-center border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
+                    <p className="text-neutral-800">{item.name}</p>
+                    <p className="font-semibold text-primary-800">{item.price}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Soprano Ice Platinum */}
-          <section id="soprano-ice-platinum" className="py-20 bg-white">
+          <section id="soprano-ice-platinum" className="py-20 bg-neutral-50">
             <div className="container-custom">
                 <h2 className="text-3xl font-bold text-primary-900 mb-2">Soprano Laser Hair Removal</h2>
                 <p className="text-lg text-neutral-600 mb-4">Virtually Pain-Free Permanent Hair Reduction</p>
@@ -366,14 +391,14 @@ const PriceListPage: React.FC = () => {
           </section>
 
           {/* Electrolysis */}
-          <section id="electrolysis" className="py-20 bg-neutral-50">
+          <section id="electrolysis" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Apilus xCell Pro Electrolysis" data={electrolysisData.map(e => ({ name: e.duration, price: e.price }))} />
             </div>
           </section>
           
           {/* Lynton */}
-          <section id="lynton-3juve" className="py-20 bg-white">
+          <section id="lynton-3juve" className="py-20 bg-neutral-50">
             <div className="container-custom">
                 <h2 className="text-3xl font-bold text-primary-900 mb-6">Lynton 3JUVE IPL & Laser Treatments</h2>
                 <PriceTable title="Skin Resurfacing" headers={['Area', 'Single', 'Course of 3', '', '']} data={lyntonData.resurfacing} />
@@ -423,30 +448,30 @@ const PriceListPage: React.FC = () => {
           </section>
 
           {/* HydraFacial */}
-          <section id="hydrafacial" className="py-20 bg-neutral-50">
+          <section id="hydrafacial" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Syndeo HydraFacial Treatments" data={hydrafacialData} />
             </div>
           </section>
 
           {/* Other Sections */}
-          <section id="skinpen" className="py-20 bg-white">
+          <section id="skinpen" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="SkinPen Microneedling" data={otherPrices.skinpen} />
             </div>
           </section>
-          <section id="dermalux" className="py-20 bg-neutral-50">
+          <section id="dermalux" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Dermalux LED Light Therapy" data={otherPrices.dermalux} />
             </div>
           </section>
-          <section id="prp" className="py-20 bg-white">
+          <section id="prp" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="PRP Skin and Hair Restoration" data={otherPrices.prp} />
             </div>
           </section>
 
-          <section id="botox" className="py-20 bg-neutral-50">
+          <section id="botox" className="py-20 bg-white">
             <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Anti-Wrinkle Injections (Botox)</h2>
               <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
@@ -460,19 +485,19 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
           
-          <section id="chemical-peels" className="py-20 bg-white">
+          <section id="chemical-peels" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <SimplePriceList title="Chemical Peels" data={otherPrices.peels} />
             </div>
           </section>
 
-          <section id="facials" className="py-20 bg-neutral-50">
+          <section id="facials" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Facials" data={otherPrices.facials} />
             </div>
           </section>
 
-          <section id="skin-boosters" className="py-20 bg-white">
+          <section id="skin-boosters" className="py-20 bg-neutral-50">
             <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Skin Boosters</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -492,13 +517,13 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
 
-          <section id="fat-dissolving" className="py-20 bg-neutral-50">
+          <section id="fat-dissolving" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Fat Dissolving (Lemon Bottle)" data={otherPrices.fatDissolving} />
             </div>
           </section>
 
-           <section id="polynucleotides" className="py-20 bg-white">
+           <section id="polynucleotides" className="py-20 bg-neutral-50">
              <div className="container-custom">
               <h2 className="text-3xl font-bold text-primary-900 mb-4">Vitaran Polynucleotides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -516,13 +541,13 @@ const PriceListPage: React.FC = () => {
             </div>
           </section>
 
-          <section id="permanent-makeup" className="py-20 bg-neutral-50">
+          <section id="permanent-makeup" className="py-20 bg-white">
             <div className="container-custom">
               <SimplePriceList title="Permanent Makeup by Master Natalia" data={otherPrices.permanentMakeup} />
             </div>
           </section>
 
-           <section id="gift-cards" className="py-20 bg-white">
+           <section id="gift-cards" className="py-20 bg-neutral-50">
              <div className="container-custom">
                 <h2 className="text-3xl font-bold text-primary-900 mb-4">Gift Cards</h2>
                 <div className="bg-white border border-neutral-200 rounded-lg shadow-sm p-6">

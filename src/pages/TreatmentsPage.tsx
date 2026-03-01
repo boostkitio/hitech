@@ -32,6 +32,11 @@ const TreatmentsPage: React.FC = () => {
   }, [location]);
 
   const treatmentCategories = {
+    skintightening: {
+      title: "Skin Tightening",
+      description: "Non-invasive ultrasound technology for skin tightening, lifting, and collagen stimulation.",
+      treatments: treatments.filter(t => ['sofwave'].includes(t.id))
+    },
     hairremoval: {
       title: "Hair Removal Treatments",
       description: "Advanced solutions for permanent hair reduction, suitable for all skin types.",

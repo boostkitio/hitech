@@ -89,6 +89,7 @@ const Header: React.FC = () => {
   };
   
   const priceListMenu = [
+    { id: 'sofwave', name: 'Sofwave Skin Tightening' },
     { id: 'soprano-ice-platinum', name: 'Soprano Laser Hair Removal' },
     { id: 'electrolysis', name: 'Apilus xCell Pro Electrolysis' },
     { id: 'lynton-3juve', name: 'Lynton IPL & Laser Resurfacing' },
@@ -106,7 +107,8 @@ const Header: React.FC = () => {
     { id: 'gift-cards', name: 'Gift Cards' },
   ];
   
-  const treatmentsMenu = [
+  const treatmentsMenu: { id: string; name: string; link?: string }[] = [
+    { id: 'sofwave', name: 'Sofwave Skin Tightening', link: '/treatments/sofwave' },
     { id: 'hairremoval', name: 'Hair Removal Treatments' },
     { id: 'injectables', name: 'Injectable Treatments' },
     { id: 'skinrejuvenation', name: 'Skin Rejuvenation' },
@@ -198,7 +200,7 @@ const Header: React.FC = () => {
                     {treatmentsMenu.map((item) => (
                       <Link
                         key={item.id}
-                        to={`/treatments#${item.id}`}
+                        to={item.link || `/treatments#${item.id}`}
                         onClick={() => setIsTreatmentsMenuOpen(false)}
                         className="block w-full text-left px-4 py-2.5 text-neutral-700 hover:bg-primary-50 hover:text-primary-800 transition-colors duration-200"
                       >
@@ -309,7 +311,7 @@ const Header: React.FC = () => {
                     {treatmentsMenu.map(item => (
                       <Link
                         key={item.id}
-                        to={`/treatments#${item.id}`}
+                        to={item.link || `/treatments#${item.id}`}
                         onClick={() => {
                           setIsTreatmentsMenuOpen(false);
                           setIsOpen(false);
