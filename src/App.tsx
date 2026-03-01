@@ -37,6 +37,7 @@ const RelaxingFacials = lazy(() => import('./pages/treatments/RelaxingFacials'))
 const ChemicalPeels = lazy(() => import('./pages/treatments/ChemicalPeels'));
 const ZOSkincare = lazy(() => import('./pages/treatments/ZOSkincare'));
 const PermanentMakeup = lazy(() => import('./pages/treatments/PermanentMakeup'));
+const Sofwave = lazy(() => import('./pages/treatments/Sofwave'));
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
             <Route path="treatments/chemical-peels" element={<ChemicalPeels />} />
             <Route path="treatments/zo-skincare" element={<ZOSkincare />} />
             <Route path="treatments/permanent-makeup" element={<PermanentMakeup />} />
+            <Route path="treatments/sofwave" element={<Sofwave />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="resources" element={<ResourcesPage />} />
             <Route path="price-list" element={<PriceListPage />} />
