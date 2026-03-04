@@ -7,6 +7,7 @@ const logos = [
   { name: 'Hydrafacial', src: 'https://ik.imagekit.io/boostkit/HiTech/Carousel/Hydrafacial_Logo.png?updatedAt=1759841217718' },
   { name: 'Lynton', src: 'https://ik.imagekit.io/boostkit/HiTech/Carousel/Lynton_Logo.png?updatedAt=1759841217505' },
   { name: 'Obagi', src: 'https://ik.imagekit.io/boostkit/HiTech/Carousel/Obagi_Logo.webp?updatedAt=1760365528818' },
+  { name: 'Sofwave', src: 'https://ik.imagekit.io/boostkit/HiTech/Logos/sofwave.png' },
   { name: 'SkinPen', src: 'https://ik.imagekit.io/boostkit/HiTech/Carousel/SkinPen_Logo.png?updatedAt=1759841217568' },
   { name: 'ZO Skin Health', src: 'https://ik.imagekit.io/boostkit/HiTech/Carousel/ZO_Logo.png?updatedAt=1759841217384' },
 ];
