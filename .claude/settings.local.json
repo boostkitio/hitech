@@ -1,30 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls:*)",
-      "Bash(grep:*)",
       "Bash(find:*)",
-      "Bash(npm run lint)",
-      "Bash(npm run build:*)",
-      "Bash(rm:*)",
-      "Bash(npm install)",
-      "Bash(npm run dev:*)",
-      "Bash(npx tsc:*)",
-      "Bash(rg:*)",
-      "Bash(sed:*)",
-      "Bash(timeout:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
+      "Bash(git log:*)",
       "Bash(git push:*)",
-      "Bash(git log:*)"
-    ],
-    "deny": []
+      "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npm install)",
+      "Bash(npm run *:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run lint)",
+      "Bash(npx eslint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(rg:*)",
+      "Bash(rm:*)",
+      "Bash(sed:*)",
+      "Bash(timeout:*)"
+    ]
   },
-  "enabledMcpjsonServers": [
-    "chrome-devtools",
-    "context7",
-    "bright-data",
-    "sanity"
-  ],
-  "enableAllProjectMcpServers": true
+  "cleanupPeriodDays": 30
 }
