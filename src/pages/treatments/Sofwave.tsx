@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Check, Clock, Shield, Zap, Target, Sparkles, Timer, Award, ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -138,6 +138,7 @@ const faqs = [
 const Sofwave: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const payl8rRef = useRef<HTMLIFrameElement>(null);
 
   const openLightbox = (galleryIndex: number) => setLightboxIndex(galleryIndex);
   const closeLightbox = () => setLightboxIndex(null);
@@ -168,6 +169,30 @@ const Sofwave: React.FC = () => {
       window.removeEventListener('keydown', handleKey);
     };
   }, [lightboxIndex, goNext, goPrev]);
+
+  // The Payl8r embed is a fixed-layout, cross-origin page that sends no resize
+  // messages, so its height can't be read directly. Estimate it from the
+  // iframe's rendered width so the whole page fits with no inner scrollbar.
+  // Reference heights measured from the Payl8r page (width px -> height px):
+  // 288->3660, 343->3443, 500->2856, 768->2610. The 100px buffer keeps the
+  // estimate above the real height; re-measure these points if Payl8r changes
+  // the page (the iframe falls back to its own scrollbar if the estimate is short).
+  useEffect(() => {
+    const iframe = payl8rRef.current;
+    if (!iframe) return;
+    const estimateHeight = (w: number) =>
+      w <= 500 ? 2856 + (500 - w) * 3.7 : 2856 - (w - 500) * 0.9;
+    const applyHeight = () => {
+      const width = iframe.getBoundingClientRect().width;
+      if (width > 0) {
+        iframe.style.height = `${Math.ceil(estimateHeight(width)) + 100}px`;
+      }
+    };
+    applyHeight();
+    const observer = new ResizeObserver(applyHeight);
+    observer.observe(iframe);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -563,8 +588,9 @@ const Sofwave: React.FC = () => {
                   Spread the Cost
                 </h2>
                 <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                  Pay for your Sofwave treatment in manageable monthly instalments
-                  with Payl8r. Use the calculator below to see your finance options.
+                  Spread the cost of your Sofwave treatment over 6 to 24 months
+                  with Payl8r. Enter an amount in the calculator below to see your
+                  estimated monthly repayments.
                 </p>
               </div>
               <motion.div
@@ -575,10 +601,10 @@ const Sofwave: React.FC = () => {
                 className="rounded-xl overflow-hidden shadow-lg bg-white"
               >
                 <iframe
+                  ref={payl8rRef}
                   src="https://payl8r.com/retailers/payment-detail?retailer=hitechaes953wbviu2n4"
                   title="Payl8r finance calculator"
-                  className="w-full"
-                  style={{ height: '800px', border: 0 }}
+                  className="w-full h-[2900px] border-0"
                   loading="lazy"
                 />
               </motion.div>
