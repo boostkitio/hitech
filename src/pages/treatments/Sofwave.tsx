@@ -554,6 +554,41 @@ const Sofwave: React.FC = () => {
           </div>
         </section>
 
+        {/* Spread the Cost — Payl8r Calculator */}
+        <section className="py-16 bg-neutral-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+                  Spread the Cost
+                </h2>
+                <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                  Pay for your Sofwave treatment in manageable monthly instalments
+                  with Payl8r. Use the calculator below to see your finance options.
+                </p>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-xl overflow-hidden shadow-lg bg-white"
+              >
+                <iframe
+                  src="https://payl8r.com/retailers/payment-detail?retailer=hitechaes953wbviu2n4"
+                  title="Payl8r finance calculator"
+                  className="w-full"
+                  style={{ height: '800px', border: 0 }}
+                  loading="lazy"
+                />
+              </motion.div>
+              <p className="text-sm text-neutral-500 text-center mt-4">
+                Finance provided by Payl8r. Subject to status and affordability checks.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Benefits Section */}
         <section className="py-16 bg-primary-50">
           <div className="container mx-auto px-4">
