@@ -45,6 +45,11 @@ const pricingOptions = [
     description: 'Tighten and lift the neck area for a more youthful profile.',
   },
   {
+    area: 'Jawline Treatment',
+    price: '£1,000',
+    description: 'Sculpt and define the jawline, smoothing jowls for a lifted, contoured profile.',
+  },
+  {
     area: 'Brow Lift',
     price: '£500',
     description: 'Non-surgical brow elevation for a refreshed, open-eyed appearance.',

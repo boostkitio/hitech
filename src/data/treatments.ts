@@ -372,7 +372,7 @@ export const treatments: Treatment[] = [
     treatmentAreas: 'Face, neck, hands, décolletage',
     course: '3 treatments, 4 weeks apart',
     duration: '30-45 minutes',
-    price: 'From £200 per treatment',
+    price: 'From £150 per treatment',
     faqs: [
       {
         question: 'What are polynucleotides?',

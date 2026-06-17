@@ -9,6 +9,7 @@ interface TreatmentLevel {
   name: string;
   price: string;
   originalPrice: string;
+  memberPrice?: string;
   duration: string;
   description: string;
   includes: string[];
@@ -50,8 +51,9 @@ const treatmentLevels: TreatmentLevel[] = [
   {
     id: 'platinum',
     name: 'HydraFacial Platinum',
-    price: '£189',
+    price: '£199',
     originalPrice: '',
+    memberPrice: '£179 (£20 saving)',
     duration: '60 minutes',
     description: 'The ultimate HydraFacial experience with lymphatic drainage and premium serums.',
     includes: [
@@ -172,7 +174,7 @@ const Hydrafacial: React.FC = () => {
             "offers": {
               "@type": "AggregateOffer",
               "lowPrice": "109",
-              "highPrice": "189",
+              "highPrice": "199",
               "priceCurrency": "GBP"
             }
           })}
@@ -369,6 +371,11 @@ const Hydrafacial: React.FC = () => {
                         </span>
                       )}
                     </div>
+                    {level.memberPrice && (
+                      <p className="text-sm font-medium text-primary-700 mb-2">
+                        Existing HiTech Aesthetics clients: {level.memberPrice}
+                      </p>
+                    )}
                     <div className="flex items-center justify-center gap-2 text-neutral-600 mb-4">
                       <Clock className="w-4 h-4" />
                       <span>{level.duration}</span>

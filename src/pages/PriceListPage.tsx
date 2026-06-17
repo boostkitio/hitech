@@ -172,7 +172,7 @@ const PriceListPage: React.FC = () => {
     resurfacing: [
       { area: 'Top lip', single: '£75', course: '£150' },
       { area: 'Lower face (cheeks, nose, chin, upper lip, jawline)', single: '£250', course: '£1,000' },
-      { area: 'Full face', single: '£350', course: '£999' },
+      { area: 'Full face', single: '£600', course: '£1,500' },
       { area: 'Chest', single: '£250', course: '£600' },
       { area: 'Face & neck', single: '£450', course: '£1,200' },
     ],
@@ -182,7 +182,7 @@ const PriceListPage: React.FC = () => {
       { area: 'Cheeks', single: '£100', course: '£220' },
       { area: 'Cheeks & nose', single: '£150', course: '£380' },
       { area: 'Half face', single: '£180', course: '£460' },
-      { area: 'Full face', single: '£200', course: '£510' },
+      { area: 'Full face', single: '£250', course: '£550' },
       { area: 'Full face & neck or chest', single: '£300', course: '£650' },
       { area: 'Full face & neck', single: '£250', course: '£500' },
       { area: 'Neck', single: '£155', course: '£395' },
@@ -222,7 +222,8 @@ const PriceListPage: React.FC = () => {
   const hydrafacialData = [
     { name: 'Syndeo HydraFacial Signature', price: '£109', duration: '30 minutes' },
     { name: 'HydraFacial Deluxe', price: '£169', duration: '45 minutes' },
-    { name: 'HydraFacial Platinum', price: '£189', duration: '60 minutes' },
+    { name: 'HydraFacial Platinum', price: '£199', duration: '60 minutes' },
+    { name: 'HydraFacial Platinum (existing HiTech Aesthetics clients)', price: '£179 (£20 saving)' },
     { name: 'Course of 3 HydraFacials', price: '£500' },
     { name: 'Course of 6 HydraFacials', price: '£965' },
     { name: 'Course of 12 HydraFacials', price: '£1,700' },
@@ -286,8 +287,8 @@ const PriceListPage: React.FC = () => {
         { name: '2 large areas', price: '£450' },
     ],
     polynucleotides: [
-        { area: 'Small Areas (eyes, upper lip & chin)', session1: '£200', session3: '£600', note: 'Protocol of 3 sessions recommended' },
-        { area: 'Large Areas (décolletage, neck, cheeks, belly, hands)', session1: '£350', session3: '£1,000', note: 'Protocol of 3 sessions recommended' },
+        { area: 'Under Eyes / Dark Circles', price: '£150', note: 'Protocol of 3 sessions recommended' },
+        { area: 'Full Face, Neck, Décolletage or Hands', price: '£300', note: 'Protocol of 3 sessions recommended' },
     ],
     permanentMakeup: [
         { name: 'Eyebrows, lip blush, and eyeliner', price: '£350 (first session)' },
@@ -335,6 +336,7 @@ const PriceListPage: React.FC = () => {
                   { name: 'Full Face', price: '£1,700' },
                   { name: 'Lower Face & Neck', price: '£1,500' },
                   { name: 'Neck', price: '£1,300' },
+                  { name: 'Jawline Treatment', price: '£1,000' },
                   { name: 'Brow Lift', price: '£500' },
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center border-b border-neutral-100 pb-4 last:border-b-0 last:pb-0">
@@ -532,8 +534,7 @@ const PriceListPage: React.FC = () => {
                           <h3 className="text-xl font-semibold text-primary-800">{p.area}</h3>
                           <p className="text-sm text-neutral-500 mb-4">{p.note}</p>
                           <div className="space-y-2">
-                              <div className="flex justify-between"><p>1 session</p><p className="font-medium">{p.session1}</p></div>
-                              <div className="flex justify-between"><p>3 sessions</p><p className="font-medium">{p.session3}</p></div>
+                              <div className="flex justify-between"><p>Per session</p><p className="font-medium">{p.price}</p></div>
                           </div>
                       </div>
                   ))}
