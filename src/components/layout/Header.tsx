@@ -285,8 +285,8 @@ const Header: React.FC = () => {
           >
             <X size={28} />
           </button>
-          <div className="flex flex-col h-full justify-center items-center" onClick={e => e.stopPropagation()}>
-            <nav className="flex flex-col items-center space-y-6">
+          <div className="h-full overflow-y-auto overscroll-contain" onClick={e => e.stopPropagation()}>
+            <nav className="flex flex-col items-center space-y-6 min-h-full justify-center py-24">
               <NavLink 
                 to="/" 
                 className={mobileNavLinkClasses}
@@ -316,7 +316,7 @@ const Header: React.FC = () => {
                           setIsTreatmentsMenuOpen(false);
                           setIsOpen(false);
                         }}
-                        className="block py-2 text-lg font-bold text-white visited:text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
+                        className="block py-2 text-lg font-bold text-white visited:text-white active:bg-white/10 rounded px-4 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
@@ -341,7 +341,7 @@ const Header: React.FC = () => {
                           setIsPriceMenuOpen(false);
                           setIsOpen(false);
                         }}
-                        className="block py-2 text-lg font-bold text-white visited:text-white hover:bg-white/10 rounded px-4 transition-colors duration-200"
+                        className="block py-2 text-lg font-bold text-white visited:text-white active:bg-white/10 rounded px-4 transition-colors duration-200"
                       >
                         {item.name}
                       </Link>
