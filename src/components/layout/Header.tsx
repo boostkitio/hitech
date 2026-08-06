@@ -23,14 +23,6 @@ const Header: React.FC = () => {
     window.scrollTo(0, 0);
   }, [locationKey]);
 
-  // Close menu when location changes - using separate effect with proper condition
-  useEffect(() => {
-    if (isOpen) {
-      setIsOpen(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locationKey]);
-  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -290,12 +282,14 @@ const Header: React.FC = () => {
               <NavLink 
                 to="/" 
                 className={mobileNavLinkClasses}
+                onClick={() => setIsOpen(false)}
               >
                 Home
               </NavLink>
               <NavLink 
                 to="/about" 
                 className={mobileNavLinkClasses}
+                onClick={() => setIsOpen(false)}
               >
                 About
               </NavLink>
@@ -352,18 +346,21 @@ const Header: React.FC = () => {
               <NavLink
                 to="/skin-membership"
                 className={mobileNavLinkClasses}
+                onClick={() => setIsOpen(false)}
               >
                 Skin Membership
               </NavLink>
               <NavLink
                 to="/contact"
                 className={mobileNavLinkClasses}
+                onClick={() => setIsOpen(false)}
               >
                 Contact
               </NavLink>
               <Link
                 to="/booking"
                 className="btn btn-primary mt-4"
+                onClick={() => setIsOpen(false)}
               >
                 Book Now
               </Link>
