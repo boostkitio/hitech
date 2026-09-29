@@ -1,0 +1,17 @@
+﻿{
+    "schemaVersion":  2,
+    "id":  "hitech",
+    "canonicalPath":  "C:\\dev\\projects\\hitech",
+    "kind":  "client",
+    "business":  "boostkit",
+    "clientId":  null,
+    "status":  "uncertain",
+    "criticality":  "medium",
+    "updateTier":  "C",
+    "productionDeploymentRequiresApproval":  true,
+    "context":  {
+                    "companyBrain":  "C:\\dev\\projects\\_TOOLS\\company-brain",
+                    "workstream":  "C:\\dev\\projects\\_TOOLS\\company-brain\\workstreams\\hitech",
+                    "repositoryContext":  "C:\\dev\\projects\\hitech\\docs\\agent-context\\project.md"
+                }
+}
