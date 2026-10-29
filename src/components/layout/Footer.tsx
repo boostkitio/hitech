@@ -105,7 +105,13 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="border-t border-white/20 mt-12 pt-8 text-white text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2025 HiTech Aesthetics. All rights reserved.</p>
+            <p>
+              &copy; 2025 HiTech Aesthetics. All rights reserved. Website by{' '}
+              <a href="https://boostkit.io/" className="hover:text-secondary-400 transition-colors">
+                Boostkit
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
