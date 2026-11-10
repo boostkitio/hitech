@@ -53,8 +53,8 @@ This is a **Vite + React SPA** for a medical aesthetics practice with:
    - No global state library required; React hooks manage local interactions
 
 4. **Component Organization**
-   - `/components/ui/`: Generic reusable components (Button, LoadingSpinner, OptimizedImage)
-   - `/components/common/`: Shared app components (Logo, WhatsAppWidget, CookieConsent)
+   - `/components/ui/`: Generic reusable components (LoadingSpinner, OptimizedImage)
+   - `/components/common/`: Shared app components (Logo, CookieConsent)
    - `/components/layout/`: Page structure components (Header, Footer)
    - Page-specific components colocated (e.g., /components/home/)
 
