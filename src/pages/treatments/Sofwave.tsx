@@ -224,9 +224,9 @@ const Sofwave: React.FC = () => {
               "url": "https://hitechaesthetics.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "9 Goods Station Road",
+                "streetAddress": "114 Camden Road",
                 "addressLocality": "Tunbridge Wells",
-                "postalCode": "TN1 2DJ",
+                "postalCode": "TN1 2QX",
                 "addressCountry": "GB"
               },
               "telephone": "+441892338157"

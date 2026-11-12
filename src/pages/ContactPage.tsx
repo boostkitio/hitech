@@ -358,7 +358,7 @@ const ContactPage: React.FC = () => {
               <div className="rounded-lg overflow-hidden shadow-lg bg-primary-100 mb-8">
                 <div className="w-full" style={{ position: 'relative', paddingBottom: '66.75%', height: 0 }}>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.46573386704!2d0.2669608775332785!3d51.13676213771081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df45c137d46dc5%3A0x1594bc02bbbe31f8!2sHiTech%20Aesthetics!5e0!3m2!1sen!2suk!4v1749819146783!5m2!1sen!2suk"
+                    src="https://maps.google.com/maps?q=HiTech%20Aesthetics%2C%20114%20Camden%20Road%2C%20Tunbridge%20Wells%20TN1%202QX&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
